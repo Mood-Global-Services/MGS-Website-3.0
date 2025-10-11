@@ -63,7 +63,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/smart-contracts">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
                                                     <Typography component="span" variant="body2">Smart Contracts</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
@@ -75,7 +75,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/infra-and-protocols">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuInfra} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuInfra} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
                                                     <Typography component="span" variant="body2">Infra & Protocols</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
@@ -86,7 +86,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/ai-systems">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuAI} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuAI} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
                                                     <Typography component="span" variant="body2">AI Systems</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
@@ -97,7 +97,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/product-dev">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuDev} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuDev} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
                                                     <Typography component="span" variant="body2">Product Dev</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
@@ -108,7 +108,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/gtm-and-legal">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuGTM} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuGTM} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
                                                     <Typography component="span" variant="body2">GTM & Legal</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
