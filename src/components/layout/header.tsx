@@ -132,7 +132,8 @@ export default function Header() {
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
                                                 <Stack sx={{ backgroundColor: "red", overflow: "hidden", width: "15%" }}>
                                                     <Image src={menuLaunch} width={80} height={80} alt="launch" priority style={{
-                                                        objectFit: "fill"
+                                                        width: "100%",
+                                                        height: "100%"
                                                     }}></Image>
                                                 </Stack>
                                                 <Stack gap={1} width={"70%"} height={"100%"} justifyContent={"space-between"}>
@@ -158,7 +159,8 @@ export default function Header() {
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
                                                 <Stack sx={{ backgroundColor: "red", overflow: "hidden", width: "15%" }}>
                                                     <Image src={menuLaunch} width={80} height={80} alt="launch" priority style={{
-                                                        objectFit: "contain"
+                                                        width: "100%",
+                                                        height: "100%"
                                                     }}></Image>
                                                 </Stack>
                                                 <Stack gap={1} width={"70%"} height={"100%"} justifyContent={"space-between"}>
