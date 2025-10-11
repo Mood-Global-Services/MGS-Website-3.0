@@ -88,7 +88,7 @@ export function NavigationMenuContent({ className, ...props }: NavigationMenuCon
             data-slot="navigation-menu-content"
             className={cn(
                 "top-full p-2 left-0 z-50 mt-1.5 w-full overflow-hidden rounded-xl md:absolute md:left-1/2 md:w-auto md:-translate-x-1/2",
-                "bg-transparent border-2 border-[#292929] shadow-none",
+                "bg-[#0b0b0b] border-2 border-[#292929] shadow-none",
                 "motion-safe:data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52",
                 "motion-safe:data-[motion=to-end]:slide-out-to-right-52 motion-safe:data-[motion=to-start]:slide-out-to-left-52",
                 "motion-safe:data-[state=closed]:zoom-out-95 motion-safe:data-[state=open]:zoom-in-95 motion-safe:data-[motion^=from-]:animate-in motion-safe:data-[motion^=to-]:animate-out",
