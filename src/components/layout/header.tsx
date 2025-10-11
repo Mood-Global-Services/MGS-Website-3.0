@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import { PlainContentItem } from "../generic/plainContentItem";
-import { Stack, Typography, Grid } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import theme from "@/theme/theme";
 
 import logo from "@/assets/images/logo.webp";
@@ -97,7 +97,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/product-dev">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuDev} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
                                                     <Typography component="span" variant="body2">Product Dev</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
@@ -108,7 +108,7 @@ export default function Header() {
                                         <NavigationMenuContentItem href="/services/gtm-and-legal">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
-                                                    <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
+                                                    <Image src={menuGTM} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
                                                     <Typography component="span" variant="body2">GTM & Legal</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
