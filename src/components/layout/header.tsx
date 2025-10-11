@@ -192,14 +192,48 @@ export default function Header() {
                                     </Typography>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="grid w-[360px] grid-cols-1 gap-1">
-                                        <NavigationMenuContentItem href="/about/company">
-                                            <div className="text-sm font-medium text-primary">Company</div>
-                                            <div className="text-xs text-primary-muted">Mission & values</div>
+                                    <div className="grid w-[800px] grid-cols-3 gap-x-3 gap-y-3">
+                                        <NavigationMenuContentItem href="/services/smart-contracts">
+                                            <Stack paddingX={1}>
+                                                <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Team</Typography>
+                                                <Stack alignItems={"center"} justifyContent={"center"} paddingX={2} paddingY={8}>
+                                                    <Image src={menuTeam} width={150} height={75} alt="team"></Image>
+                                                </Stack>
+                                            </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/about/careers">
-                                            <div className="text-sm font-medium text-primary">Careers</div>
-                                            <div className="text-xs text-primary-muted">Open roles</div>
+                                        <NavigationMenuContentItem href="/services/infra-and-protocols">
+                                            <Stack height={"100%"} gap={6} justifyContent={"space-between"} paddingX={1}>
+                                                <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Careers</Typography>
+                                                <Typography component="span" variant="body2">
+                                                    Check out our open roles and become part of a team that’s shaping the future
+                                                </Typography>
+                                                <SideTabbedButton fullWidth color="#1D1D1D" shadowColor="#292929" height={40} hoverShiftX={1.5} hoverShiftY={-1}>
+                                                    <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={1}>
+                                                        <Typography component={"span"} variant="h6" sx={{
+                                                            whiteSpace: "nowrap"
+                                                        }}>
+                                                            Join the team
+                                                        </Typography>
+                                                    </Stack>
+                                                </SideTabbedButton>
+                                            </Stack>
+                                        </NavigationMenuContentItem>
+                                        <NavigationMenuContentItem href="/services/ai-systems">
+                                        <Stack height={"100%"} gap={4} justifyContent={"space-between"} paddingX={1}>
+                                                <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Careers</Typography>
+                                                <Stack alignItems={"center"} justifyContent={"center"} paddingX={2}>
+                                                    <Image src={menuPortfolio} width={150} height={75} alt="team"></Image>
+                                                </Stack>
+                                                <SideTabbedButton fullWidth color="#1D1D1D" shadowColor="#292929" height={40} hoverShiftX={1.5} hoverShiftY={-1}>
+                                                    <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={1}>
+                                                        <Typography component={"span"} variant="h6" sx={{
+                                                            whiteSpace: "nowrap"
+                                                        }}>
+                                                            View
+                                                        </Typography>
+                                                    </Stack>
+                                                </SideTabbedButton>
+                                            </Stack>
                                         </NavigationMenuContentItem>
                                     </div>
                                 </NavigationMenuContent>
