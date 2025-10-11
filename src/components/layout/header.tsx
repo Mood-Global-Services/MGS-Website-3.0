@@ -59,11 +59,11 @@ export default function Header() {
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <div className="grid w-[800px] grid-cols-3 gap-x-3 gap-y-3">
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/services/smart-contracts">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
-                                                    <Typography component="span" variant="body1">Smart Contracts</Typography>
+                                                    <Typography component="span" variant="body2">Smart Contracts</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                     End-to-end development from
@@ -71,44 +71,44 @@ export default function Header() {
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/services/infra-and-protocols">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuInfra} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
-                                                    <Typography component="span" variant="body1">Infra & Protocols</Typography>
+                                                    <Typography component="span" variant="body2">Infra & Protocols</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                     We design and implement robust blockchain infrastructure
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/services/ai-systems">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuAI} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
-                                                    <Typography component="span" variant="body1">AI Systems</Typography>
+                                                    <Typography component="span" variant="body2">AI Systems</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                     Automation, insight generation, and data-driven decision-making
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/services/product-dev">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
-                                                    <Typography component="span" variant="body1">Product Dev</Typography>
+                                                    <Typography component="span" variant="body2">Product Dev</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                     Blockchain-based product development and UX/Ui design
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/services/gtm-and-legal">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts"></Image>
-                                                    <Typography component="span" variant="body1">GTM & Legal</Typography>
+                                                    <Typography component="span" variant="body2">GTM & Legal</Typography>
                                                 </Stack>
                                                 <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                     Market insight with<br />legal precision
@@ -127,11 +127,11 @@ export default function Header() {
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <div className="grid w-[800px] grid-cols-1 gap-x-3 gap-y-3">
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/products/launch">
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
                                                 <Image src={menuLaunch} height={85} width={85} alt="launch" priority></Image>
                                                 <Stack gap={1} width={"70%"} height={"100%"} justifyContent={"space-between"}>
-                                                    <Typography component="span" variant="body1" color={theme.palette.brand.mgsPurple1.main}>Launch your business online with SiteLab’s AI</Typography>
+                                                    <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Launch your business online with SiteLab’s AI</Typography>
                                                     <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                         Generated websites, tailored for SMEs. Enjoy quick setup, cost-effective solutions, and no technical expertise needed to create a professional, modern website.
                                                     </Typography>
@@ -149,11 +149,11 @@ export default function Header() {
                                                 </Stack>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/consulting">
+                                        <NavigationMenuContentItem href="/products/explore">
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
                                                 <Image src={menuExplore} height={85} width={85} alt="launch" priority></Image>
                                                 <Stack gap={1} width={"70%"} height={"100%"} justifyContent={"space-between"}>
-                                                    <Typography component="span" variant="body1" color={theme.palette.brand.mgsPurple1.main}>Explore all EVM-compatible blockchains </Typography>
+                                                    <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Explore all EVM-compatible blockchains </Typography>
                                                     <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
                                                         Query wallet addresses, retrieve transaction details, or append custom notes through natural conversation — faster and smarter than traditional tools like Blockscan
                                                     </Typography>
