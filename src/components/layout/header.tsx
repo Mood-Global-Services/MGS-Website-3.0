@@ -137,7 +137,7 @@ export default function Header() {
                                                     </Typography>
                                                 </Stack>
                                                 <Stack flexGrow={1} justifyContent={"end"}>
-                                                    <SideTabbedButton height={40} hoverShiftX={1.5} hoverShiftY={-1}>
+                                                    <SideTabbedButton color="#1D1D1D" shadowColor="#292929" height={40} hoverShiftX={1.5} hoverShiftY={-1}>
                                                         <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={1}>
                                                             <Typography component={"span"} variant="h6" sx={{
                                                                 whiteSpace: "nowrap"
@@ -159,7 +159,7 @@ export default function Header() {
                                                     </Typography>
                                                 </Stack>
                                                 <Stack flexGrow={1} justifyContent={"end"}>
-                                                    <SideTabbedButton height={40} hoverShiftX={1.5} hoverShiftY={-1}>
+                                                    <SideTabbedButton color="#1D1D1D" shadowColor="#292929" height={40} hoverShiftX={1.5} hoverShiftY={-1}>
                                                         <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={1}>
                                                             <Typography component={"span"} variant="h6" sx={{
                                                                 whiteSpace: "nowrap"
