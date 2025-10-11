@@ -130,7 +130,7 @@ export default function Header() {
                                     <div className="grid w-[800px] grid-cols-1 gap-x-3 gap-y-3">
                                         <NavigationMenuContentItem href="/products/launch">
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
-                                                <Stack sx={{ overflow: "hidden", width: "15%" }}>
+                                                <Stack alignItems={"center"} justifyContent={"center"} sx={{ overflow: "hidden", width: "15%" }}>
                                                     <Image src={menuLaunch} width={80} height={80} alt="launch" priority style={{
                                                         width: "100%",
                                                         height: "100%"
@@ -157,7 +157,7 @@ export default function Header() {
                                         </NavigationMenuContentItem>
                                         <NavigationMenuContentItem href="/products/explore">
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
-                                                <Stack sx={{ overflow: "hidden", width: "15%" }}>
+                                                <Stack alignItems={"center"} justifyContent={"center"} sx={{ overflow: "hidden", width: "15%" }}>
                                                     <Image src={menuExplore} width={80} height={80} alt="launch" priority style={{
                                                         width: "100%",
                                                         height: "100%"
