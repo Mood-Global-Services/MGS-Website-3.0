@@ -1,7 +1,8 @@
 import "@/styles/globals.css";
-
 import { type Metadata } from "next";
 import { Funnel_Display } from "next/font/google";
+import ThemeRegistry from "@/components/layout/ThemeRegistry";
+import Header from "@/components/layout/header";
 
 export const metadata: Metadata = {
   title: "MGS | Tailored Blockchain Solutions",
@@ -9,16 +10,18 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const funnel = Funnel_Display({
-  subsets: ["latin"],
-});
+const funnel = Funnel_Display({ subsets: ["latin"] });
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={funnel.className}>{children}</body>
+      <body className={funnel.className}>
+        <ThemeRegistry>
+          {/* If Header uses MUI (or any client-only APIs), put it here and start the file with "use client" */}
+          <Header />
+          {children}
+        </ThemeRegistry>
+      </body>
     </html>
   );
 }

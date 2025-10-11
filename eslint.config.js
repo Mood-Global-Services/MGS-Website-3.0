@@ -1,14 +1,11 @@
+// eslint.config.js
 import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "typescript-eslint";
 
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-});
+const compat = new FlatCompat({ baseDirectory: import.meta.dirname });
 
 export default tseslint.config(
-  {
-    ignores: [".next"],
-  },
+  { ignores: [".next"] },
   ...compat.extends("next/core-web-vitals"),
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -17,6 +14,14 @@ export default tseslint.config(
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
     ],
+    languageOptions: {
+      parserOptions: {
+        // Use ONE approach; this one is the most reliable:
+        project: ["./tsconfig.json"],
+        tsconfigRootDir: import.meta.dirname,
+        // If you prefer, you can use projectService: true instead of the two lines above.
+      },
+    },
     rules: {
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
@@ -24,10 +29,7 @@ export default tseslint.config(
         "warn",
         { prefer: "type-imports", fixStyle: "inline-type-imports" },
       ],
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_" },
-      ],
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
       "@typescript-eslint/require-await": "off",
       "@typescript-eslint/no-misused-promises": [
         "error",
@@ -36,13 +38,6 @@ export default tseslint.config(
     },
   },
   {
-    linterOptions: {
-      reportUnusedDisableDirectives: true,
-    },
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-      },
-    },
+    linterOptions: { reportUnusedDisableDirectives: true },
   },
 );
