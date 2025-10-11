@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
+import { PlainContentItem } from "../generic/plainContentItem";
 import { Stack, Typography, Grid } from "@mui/material";
 import theme from "@/theme/theme";
 
@@ -192,17 +193,18 @@ export default function Header() {
                                     </Typography>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <div className="grid w-[800px] grid-cols-3 gap-x-3 gap-y-3">
-                                        <NavigationMenuContentItem href="/services/smart-contracts">
-                                            <Stack paddingX={1}>
+                                    <div className="grid w-[800px] h-[275px] items-stretch [grid-template-columns:1fr_1px_1fr_1px_1fr]">
+                                        <PlainContentItem href="/services/smart-contracts" className="pr-3">
+                                            <Stack paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
                                                 <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Team</Typography>
-                                                <Stack alignItems={"center"} justifyContent={"center"} paddingX={2} paddingY={8}>
+                                                <Stack alignItems={"center"} justifyContent={"center"} paddingX={2} paddingTop={8}>
                                                     <Image src={menuTeam} width={150} height={75} alt="team"></Image>
                                                 </Stack>
                                             </Stack>
-                                        </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/infra-and-protocols">
-                                            <Stack height={"100%"} gap={6} justifyContent={"space-between"} paddingX={1}>
+                                        </PlainContentItem>
+                                        <div aria-hidden className="bg-[#292929]" />
+                                        <PlainContentItem href="/services/infra-and-protocols" className="px-3">
+                                            <Stack height={"100%"} justifyContent={"space-between"} paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
                                                 <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Careers</Typography>
                                                 <Typography component="span" variant="body2">
                                                     Check out our open roles and become part of a team that’s shaping the future
@@ -217,10 +219,11 @@ export default function Header() {
                                                     </Stack>
                                                 </SideTabbedButton>
                                             </Stack>
-                                        </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/ai-systems">
-                                        <Stack height={"100%"} gap={4} justifyContent={"space-between"} paddingX={1}>
-                                                <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Careers</Typography>
+                                        </PlainContentItem>
+                                        <div aria-hidden className="bg-[#292929]" />
+                                        <PlainContentItem href="/services/ai-systems" className="pl-3">
+                                            <Stack height={"100%"} justifyContent={"space-between"} paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
+                                                <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Portfolio</Typography>
                                                 <Stack alignItems={"center"} justifyContent={"center"} paddingX={2}>
                                                     <Image src={menuPortfolio} width={150} height={75} alt="team"></Image>
                                                 </Stack>
@@ -234,7 +237,7 @@ export default function Header() {
                                                     </Stack>
                                                 </SideTabbedButton>
                                             </Stack>
-                                        </NavigationMenuContentItem>
+                                        </PlainContentItem>
                                     </div>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
