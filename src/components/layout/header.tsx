@@ -130,7 +130,7 @@ export default function Header() {
                                     <div className="grid w-[800px] grid-cols-1 gap-x-3 gap-y-3">
                                         <NavigationMenuContentItem href="/products/launch">
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
-                                                <Image src={menuLaunch} height={85} width={85} alt="launch" priority></Image>
+                                                <Image src={menuLaunch} height={75} width={85} alt="launch" priority></Image>
                                                 <Stack gap={1} width={"70%"} height={"100%"} justifyContent={"space-between"}>
                                                     <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Launch your business online with SiteLab’s AI</Typography>
                                                     <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
@@ -152,7 +152,7 @@ export default function Header() {
                                         </NavigationMenuContentItem>
                                         <NavigationMenuContentItem href="/products/explore">
                                             <Stack direction={"row"} alignItems={"stretch"} justifyContent={"space-between"} gap={1.5}>
-                                                <Image src={menuExplore} height={85} width={85} alt="launch" priority></Image>
+                                                <Image src={menuExplore} height={75} width={85} alt="launch" priority></Image>
                                                 <Stack gap={1} width={"70%"} height={"100%"} justifyContent={"space-between"}>
                                                     <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Explore all EVM-compatible blockchains </Typography>
                                                     <Typography component="span" variant="body2" color={theme.palette.text.secondary}>
