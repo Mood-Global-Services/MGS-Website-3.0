@@ -16,6 +16,7 @@
 
 @font-face {
   font-family: "CHNO";
+  font-display: auto;
   src: url("../fonts/CHNO/hinted/CHNOPixelCodePro-Regular.woff2")
     format("opentype");
 }

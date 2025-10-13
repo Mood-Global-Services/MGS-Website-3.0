@@ -24,7 +24,7 @@ const Hero = () => {
             paddingX={4}
             position="relative"
         >
-            <Stack height={"200px"} width="100%" sx={{
+            <Stack height={"120px"} width="100%" sx={{
                 background: "linear-gradient(-180deg, #0B0B0B 0%, rgba(11, 11, 11, 0) 100%)",
                 position: "absolute",
                 top: 0,
@@ -56,6 +56,9 @@ const Hero = () => {
                     </Typography>
                 </Stack>
 
+                <Stack width="100%" direction="row" alignItems="center" justifyContent="center" position="relative" sx={{
+                    zIndex: 2
+                }}>
                 <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                     <div className="flex items-center justify-center gap-1">
                         <Typography component="span" variant="h6">
@@ -68,6 +71,7 @@ const Hero = () => {
                         </span>
                     </div>
                 </SideTabbedButton>
+                </Stack>
             </Stack>
 
             <Stack height={"100px"} width="100%" sx={{
