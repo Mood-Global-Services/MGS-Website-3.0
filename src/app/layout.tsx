@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const funnel = Funnel_Display({ subsets: ["latin"] });
+const funnel = Funnel_Display({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

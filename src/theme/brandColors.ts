@@ -2,6 +2,7 @@
 export type BrandColor = { main: string };
 
 export type BrandPalette = {
+  mgsBlack: BrandColor;
   mgsBlue1: BrandColor;
   mgsBlue2: BrandColor;
   mgsBlue3: BrandColor;
@@ -19,6 +20,7 @@ export type BrandPalette = {
 export type BrandPaletteOptions = Partial<BrandPalette>;
 
 export const brandColors: BrandPalette = {
+  mgsBlack: { main: "#0B0B0B" },
   mgsBlue1: { main: "#1437E8" },
   mgsBlue2: { main: "#1F37E1" },
   mgsBlue3: { main: "#3D5FFF" },
