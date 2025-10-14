@@ -14,8 +14,6 @@ import chainlink from "@/assets/images/chainlink-link-logo.webp"
 import BS from "@/assets/images/BS.webp"
 import grafana from "@/assets/images/grafana.webp"
 
-import l2Asset from "@/assets/images/assetL2.webp"
-
 export default function ServicesLayer2Banner() {
     return (
         <Stack
@@ -30,7 +28,6 @@ export default function ServicesLayer2Banner() {
                 backgroundColor: "#000",       // optional: base behind the SVG
             }}
         >
-            {/* Background SVG (fills the box) */}
             <Box
                 component="svg"
                 viewBox="0 0 1343 572"
@@ -181,14 +178,10 @@ export default function ServicesLayer2Banner() {
                     </linearGradient>
                 </defs>
             </Box>
-
-            
-
-            {/* Content goes above the background */}
             <Stack
                 justifyContent="center"
                 width={"60%"}
-                sx={{ position: "relative", zIndex: 1, height: "100%", px: 3, gap: 4}}
+                sx={{ position: "relative", zIndex: 1, height: "100%", px: 3, gap: 4 }}
             >
                 <Stack gap={0.5}>
                     <Typography variant="body1" color={theme.palette.text.secondary} fontWeight={400}>Discover the trending  service of last quarter</Typography>
