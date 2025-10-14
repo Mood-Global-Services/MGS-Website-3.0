@@ -4,13 +4,9 @@ import * as React from "react";
 import { Box, type BoxProps } from "@mui/material";
 
 type WeSpecializeFrameProps = BoxProps & {
-  /** Height of the whole frame (responsive string or number). */
-  height?: number | string;           // e.g. 200, "28rem", "50vh"
-  /** Corner radius of the inner panel (matches SVG’s 8 by default). */
-  panelRadius?: number;               // px
-  /** Opacity of the inner panel fill (SVG uses 0.2). */
-  panelOpacity?: number;              // 0..1
-  /** Show the blurred blue glow ellipse. */
+  height?: number | string;
+  panelRadius?: number;
+  panelOpacity?: number;
   glow?: boolean;
   children?: React.ReactNode;
 };
@@ -34,7 +30,6 @@ export default function WeSpecializeFrame({
       }}
       {...rest}
     >
-      {/* SVG frame (responsive) */}
       <Box
         component="svg"
         viewBox="0 0 1388 397"
@@ -48,7 +43,6 @@ export default function WeSpecializeFrame({
           pointerEvents: "none",
         }}
       >
-        {/* --- inner panel (vertical fade) --- */}
         <rect
           x="40"
           y="65"
@@ -59,7 +53,6 @@ export default function WeSpecializeFrame({
           fillOpacity={panelOpacity}
         />
 
-        {/* --- blue glow ellipse (optional) --- */}
         {glow && (
           <g filter="url(#glowBlur)">
             <ellipse
@@ -73,29 +66,24 @@ export default function WeSpecializeFrame({
           </g>
         )}
 
-        {/* --- gradient border strokes, like your SVG --- */}
-        {/* left top-to-mid */}
         <path
           d="M40.5 229V77.5C40.5 70.8726 45.8726 65.5 52.5 65.5H519.5"
           stroke="url(#strokeLeftTop)"
           strokeWidth="1.5"
           fill="none"
         />
-        {/* left mid-to-bottom */}
         <path
           d="M40.5 168.5V320C40.5 326.627 45.8726 332 52.5 332H519.5"
           stroke="url(#strokeLeftBottom)"
           strokeWidth="1.5"
           fill="none"
         />
-        {/* right top-to-mid */}
         <path
           d="M1349 229V77.5C1349 70.8726 1343.63 65.5 1337 65.5H870"
           stroke="url(#strokeRightTop)"
           strokeWidth="1.5"
           fill="none"
         />
-        {/* right mid-to-bottom */}
         <path
           d="M1349 168.5V320C1349 326.627 1343.63 332 1337 332H870"
           stroke="url(#strokeRightBottom)"
@@ -103,9 +91,7 @@ export default function WeSpecializeFrame({
           fill="none"
         />
 
-        {/* --- defs from your SVG (unchanged) --- */}
         <defs>
-          {/* blur filter for glow */}
           <filter
             id="glowBlur"
             x="-46.3"
@@ -120,19 +106,16 @@ export default function WeSpecializeFrame({
             <feGaussianBlur stdDeviation="85.65" result="effect1_foregroundBlur" />
           </filter>
 
-          {/* panel vertical fade */}
           <linearGradient id="panelFill" x1="694.5" y1="65" x2="694.5" y2="332" gradientUnits="userSpaceOnUse">
             <stop stopOpacity="0" />
             <stop offset="1" stopOpacity="1" />
           </linearGradient>
 
-          {/* glow vertical gradient */}
           <linearGradient id="glowFill" x1="687" y1="123" x2="687" y2="369" gradientUnits="userSpaceOnUse">
             <stop stopColor="#1437E8" />
             <stop offset="1" stopColor="#0B0B0B" />
           </linearGradient>
 
-          {/* stroke gradients */}
           <linearGradient id="strokeLeftTop" x1="519" y1="66" x2="40" y2="223.5" gradientUnits="userSpaceOnUse">
             <stop stopColor="#434343" stopOpacity="0" />
             <stop offset="0.27172" stopColor="#434343" />
@@ -163,7 +146,6 @@ export default function WeSpecializeFrame({
         </defs>
       </Box>
 
-      {/* Content layer (cards etc.) */}
       <Box
         sx={{
           position: "relative",
@@ -174,7 +156,7 @@ export default function WeSpecializeFrame({
           height: "100%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",     // <- was "end"
+          justifyContent: "center",
         }}
       >
         {children}

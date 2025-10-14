@@ -39,7 +39,6 @@ import mvpValidation from "@/assets/images/mvpValidation.webp"
 export default function WeSpecializeIn() {
     return (
         <WeSpecializeFrame height={"fit-content"}>
-            {/* Title */}
             <Box
                 sx={{
                     width: "fit-content",
@@ -57,11 +56,10 @@ export default function WeSpecializeIn() {
                 </Typography>
             </Box>
 
-            {/* Cards */}
             <Box
                 sx={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(5, minmax(0, 1fr))", // <- minmax(0,1fr) avoids min-content blowups
+                    gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
                     gap: 2,
                     width: "100%",
                     height: "100%",
@@ -71,8 +69,8 @@ export default function WeSpecializeIn() {
                     mt: 7,
                     mb: 5.5,
                     alignItems: "stretch",
-                    flex: "1 1 100%",   // <- fill the row
-                    minWidth: 0,        // <- allow shrinking below content width
+                    flex: "1 1 100%",
+                    minWidth: 0,
                 }}
             >
                 <WeSpecializeCard radius={8} heightPx={200}>

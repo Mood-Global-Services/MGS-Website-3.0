@@ -4,15 +4,15 @@
 import { Box, type BoxProps } from "@mui/material";
 
 type WeSpecializeCardProps = BoxProps & {
-  radius?: number;        // corner radius in px
-  borderWidth?: number;   // gradient stroke width
-  heightPx?: number;      // <- NEW: uniform height for all cards
+  radius?: number;
+  borderWidth?: number;
+  heightPx?: number;
 };
 
 export default function WeSpecializeCard({
   radius = 14,
   borderWidth = 0.95,
-  heightPx = 260,           // sensible default; override per section if needed
+  heightPx = 260,
   sx,
   children,
   ...rest
@@ -27,8 +27,6 @@ export default function WeSpecializeCard({
         height: `${heightPx}px`,
         backgroundColor: "transparent",
         overflow: "visible",
-
-        // Gradient “stroke-only” border
         "&::after": {
           content: '""',
           position: "absolute",
@@ -43,13 +41,10 @@ export default function WeSpecializeCard({
           pointerEvents: "none",
           zIndex: 2,
         },
-
-        // Let caller extend/override
         ...sx,
       }}
       {...rest}
     >
-      {/* Content layer fills the card and centers everything */}
       <Box
         sx={{
           position: "relative",
@@ -59,7 +54,6 @@ export default function WeSpecializeCard({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // prevents accidental overflow cutting
           overflow: "visible",
           p: 2,
         }}

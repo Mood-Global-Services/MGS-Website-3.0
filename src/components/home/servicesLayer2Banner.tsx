@@ -1,4 +1,3 @@
-// src/components/ServicesLayer2Banner.tsx
 "use client";
 
 import { Stack, Box, Typography } from "@mui/material";
@@ -24,14 +23,14 @@ export default function ServicesLayer2Banner() {
                 position: "relative",
                 border: "1px solid rgba(103,103,103,0.26)",
                 borderRadius: 2,
-                overflow: "hidden",            // clip the SVG to rounded corners
-                backgroundColor: "#000",       // optional: base behind the SVG
+                overflow: "hidden",
+                backgroundColor: "#000",
             }}
         >
             <Box
                 component="svg"
                 viewBox="0 0 1343 572"
-                preserveAspectRatio="xMidYMid slice" // fill while keeping vibe
+                preserveAspectRatio="xMidYMid slice"
                 sx={{
                     position: "absolute",
                     inset: 0,
