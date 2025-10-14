@@ -1,0 +1,5 @@
+<!-- servicesListItemMask.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1097 157" preserveAspectRatio="none">
+  <!-- Fill the shape with white so it becomes the visible region of the mask -->
+  <path fill="#fff" d="M1053 0V22H1075V44H1097V104H1075V126H1053V148H44V126H22V104H0V44H22V22H44V0H1053Z"/>
+</svg>

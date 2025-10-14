@@ -9,8 +9,8 @@ export default function Home() {
     <Stack width={"100%"} alignItems={"center"} gap={2}>
       <Hero />
       <Stack width={"100%"} alignItems={"center"} gap={2} paddingBottom={4}>
-      <WeSpecializeIn />
-      <Services />
+        <WeSpecializeIn />
+        <Services />
       </Stack>
     </Stack>
   );
