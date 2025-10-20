@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import Hero from "@/sections/home/hero";
 import WeSpecializeIn from "@/sections/home/weSpecializeIn";
 import Services from "@/sections/home/services";
+import Products from "@/sections/home/products";
 
 export default function Home() {
 
@@ -11,6 +12,7 @@ export default function Home() {
       <Stack width={"100%"} alignItems={"center"} gap={2} paddingBottom={4}>
         <WeSpecializeIn />
         <Services />
+        <Products />
       </Stack>
     </Stack>
   );
