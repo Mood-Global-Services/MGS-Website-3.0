@@ -166,7 +166,7 @@ export default function ProductsBanner2() {
             <Stack width="100%" height="100%" direction="row" alignItems="stretch" justifyContent="space-between">
                 <Stack
                     justifyContent="center"
-                    width="50%"
+                    width="45%"
                     sx={{ position: "relative", zIndex: 1, height: "100%", p: 8, gap: 4, }}
                 >
                     <Stack gap={2}>
@@ -202,19 +202,15 @@ export default function ProductsBanner2() {
                 <Stack sx={{
                     position: "relative",
                     zIndex: 1,
-                    width: "50%",
+                    width: "55%",
                     flexGrow: 1,
                     alignItems: "center",
                     justifyContent: "center",
                     overflow: "hidden",
                 }}>
                     <Image src={productAsset2} alt="Product Asset 2" width={400} height={400} style={{
-                        position: "absolute",
-                        top: 0,
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        transform: "translateY(15%) translateX(5%)",
+                        
+                        transform: "translateY(15%)",
                     }} />
                 </Stack>
             </Stack>
