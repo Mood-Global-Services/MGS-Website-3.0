@@ -12,6 +12,7 @@ const MorningsideCard = () => {
                 borderRadius: { xs: 3, md: 4 },
                 position: "relative",
                 overflow: "hidden",
+                cursor: "pointer",
                 padding: 3,
                 "& .morningside-bg": {
                     opacity: 0.7,

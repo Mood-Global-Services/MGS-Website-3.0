@@ -14,6 +14,7 @@ const ColichainCard = () => {
                 padding: 3,
                 position: "relative",
                 overflow: "hidden",
+                cursor: "pointer",
                 "& .colichain-bg": {
                     opacity: 0.95,
                     transition: "opacity 0.3s ease",

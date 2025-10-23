@@ -13,6 +13,7 @@ const TrustifyCard = () => {
                 borderRadius: { xs: 3, md: 4 },
                 position: "relative",
                 overflow: "hidden",
+                cursor: "pointer",
                 padding: 3,
                 "& .trustify-asset": {
                     scale: 1,
