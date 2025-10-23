@@ -6,19 +6,24 @@
 
 @theme {
   /* Map these to your design system / MUI palette */
-  --color-main-background: #0B0B0B;          /* page bg */
-  --color-main-foreground: rgba(255,255,255,0.06); /* menu item hover bg */
-  --color-main-muted: #111213;               /* dropdown panel bg */
-  --color-primary: #ffffff;                  /* primary text */
-  --color-primary-muted: #cfcfcf;            /* secondary text */
-  --color-border: rgba(255,255,255,0.10);    /* subtle borders */
+  --color-main-background: #0B0B0B;
+  /* page bg */
+  --color-main-foreground: rgba(255, 255, 255, 0.06);
+  /* menu item hover bg */
+  --color-main-muted: #111213;
+  /* dropdown panel bg */
+  --color-primary: #ffffff;
+  /* primary text */
+  --color-primary-muted: #cfcfcf;
+  /* secondary text */
+  --color-border: rgba(255, 255, 255, 0.10);
+  /* subtle borders */
 }
 
 @font-face {
   font-family: "CHNO";
   font-display: auto;
-  src: url("../fonts/CHNO/hinted/CHNOPixelCodePro-Regular.woff2")
-    format("opentype");
+  src: url("../fonts/CHNO/hinted/CHNOPixelCodePro-Regular.woff2") format("opentype");
 }
 
 html,
@@ -27,6 +32,7 @@ body {
   margin: 0;
   background-color: #0b0b0b !important;
   overflow-x: hidden !important;
+  height: 100%;
 }
 
 a {
@@ -101,6 +107,7 @@ a {
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-accordion-content-height);
     }
@@ -110,6 +117,7 @@ a {
     from {
       height: var(--radix-accordion-content-height);
     }
+
     to {
       height: 0;
     }
@@ -119,6 +127,7 @@ a {
     from {
       background-position: 0 0;
     }
+
     to {
       background-position: -400% 0;
     }
@@ -134,15 +143,19 @@ a {
     15% {
       transform: translateX(5px);
     }
+
     30% {
       transform: translateX(-5px);
     }
+
     50% {
       transform: translateX(3px);
     }
+
     80% {
       transform: translateX(2px);
     }
+
     100% {
       transform: translateX(0);
     }
@@ -152,6 +165,7 @@ a {
     0% {
       transform: skew(-13deg) translateX(-100%);
     }
+
     100% {
       transform: skew(-13deg) translateX(100%);
     }
@@ -161,8 +175,27 @@ a {
     0% {
       opacity: 1;
     }
+
     100% {
       opacity: 0.15;
     }
   }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  width: 0px !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  width: 0px !important;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }

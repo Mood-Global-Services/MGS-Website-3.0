@@ -19,7 +19,17 @@ export default function Home() {
         <WeSpecializeIn />
         <Services />
         <Products />
-        <Stack id="test" width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} py={24} my={8} overflow={"visible"}>
+        <Stack
+          className="hide-scrollbar"
+          width={"100%"}
+          height={"fit-content"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          position={"relative"}
+          py={24}
+          my={8}
+          overflow={"visible"}
+        >
           <Stack sx={{
             position: "absolute",
             top: "-35%",
