@@ -18,6 +18,7 @@ const NotJustSME = () => {
             alignItems={"center"}
             justifyContent={"center"}
             position={"relative"}
+            overflow={"hidden"}
         >
             <Stack
                 direction={"row"}
@@ -28,7 +29,7 @@ const NotJustSME = () => {
                 paddingRight={12}
                 paddingY={8}
                 position="relative"
-                zIndex={2}
+                zIndex={3}
                 gap={4}
             >
                 <Stack width={"40%"} height={"100%"} gap={10}>

@@ -35,6 +35,7 @@ export default function ProductsBanner2() {
                 position: "relative",
                 overflow: "hidden",
                 borderRadius: 2,
+                zIndex: 5,
             }}
         >
 
