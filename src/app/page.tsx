@@ -28,7 +28,9 @@ export default function Home() {
           alignItems={"center"}
           justifyContent={"center"}
           position={"relative"}
-          p={{ xs: 12, md: 24, lg: 12, xl: 16 }}
+          px={{ xs: 12, md: 24, lg: 8, xl: 16 }}
+          pt={{ xs: 12, md: 24, lg: 20, xl: 28 }}
+          pb={{ xs: 12, md: 24, lg: 36, xl: 36 }}
           mt={8}
           overflow={"visible"}
         >
@@ -36,7 +38,7 @@ export default function Home() {
             position: "absolute",
             top: "-35%",
             left: 0,
-            width: "70vw",
+            width: "100%",
             aspectRatio: "1/1",
             zIndex: 0,
             overflow: "hidden",

@@ -16,7 +16,7 @@ const OurPortfolio = () => {
             position={"relative"}
             overflow={"hidden"}
             paddingX={10}
-            mt={-8}
+            mt={{ xs: 8, md: -20, lg: -32, xl: -16 }}
             pb={36}
             gap={36}
         >
