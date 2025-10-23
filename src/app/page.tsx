@@ -5,6 +5,7 @@ import WeSpecializeIn from "@/sections/home/weSpecializeIn";
 import Services from "@/sections/home/services";
 import Products from "@/sections/home/products";
 import NotJustSME from "@/sections/home/notJustSME";
+import OurPortfolio from "@/sections/home/ourPortfolio";
 
 import notJustForSMEsBg from "@/assets/images/notJustForSMEsBG.svg?url";
 import circle1 from "@/assets/images/circle1.svg?url";
@@ -27,7 +28,7 @@ export default function Home() {
           justifyContent={"center"}
           position={"relative"}
           py={24}
-          my={8}
+          mt={8}
           overflow={"visible"}
         >
           <Stack sx={{
@@ -88,6 +89,7 @@ export default function Home() {
           </Stack>
         </Stack>
       </Stack>
+      <OurPortfolio />
     </Stack>
   );
 }

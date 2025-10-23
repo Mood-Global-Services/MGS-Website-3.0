@@ -8,8 +8,6 @@ import notJustSMEs3 from "@/assets/images/icons/notJustForSMEs3.webp";
 import notJustSMEs4 from "@/assets/images/icons/notJustForSMEs4.webp";
 import notJustSMEs5 from "@/assets/images/icons/notJustForSMEs5.webp";
 
-import notJustForSMEsBg from "@/assets/images/notJustForSMEsBG.svg?url";
-
 const NotJustSME = () => {
     return (
         <Stack
