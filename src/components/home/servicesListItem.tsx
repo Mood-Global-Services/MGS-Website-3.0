@@ -39,10 +39,12 @@ export default function ServicesListItem({
             direction="row"
             alignItems="stretch"
             justifyContent="space-between"
+            
             sx={{
                 position: "relative",
                 overflow: "hidden",
                 background: "transparent",
+                cursor: "pointer",
                 "& svg .hoverGrad": {
                     opacity: 0,
                     transition: "opacity 220ms ease",
