@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Link } from "@mui/material";
 import Image from "next/image";
 
 import unicoverBG from "@/assets/images/portfolioSlider/unicoverBG.webp"
@@ -9,6 +9,7 @@ import theme from "@/theme/theme";
 
 const UnicoverCard = () => {
     return (
+        <Link href="/" target="_blank" underline="none">
         <Stack
             sx={{
                 height: { xs: 180, sm: 220, md: 250, lg: 250 },
@@ -91,6 +92,7 @@ const UnicoverCard = () => {
 
 
         </Stack>
+        </Link>
     )
 }
 
