@@ -56,7 +56,7 @@ const OurPortfolio = () => {
                 position={"relative"}
                 zIndex={3}
             >
-                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"} gap={2} paddingX={1}>
+                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"} gap={2} paddingX={0.75}>
                     <NexPortfolioCard />
                     <NapulethPortfolioCard />
                 </Stack>
