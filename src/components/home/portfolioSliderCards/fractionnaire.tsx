@@ -10,7 +10,7 @@ const FractionnaireCard = () => {
             <Stack
                 sx={{
                     height: { xs: 180, sm: 220, md: 250, lg: 250 },
-                    borderRadius: { xs: 3, md: 4 },
+                    borderRadius: { xs: 2, md: 2 },
                     padding: 3,
                     position: "relative",
                     overflow: "hidden",

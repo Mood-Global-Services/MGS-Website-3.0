@@ -17,8 +17,8 @@ const OurPortfolio = () => {
             overflow={"hidden"}
             paddingX={10}
             mt={-8}
-            pb={44}
-            gap={44}
+            pb={36}
+            gap={36}
         >
             <Stack
                 width={"100%"}
