@@ -23,8 +23,8 @@ const NotJustSME = () => {
                 alignItems="stretch"
                 justifyContent="center"
                 width="100%"
-                paddingLeft={16}
-                paddingRight={12}
+                paddingLeft={{ xs: 12, md: 6, lg: 0, xl: 0 }}
+                paddingRight={{ xs: 12, md: 6, lg: 0, xl: 0 }}
                 paddingY={8}
                 position="relative"
                 zIndex={3}

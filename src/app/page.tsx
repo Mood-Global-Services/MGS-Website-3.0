@@ -24,10 +24,11 @@ export default function Home() {
           className="hide-scrollbar"
           width={"100%"}
           height={"fit-content"}
+          minHeight={"100vh"}
           alignItems={"center"}
           justifyContent={"center"}
           position={"relative"}
-          py={24}
+          p={{ xs: 12, md: 24, lg: 12, xl: 16 }}
           mt={8}
           overflow={"visible"}
         >
