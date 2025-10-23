@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: "CHNO";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/CHNO/hinted/CHNOPixelCodePro-Regular.woff2") format("opentype");
 }
 
