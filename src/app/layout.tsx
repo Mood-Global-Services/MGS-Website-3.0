@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "react-multi-carousel/lib/styles.css"
 import { type Metadata } from "next";
 import { Funnel_Display } from "next/font/google";
 import ThemeRegistry from "@/components/layout/ThemeRegistry";

@@ -3,7 +3,7 @@ import Image from "next/image";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import NexPortfolioCard from "@/components/home/nexPortfolioCard";
 import NapulethPortfolioCard from "@/components/home/napulethPortfolioCard";
-
+import PortfolioSlider from "@/components/home/portfolioSlider";
 import arrow from "@/assets/images/icons/arrow.webp"
 
 const OurPortfolio = () => {
@@ -17,8 +17,8 @@ const OurPortfolio = () => {
             overflow={"hidden"}
             paddingX={10}
             mt={-8}
-            pb={12}
-            gap={12}
+            pb={44}
+            gap={44}
         >
             <Stack
                 width={"100%"}
@@ -55,11 +55,13 @@ const OurPortfolio = () => {
                 justifyContent={"center"}
                 position={"relative"}
                 zIndex={3}
-
             >
-                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"} gap={2}>
+                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"} gap={2} paddingX={1}>
                     <NexPortfolioCard />
                     <NapulethPortfolioCard />
+                </Stack>
+                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"}>
+                    <PortfolioSlider />
                 </Stack>
             </Stack>
         </Stack>
