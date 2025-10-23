@@ -37,6 +37,7 @@ const Hero = () => {
                 alt="mood global services"
                 style={{ position: "absolute", inset: 0, zIndex: 0, objectFit: "cover" }}
                 priority
+                fetchPriority="high"
             />
 
             {/* Static grid */}
