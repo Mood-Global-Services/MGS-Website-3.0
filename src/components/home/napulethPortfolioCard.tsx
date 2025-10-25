@@ -107,7 +107,10 @@ const NapulethPortfolioCard = () => {
                     objectFit: "cover",
                 }}
             />
-            <Typography variant="h5" fontWeight={600} textAlign={"center"} textTransform={"uppercase"}>
+            <Typography variant="h5" fontWeight={600} textAlign={"center"} textTransform={"uppercase"} sx={{
+                position: "relative",
+                zIndex: 5,
+            }}>
                 <span style={{ color: "#DB89FF", fontSize: "2.25rem", textShadow: "0px 0px 8px #DB89FF" }}>NAPULETH</span>
                 <br />
                 <span style={{ color: "#78D0F3", fontSize: "1.25rem", textShadow: "0px 0px 8px #78D0F3" }}>
