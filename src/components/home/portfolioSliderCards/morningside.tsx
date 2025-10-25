@@ -20,7 +20,7 @@ const MorningsideCard = () => {
                         transition: "opacity 0.3s ease",
                     },
                     "& .morningside-asset": {
-                        scale: 1,
+                        scale: 1.25,
                         transition: "scale 0.3s ease",
                     },
                     "&:hover": {
@@ -28,7 +28,7 @@ const MorningsideCard = () => {
                             opacity: 1,
                         },
                         "& .morningside-asset": {
-                            scale: 1.05,
+                            scale: 1.3,
                         },
                     },
                 }}
@@ -62,13 +62,13 @@ const MorningsideCard = () => {
                     src={morningsideAsset}
                     className="morningside-asset"
                     alt="Morningside"
-                    width={200}
-                    height={200}
+                    width={250}
+                    height={250}
                     style={{
                         position: "absolute",
                         right: 0,
                         left: 0,
-                        bottom: "-60%",
+                        bottom: "-70%",
                         width: "100%",
                         height: "auto",
                         zIndex: 2,

@@ -16,12 +16,12 @@ const ColiseumCard = () => {
                     cursor: "pointer",
                     padding: 3,
                     "& .coliseum-asset": {
-                        bottom: "-30%",
+                        bottom: "-35%",
                         transition: "bottom 0.3s ease",
                     },
                     "&:hover": {
                         "& .coliseum-asset": {
-                            bottom: "-23%",
+                            bottom: "-30%",
                         },
                     },
                 }}
@@ -60,8 +60,8 @@ const ColiseumCard = () => {
                     src={coliseumAsset}
                     className="coliseum-asset"
                     alt="Coliseum"
-                    width={200}
-                    height={200}
+                    width={250}
+                    height={250}
                     style={{
                         position: "absolute",
                         right: 0,
