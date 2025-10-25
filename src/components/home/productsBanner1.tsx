@@ -60,6 +60,8 @@ export default function ProductsBanner1() {
           display: "block",
           pointerEvents: "none",
           zIndex: 0,
+          borderRadius: 2,
+          overflow: "hidden",
         }}
       >
         <defs>
@@ -102,6 +104,8 @@ export default function ProductsBanner1() {
           width: "auto",
           pointerEvents: "none",
           zIndex: 0,
+          borderRadius: 2,
+          overflow: "hidden",
           // optional: brighten a bit on light backgrounds
           // mixBlendMode: "screen",
         }}
@@ -144,7 +148,9 @@ export default function ProductsBanner1() {
           width: "auto",
           pointerEvents: "none",
           zIndex: 0,
+          borderRadius: 2,
           // mixBlendMode: "screen",
+          overflow: "hidden",
         }}
       >
         <g filter="url(#filter0_f_147_947)" opacity={0.8}>
@@ -172,7 +178,9 @@ export default function ProductsBanner1() {
       </Box>
 
       {/* Content */}
-      <Stack width="100%" height="100%" direction="row" alignItems="stretch" justifyContent="space-between">
+      <Stack width="100%" height="100%" direction="row" alignItems="stretch" justifyContent="space-between" sx={{
+        borderRadius: 2,
+      }}>
         <Stack
           justifyContent="center"
           width="50%"
