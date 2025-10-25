@@ -61,7 +61,7 @@ export default function WeSpecializeFrame({
               rx="562"
               ry="123"
               fill="url(#glowFill)"
-              fillOpacity="0.29"
+              fillOpacity="0.25"
             />
           </g>
         )}
@@ -73,20 +73,8 @@ export default function WeSpecializeFrame({
           fill="none"
         />
         <path
-          d="M40.5 168.5V320C40.5 326.627 45.8726 332 52.5 332H519.5"
-          stroke="url(#strokeLeftBottom)"
-          strokeWidth="1.5"
-          fill="none"
-        />
-        <path
           d="M1349 229V77.5C1349 70.8726 1343.63 65.5 1337 65.5H870"
           stroke="url(#strokeRightTop)"
-          strokeWidth="1.5"
-          fill="none"
-        />
-        <path
-          d="M1349 168.5V320C1349 326.627 1343.63 332 1337 332H870"
-          stroke="url(#strokeRightBottom)"
           strokeWidth="1.5"
           fill="none"
         />
