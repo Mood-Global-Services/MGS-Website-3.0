@@ -117,9 +117,9 @@ const PortfolioSlider = () => {
                 },
               
                 '& .carousel-item': {
-                  padding: { xs: '0 10px', md: '0 4px', lg: '0 6px' },
+                  padding: { xs: '0 10px', md: '0 8px', lg: '0 6px' },
                   height: '100%',
-                  marginBottom: 6,
+                  marginBottom: { xs: 2, md: 2, lg: 4, xl: 6 },
                   overflow: 'visible',
                 },
               }}

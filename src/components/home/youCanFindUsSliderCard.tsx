@@ -3,7 +3,7 @@ import theme from "@/theme/theme";
 
 const YouCanFindUsSliderCard = ({ cardContent }: { cardContent: React.ReactNode }) => {
     return (
-        <Stack alignItems="center" justifyContent="center" minWidth={400} minHeight={300} sx={{
+        <Stack alignItems="center" justifyContent="center" width="fit-content" height="fit-content" sx={{
             backgroundColor: theme.palette.background.default,
             border: `1.5px solid ${theme.palette.brand.border1.main}`,
             borderRadius: 2,
