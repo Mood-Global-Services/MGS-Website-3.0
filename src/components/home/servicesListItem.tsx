@@ -72,6 +72,36 @@ export default function ServicesListItem({
                 "&:hover svg .shadow-path": {
                     opacity: 0.55, // tweak to taste
                 },
+                "& .arrow-clip": {
+                    width: 30,
+                    height: 30,
+                    overflow: "hidden",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                },
+                "& .arrow-slide": {
+                    willChange: "transform, opacity, filter",
+                },
+                "&:hover .arrow-slide, &:focus-visible .arrow-slide": {
+                    animation: "mgsArrowGhost 950ms ease-out infinite",
+                    filter: "brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(2000%) hue-rotate(205deg) contrast(95%)",
+                },
+
+                "@keyframes mgsArrowGhost": {
+                    "0%": { transform: "translateX(-130%)", opacity: 0 },
+                    "15%": { transform: "translateX(-75%)", opacity: 1 },
+                    "70%": { transform: "translateX(0%)", opacity: 1 },
+                    "100%": { transform: "translateX(130%)", opacity: 0 },
+                },
+
+                "@media (prefers-reduced-motion: reduce)": {
+                    "&:hover .arrow-slide, &:focus-visible .arrow-slide": {
+                        animation: "none",
+                        opacity: 1,
+                        transform: "translateX(0%)",
+                    },
+                },
             }}
 
         >

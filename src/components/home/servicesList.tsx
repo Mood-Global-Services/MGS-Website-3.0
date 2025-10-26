@@ -50,7 +50,7 @@ const ServicesList = () => {
                         <Stack width="fit-content" flexGrow={1} justifyContent="center" alignItems="end" gap={1}>
                             <span className="arrow-clip">
                                 <span className="arrow-slide">
-                                    <Image src={arrow} alt="arrow animation" width={30} height={30} style={{ display: "block" }} />
+                                    <Image src={arrow} alt="arrow animation" width={60} height={60} style={{ display: "block" }} />
                                 </span>
                             </span>
                         </Stack>
