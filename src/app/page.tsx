@@ -6,10 +6,15 @@ import Services from "@/sections/home/services";
 import Products from "@/sections/home/products";
 import NotJustSME from "@/sections/home/notJustSME";
 import OurPortfolio from "@/sections/home/ourPortfolio";
+import YouCanFidUs from "@/sections/home/youCanFidUs";
 
 import notJustForSMEsBg from "@/assets/images/notJustForSMEsBG.svg?url";
 import circle1 from "@/assets/images/circle1.svg?url";
 import circle2 from "@/assets/images/circle2.svg?url";
+import findUsBg from "@/assets/images/findUsBg.svg?url";
+import findUsBlobs from "@/assets/images/findUsBlobs.svg?url";
+import findUsLeftSide from "@/assets/images/findUsLeftSide.svg?url";
+import findUsRightSide from "@/assets/images/findUsRightSide.svg?url";
 
 export default function Home() {
 
@@ -93,6 +98,49 @@ export default function Home() {
         </Stack>
       </Stack>
       <OurPortfolio />
+      <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} paddingY={8} position={"relative"} overflow={"hidden"}>
+        <Stack width={"100%"} height={"10%"} sx={{
+          background: "linear-gradient(-180deg, rgba(11, 11, 11, 1) 0%, rgba(11, 11, 11, 0) 100%)",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: 2,
+        }}>
+          
+        </Stack>
+        <Image src={findUsBlobs} alt="findUsBg" width={1300} height={1300} style={{
+          position: "absolute",
+          top: "-30%",
+          right: "-20%",
+          zIndex: 2,
+        }}></Image>
+        <Image src={findUsBg} alt="findUsBg" width={1000} height={1000} style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          position: "absolute",
+          marginTop: 5,
+          top: 5,
+          left: 0,
+          zIndex: 1,
+          opacity: 0.3,
+        }}></Image>
+        <YouCanFidUs />
+        <Image src={findUsLeftSide} alt="findUsLeftSide" width={160} height={160} style={{
+          position: "absolute",
+          bottom: "10%",
+          left: 0,
+          marginLeft: "5rem",
+          objectFit: "cover",
+        }} />
+        <Image src={findUsRightSide} alt="findUsRightSide" width={100} height={100} style={{
+          position: "absolute",
+          bottom: "10%",
+          right: 0,
+          marginRight: "5rem",
+          objectFit: "cover",
+        }} />
+      </Stack>
     </Stack>
   );
 }
