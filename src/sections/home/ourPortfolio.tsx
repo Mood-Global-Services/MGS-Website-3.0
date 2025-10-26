@@ -34,18 +34,18 @@ const OurPortfolio = () => {
                     Our Portfolio
                 </Typography>
                 <Stack mt={1}>
-                    <SideTabbedButton hoverShiftX={1.5} hoverShiftY={-1}>
-                        <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={1}>
-                            <Typography component={"span"} variant="h6">
-                                All projects
-                            </Typography>
-                            <span className="arrow-clip">
-                                <span className="arrow-slide">
-                                    <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                            <div className="flex items-center justify-center gap-1">
+                                <Typography component="span" variant="h6" marginRight={1}>
+                                    All projects
+                                </Typography>
+                                <span className="arrow-clip">
+                                    <span className="arrow-slide">
+                                        <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                    </span>
                                 </span>
-                            </span>
-                        </Stack>
-                    </SideTabbedButton>
+                            </div>
+                        </SideTabbedButton>
                 </Stack>
             </Stack>
             <Stack

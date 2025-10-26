@@ -25,12 +25,12 @@ import SpyralCard from './portfolioSliderCards/spyral';
 const CustomButtonGroup = ({ next, previous }: ButtonGroupProps) => (
   <>
     <Arrow side="left" onClick={() => previous?.()}>
-        <Image src={buttonArrow} alt="arrow" width={100} height={100} style={{
+        <Image src={buttonArrow} alt="arrow" width={100} height={100} className="arrow-image" style={{
             transform: "rotate(180deg)",
         }} />
     </Arrow>
     <Arrow side="right" onClick={() => next?.()}>
-        <Image src={buttonArrow} alt="arrow" width={100} height={100} />
+        <Image src={buttonArrow} alt="arrow" width={100} height={100} className="arrow-image" />
     </Arrow>
   </>
 );
@@ -49,6 +49,11 @@ function Arrow({
         borderRadius: '9999px', bgcolor: theme.palette.background.default, border: `6px solid ${theme.palette.background.default}`,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         cursor: 'pointer', boxShadow: '0 6px 18px rgba(0,0,0,0.15)', userSelect: 'none',
+        "& .arrow-image": {
+          "&:hover": {
+            filter: "brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(2000%) hue-rotate(205deg) contrast(95%)",
+          },
+        },
       }}
       role="button"
       aria-label={side === 'left' ? 'Previous' : 'Next'}
