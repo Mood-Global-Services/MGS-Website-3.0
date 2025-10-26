@@ -209,7 +209,7 @@ export default function ServicesLayer2Banner() {
                 <Stack width={"40%"}>
                     <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                         <div className="flex items-center justify-center gap-1">
-                            <Typography component="span" variant="h6">
+                            <Typography component="span" variant="h6" marginRight={1}>
                                 Get in touch
                             </Typography>
                             <span className="arrow-clip">

@@ -185,10 +185,10 @@ export default function ProductsBanner2() {
                         </Typography>
                     </Stack>
 
-                    <Stack width="40%">
+                    <Stack width="45%">
                         <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-                            <div className="flex items-center justify-center gap-2">
-                                <Typography component="span" variant="h6">
+                            <div className="flex items-center justify-center gap-1">
+                                <Typography component="span" variant="h6" marginRight={1}>
                                     Explore
                                 </Typography>
                                 <span className="arrow-clip">
@@ -210,7 +210,7 @@ export default function ProductsBanner2() {
                     overflow: "hidden",
                 }}>
                     <Image src={productAsset2} alt="Product Asset 2" width={400} height={400} style={{
-                        
+
                         transform: "translateY(15%)",
                     }} />
                 </Stack>

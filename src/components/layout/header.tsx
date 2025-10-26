@@ -256,17 +256,17 @@ export default function Header() {
                 </div>
 
                 <div className="hidden md:block">
-                    <SideTabbedButton hoverShiftX={1.5} hoverShiftY={-1}>
-                        <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={1}>
-                            <Typography component={"span"} variant="h6">
-                                Contact us
+                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                        <div className="flex items-center justify-center gap-1">
+                            <Typography component="span" variant="h6" marginRight={0.5}>
+                                Contact us&nbsp;
                             </Typography>
                             <span className="arrow-clip">
                                 <span className="arrow-slide">
                                     <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
                                 </span>
                             </span>
-                        </Stack>
+                        </div>
                     </SideTabbedButton>
                 </div>
             </div>

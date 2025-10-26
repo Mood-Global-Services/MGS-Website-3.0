@@ -203,8 +203,8 @@ export default function ProductsBanner1() {
 
           <Stack width="40%">
             <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-              <div className="flex items-center justify-center gap-2">
-                <Typography component="span" variant="h6">
+              <div className="flex items-center justify-center gap-1">
+                <Typography component="span" variant="h6" marginRight={1}>
                   Explore
                 </Typography>
                 <span className="arrow-clip">
