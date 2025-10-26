@@ -39,20 +39,41 @@ export default function ServicesListItem({
             direction="row"
             alignItems="stretch"
             justifyContent="space-between"
-            
+
             sx={{
                 position: "relative",
                 overflow: "hidden",
                 background: "transparent",
                 cursor: "pointer",
+                transition: "transform 220ms ease",
+                "&:hover": {
+                    transform: "translateY(5px)",
+                },
+                "& .main-path": {
+                    transition: "transform 220ms ease",
+                    transformBox: "fill-box",
+                    transformOrigin: "center bottom",
+                },
+                "& .shadow-path": {
+                    transition: "opacity 220ms ease",
+                    transformBox: "fill-box",
+                    transformOrigin: "center bottom",
+                },
+
                 "& svg .hoverGrad": {
                     opacity: 0,
                     transition: "opacity 220ms ease",
                 },
+
                 "&:hover svg .hoverGrad": {
                     opacity: 1,
                 },
+
+                "&:hover svg .shadow-path": {
+                    opacity: 0.55, // tweak to taste
+                },
             }}
+
         >
             <Box
                 component="svg"
@@ -77,8 +98,10 @@ export default function ServicesListItem({
                         <stop offset="1" stopColor="#000000" stopOpacity="0" />
                     </linearGradient>
                 </defs>
-                <path d={dShadow} fill="#676767" opacity={shadowOpacity} />
-                <path d={dMain} fill={baseFill} />
+                <g className="shadow-path">
+                    <path d={dShadow} fill="#676767" opacity={shadowOpacity} />
+                </g>
+                <path d={dMain} fill={baseFill} className="main-path" />
                 <g className="hoverGrad" clipPath="url(#clipMain)">
                     <rect x="0" y="0" width="1097" height="153" fill="url(#blueOverlay)" />
                 </g>
