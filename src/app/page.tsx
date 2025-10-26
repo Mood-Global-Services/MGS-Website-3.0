@@ -7,6 +7,7 @@ import Products from "@/sections/home/products";
 import NotJustSME from "@/sections/home/notJustSME";
 import OurPortfolio from "@/sections/home/ourPortfolio";
 import YouCanFidUs from "@/sections/home/youCanFidUs";
+import Footer from "@/components/layout/footer";
 
 import notJustForSMEsBg from "@/assets/images/notJustForSMEsBG.svg?url";
 import circle1 from "@/assets/images/circle1.svg?url";
@@ -15,6 +16,7 @@ import findUsBg from "@/assets/images/findUsBg.svg?url";
 import findUsBlobs from "@/assets/images/findUsBlobs.svg?url";
 import findUsLeftSide from "@/assets/images/findUsLeftSide.svg?url";
 import findUsRightSide from "@/assets/images/findUsRightSide.svg?url";
+import theme from "@/theme/theme";
 
 export default function Home() {
 
@@ -106,7 +108,7 @@ export default function Home() {
           left: 0,
           zIndex: 2,
         }}>
-          
+
         </Stack>
         <Image src={findUsBlobs} alt="findUsBg" width={1300} height={1300} style={{
           position: "absolute",
@@ -141,6 +143,13 @@ export default function Home() {
           objectFit: "cover",
         }} />
       </Stack>
+      <Stack width={"100%"} alignItems={"center"} position={"relative"} sx={{
+        borderTop: `1px solid ${theme.palette.brand.border1.main}`,
+        marginTop: -2,
+      }}>
+        <Footer />
+      </Stack>
+
     </Stack>
   );
 }
