@@ -3,11 +3,13 @@ import theme from "@/theme/theme";
 import Image from "next/image";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 
+import weEmpowerShape from "@/components/home/weEmpowerShape"
 import weEmpowerBg from "@/assets/images/weEmpowerBG.svg?url";
 import weEmpowerIcon1 from "@/assets/images/icons/weEmpowerIcon1.webp";
 import weEmpowerIcon2 from "@/assets/images/icons/weEmpowerIcon2.webp";
 import weEmpowerArrows from "@/assets/images/empowerArrows.webp";
 import arrow from "@/assets/images/icons/arrow.webp"
+import WeEmpowerShape from "@/components/home/weEmpowerShape";
 
 const WeEmpower = () => {
     return (
@@ -28,11 +30,7 @@ const WeEmpower = () => {
                     zIndex: 0,
                     borderRadius: 2,
                 }}>
-                    <Image src={weEmpowerBg} alt="weEmpowerBg" width={100} height={100} style={{
-                        width: "100%",
-                        height: "auto",
-                        objectFit: "cover",
-                    }} />
+                    <WeEmpowerShape />
                 </Stack>
                 <Stack gap={4} width="70%" position={"relative"} sx={{
                     zIndex: 2,
