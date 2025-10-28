@@ -1,4 +1,4 @@
-import { Stack, Typography, Grid } from "@mui/material";
+import { Stack, Typography, Grid, Box } from "@mui/material";
 import theme from "@/theme/theme";
 
 import TestimonialsCard1 from "@/components/home/testimonialsCards/testimonialsCard1";
@@ -19,8 +19,17 @@ const Testimonials = () => {
                     See what our customers have to say about us.
                 </Typography>
             </Stack>
-            <Stack width="100%" height="100%" direction="row" alignItems="stretch" justifyContent="space-between" gap={4}>
-                <Grid container spacing={2} width="90%" marginX="auto">
+            <Stack width="100%" height="100%" direction="row" alignItems="stretch" justifyContent="space-between" position="relative" gap={4}>
+                <Box sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: 80,
+                    background: "linear-gradient(180deg, #0B0B0B 0%, rgba(11, 11, 11, 0) 100%)",
+                    zIndex: 2,
+                }} />
+                <Grid container spacing={2} width="90%" marginX="auto" position="relative" zIndex={1}>
                     <Grid size={4}>
                         <TestimonialsCard1 />
                     </Grid>
@@ -40,6 +49,15 @@ const Testimonials = () => {
                         <TestimonialsCard1 />
                     </Grid>
                 </Grid>
+                <Box sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    height: 120,
+                    background: "linear-gradient(0deg, #0B0B0B 0%, rgba(11, 11, 11, 0) 100%)",
+                    zIndex: 2,
+                }} />
             </Stack>
         </Stack>
     );
