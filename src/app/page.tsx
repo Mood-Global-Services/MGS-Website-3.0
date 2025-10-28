@@ -21,6 +21,7 @@ import findUsLeftSide from "@/assets/images/findUsLeftSide.svg?url";
 import findUsRightSide from "@/assets/images/findUsRightSide.svg?url";
 import empowerShadow from "@/assets/images/empowerShadow.svg?url";
 import theme from "@/theme/theme";
+import Testimonials from "@/sections/home/testimonials";
 
 export default function Home() {
 
@@ -161,6 +162,11 @@ export default function Home() {
         <WeEmpower />
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} marginTop={8} sx={{
+        zIndex: 1,
+      }}>
+        <Testimonials />
+      </Stack>
+      <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 1,
       }}>
         <DevelopingWithTheBest />

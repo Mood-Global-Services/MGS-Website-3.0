@@ -20,7 +20,7 @@ const DevelopingWithTheBest = () => {
         <Stack width="100%" height="100%" position="relative" paddingY={8} paddingX={10} gap={4}>
             <Stack direction="row" alignItems="stretch" justifyContent="space-between" gap={4}>
                 <Stack width="50%" flexGrow={1} position="relative" gap={4}>
-                    <Typography variant="h3" fontSize={"1.85rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
+                    <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
                         Developing With The Best
                     </Typography>
                     <Grid container spacing={2} width="100%" sx={{
@@ -194,7 +194,7 @@ const DevelopingWithTheBest = () => {
                     </Stack>
                 </Stack>
                 <Stack width="45%" flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
-                    <Typography variant="h3" fontSize={"1.85rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
+                    <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
                         Subscribe<br />to our newslatter
                     </Typography>
                     <Stack gap={2}>
