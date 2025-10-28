@@ -23,7 +23,7 @@ const DevelopingWithTheBest = () => {
                     <Typography variant="h3" fontSize={"1.85rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
                         Developing With The Best
                     </Typography>
-                    <Grid container spacing={2} width="85%" sx={{
+                    <Grid container spacing={2} width="100%" sx={{
                         "& .weDevelopIcon": {
                             transition: "filter 0.4s ease-in-out, opacity 0.4s ease-in-out",
                             filter: "grayscale(100%)",
@@ -50,7 +50,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon1} alt="weDevelopIcon1" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon1} alt="weDevelopIcon1" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -68,7 +68,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon2} alt="weDevelopIcon2" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon2} alt="weDevelopIcon2" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -86,7 +86,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon3} alt="weDevelopIcon3" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon3} alt="weDevelopIcon3" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -104,7 +104,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon4} alt="weDevelopIcon4" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon4} alt="weDevelopIcon4" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -122,7 +122,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon5} alt="weDevelopIcon5" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon5} alt="weDevelopIcon5" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -140,7 +140,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon6} alt="weDevelopIcon6" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon6} alt="weDevelopIcon6" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -158,7 +158,7 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon7} alt="weDevelopIcon7" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon7} alt="weDevelopIcon7" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                         <Grid size={3} sx={{
                             position: "relative",
@@ -176,11 +176,24 @@ const DevelopingWithTheBest = () => {
                                 right: 3,
                                 objectFit: "contain",
                             }} />
-                            <Image src={weDevelopIcon8} alt="weDevelopIcon8" width={200} height={200} className="weDevelopIcon" />
+                            <Image src={weDevelopIcon8} alt="weDevelopIcon8" width={180} height={180} className="weDevelopIcon" />
                         </Grid>
                     </Grid>
                 </Stack>
-                <Stack width="40%" flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
+                <Stack sx={{
+                    flexGrow: 1,
+                    width: "5%",
+                    alignItems: "center",
+                }}>
+                    <Stack sx={{
+                        background: "linear-gradient(180deg, rgba(0, 19, 153, 0) 0%, #0020FF 100%)",
+                        flexGrow: 1,
+                        width: "30%",
+                    }}>
+
+                    </Stack>
+                </Stack>
+                <Stack width="45%" flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
                     <Typography variant="h3" fontSize={"1.85rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
                         Subscribe<br />to our newslatter
                     </Typography>
@@ -200,6 +213,11 @@ const DevelopingWithTheBest = () => {
                             backgroundSize: "100% 90%",
                             backgroundPosition: "center center",
                             backgroundRepeat: "no-repeat",
+                            opacity: 0.75,
+                            transition: "opacity 0.3s ease-in-out",
+                            "&:hover": {
+                                opacity: 1,
+                            },
                         }}>
                             <InputBase
                                 placeholder="Your email"
@@ -214,7 +232,6 @@ const DevelopingWithTheBest = () => {
                                     paddingX: 1,
                                     zIndex: 1,
                                     "& ::placeholder": {
-                                        color: theme.palette.text.secondary,
                                         fontWeight: 300,
                                     },
                                 }}
