@@ -3,30 +3,18 @@
 import * as React from "react";
 import { Box, type SxProps, type Theme } from "@mui/material";
 
-/**
- * HeroGridTrail (MUI, TypeScript-safe)
- * - Div grid where cells light up under the pointer and fade out.
- * - Performance:
- *   • Pointer writes to a ref-backed Map (no state thrash)
- *   • Tick loop gated by IntersectionObserver (pauses off-screen)
- *   • ResizeObserver for responsive cols/rows from container
- *   • DOM size soft-cap (prevents massive node counts)
- *   • Properly restarts tick when prefers-reduced-motion flips
- */
-
 type Props = {
-  cellSize?: number;           // px per cell
-  fadeDurationMs?: number;     // ms to fully fade
-  tickMs?: number;             // ms cadence for fades (e.g., 50)
-  borderIdle?: string;         // idle border color
-  borderActive?: string;       // active border color (alpha applied at runtime)
-  bgActive?: string;           // active bg color (alpha applied at runtime)
-  background?: string;         // container background color
+  cellSize?: number;
+  fadeDurationMs?: number;
+  tickMs?: number;
+  borderIdle?: string;
+  borderActive?: string;
+  bgActive?: string;
+  background?: string;
   ariaHidden?: boolean;
   sx?: SxProps<Theme>;
 };
 
-// Soft cap to avoid generating huge DOMs on very large containers
 const MAX_CELLS = 6000;
 
 export default function HeroGridTrail({
@@ -42,20 +30,15 @@ export default function HeroGridTrail({
 }: Props) {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
 
-  // layout
   const [cols, setCols] = React.useState<number>(0);
   const [rows, setRows] = React.useState<number>(0);
 
-  // active cells: Map<"col-row", timestampMs> — keeps pointer updates out of React state
   const hoveredRef = React.useRef<Map<string, number>>(new Map());
 
-  // tick clock (drives fading), gated by visibility & reduced-motion
   const [now, setNow] = React.useState<number>(() => Date.now());
   const visibleRef = React.useRef<boolean>(true);
   const intervalRef = React.useRef<number | null>(null);
   const reducedRef = React.useRef<boolean>(false);
-
-  // --- helpers ---------------------------------------------------------------
 
   const computeGrid = React.useCallback((): void => {
     const el = containerRef.current;
@@ -67,7 +50,6 @@ export default function HeroGridTrail({
     let c = Math.ceil(w / cellSize) + 1;
     let r = Math.ceil(h / cellSize) + 1;
 
-    // soft cap to avoid huge DOMs
     if (c * r > MAX_CELLS) {
       const scale = Math.sqrt((c * r) / MAX_CELLS);
       c = Math.max(1, Math.floor(c / scale));
@@ -86,16 +68,13 @@ export default function HeroGridTrail({
   }, []);
 
   const startTick = React.useCallback((): void => {
-    stopTick(); // ensure clean
+    stopTick();
     const cadence = reducedRef.current ? Math.max(tickMs * 2, 100) : tickMs;
     intervalRef.current = window.setInterval(() => {
       if (visibleRef.current) setNow(Date.now());
     }, cadence);
   }, [tickMs, stopTick]);
 
-  // --- effects ---------------------------------------------------------------
-
-  // Observe visibility to pause when off-screen
   React.useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -109,23 +88,20 @@ export default function HeroGridTrail({
     return () => io.disconnect();
   }, []);
 
-  // Manage reduced-motion & ticking interval (with typed fallbacks)
   React.useEffect(() => {
     const mql: MediaQueryList = window.matchMedia("(prefers-reduced-motion: reduce)");
     reducedRef.current = mql.matches;
 
     const onChange = (ev: MediaQueryListEvent): void => {
       reducedRef.current = ev.matches;
-      startTick(); // restart with new cadence
+      startTick();
     };
 
-    // initial start
     startTick();
 
     if (typeof mql.addEventListener === "function") {
       mql.addEventListener("change", onChange);
     } else {
-      // Older Safari fallback
       const legacyListener: (this: MediaQueryList, ev: MediaQueryListEvent) => void = function (this, ev) {
         onChange(ev);
       };
@@ -142,7 +118,6 @@ export default function HeroGridTrail({
     };
   }, [startTick, stopTick]);
 
-  // Compute cols/rows and keep them updated
   React.useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -152,7 +127,6 @@ export default function HeroGridTrail({
     return () => ro.disconnect();
   }, [computeGrid]);
 
-  // Stable pointer listeners
   const onMoveRef = React.useRef<(e: MouseEvent) => void>(() => { return; });
   const onTouchRef = React.useRef<(e: TouchEvent) => void>(() => { return; });
   const onLeaveRef = React.useRef<() => void>(() => { return; });
@@ -201,7 +175,6 @@ export default function HeroGridTrail({
     };
   }, [cellSize]);
 
-  // Prune fully faded cells periodically (keeps Map small)
   React.useEffect(() => {
     const map = hoveredRef.current;
     const cutoff = now - fadeDurationMs - 50;
@@ -210,7 +183,6 @@ export default function HeroGridTrail({
     }
   }, [now, fadeDurationMs]);
 
-  // --- render ----------------------------------------------------------------
 
   return (
     <Box
@@ -218,16 +190,13 @@ export default function HeroGridTrail({
       sx={{
         position: "relative",
         width: "100%",
-        height: "100%", // set height on the parent container using this
+        height: "100%",
         overflow: "hidden",
         backgroundColor: 'transparent',
-        // If this is purely decorative behind hero text, uncomment:
-        // pointerEvents: "none",
         ...sx,
       }}
       aria-hidden={ariaHidden || undefined}
     >
-      {/* Grid layer */}
       <Box sx={{ position: "absolute", inset: 0 }}>
         {Array.from({ length: rows }).map((_, row) => (
           <Box key={row} sx={{ display: "flex", willChange: "contents" }}>

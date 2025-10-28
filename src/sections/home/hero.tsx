@@ -1,5 +1,6 @@
 "use client"
 
+import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
@@ -10,7 +11,8 @@ import GridOverlay from "@/components/home/GridOverlay";
 
 import heroBg from "@/assets/images/heroBG.webp"
 import arrow from "@/assets/images/icons/arrow.webp"
-import HeroGridAnimation from "@/components/home/heroGridAnimation/heroGridAnimation";
+
+const HeroGridAnimation = dynamic(() => import("@/components/home/heroGridAnimation/heroGridAnimation"), { ssr: false });
 
 const Hero = () => {
     const heroRef = useRef<HTMLDivElement>(null);
