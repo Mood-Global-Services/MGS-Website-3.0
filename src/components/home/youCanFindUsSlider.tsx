@@ -14,7 +14,7 @@ import findUsAsset from "@/assets/images/findUsAsset.webp"
 import findUsImage1 from "@/assets/images/findUsImage1.svg?url"
 import findUsImage2 from "@/assets/images/findUsImage2.svg?url"
 
-import { BsArrowUpRight } from "react-icons/bs";
+import EastIcon from '@mui/icons-material/East';
 
 const Carousel = dynamic(() => import('react-multi-carousel'), { ssr: false });
 
@@ -158,7 +158,7 @@ const PortfolioSlider = () => {
                             </Typography>
                             <span className="arrow-clip">
                                 <span className="arrow-slide">
-                                    <BsArrowUpRight size={12} />
+                                    <EastIcon fontSize="small" style={{ transform: "rotate(45deg)" }} />
                                 </span>
                             </span>
                         </Stack>
@@ -204,7 +204,7 @@ const PortfolioSlider = () => {
                             </Typography>
                             <span className="arrow-clip">
                                 <span className="arrow-slide">
-                                    <BsArrowUpRight size={12} />
+                                    <EastIcon fontSize="small" style={{ transform: "rotate(45deg)" }} />
                                 </span>
                             </span>
                         </Stack>
