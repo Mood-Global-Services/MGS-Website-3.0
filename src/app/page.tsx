@@ -8,6 +8,7 @@ import NotJustSME from "@/sections/home/notJustSME";
 import OurPortfolio from "@/sections/home/ourPortfolio";
 import YouCanFidUs from "@/sections/home/youCanFidUs";
 import WeEmpower from "@/sections/home/weEmpower";
+import DevelopingWithTheBest from "@/sections/home/developpingWithTheBest";
 import Footer from "@/components/layout/footer";
 
 
@@ -158,6 +159,11 @@ export default function Home() {
           zIndex: 0,
         }} />
         <WeEmpower />
+      </Stack>
+      <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} marginTop={8} sx={{
+        zIndex: 1,
+      }}>
+        <DevelopingWithTheBest />
       </Stack>
       <Stack width={"100%"} alignItems={"center"} position={"relative"} sx={{
         borderTop: `1px solid ${theme.palette.brand.border1.main}`,
