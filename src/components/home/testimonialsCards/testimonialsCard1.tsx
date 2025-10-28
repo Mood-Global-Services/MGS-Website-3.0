@@ -1,6 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import theme from "@/theme/theme";
 
 import testimonialCardShape from "@/assets/images/testimonialCardShape.svg?url";
 import testimonialsQuoteMark from "@/assets/images/icons/testimonialsQuoteMark.webp";
@@ -11,9 +10,8 @@ export default function TestimonialsCard1() {
             sx={{
                 position: "relative",
                 width: "100%",
-                maxWidth: 720,          // optional max width
+                maxWidth: 720,
                 mx: "auto",
-                // keep the same proportion as your design image (width/height)
                 aspectRatio: "493 / 311",
                 color: "text.secondary",
             }}
@@ -27,13 +25,13 @@ export default function TestimonialsCard1() {
                 height: "100%",
             }} />
 
-            {/* Content (no absolute positioning) */}
+            {/* Content */}
             <Stack
                 sx={{
                     position: "relative",
                     height: "100%",
                     justifyContent: "space-between",
-                    px: { xs: 3, sm: 5, md: 4, lg: 3, xl: 2 }, // overall breathing room
+                    px: { xs: 3, sm: 5, md: 4, lg: 3, xl: 2 },
                     py: { xs: 3, sm: 5, md: 4, lg: 3, xl: 2 },
                 }}
             >
@@ -43,7 +41,6 @@ export default function TestimonialsCard1() {
                     alignItems="center"
                     justifyContent="space-between"
                     sx={{
-                        // left notch offset to match the shape
                         pl: { xs: 6, sm: 9, md: 8, lg: 6, xl: 10 },
                         pr: { xs: 2, sm: 3, md: 0, lg: 0, xl: 0 },
                         py: { xs: 1, sm: 0, lg: 0, xl: 1.5 },
@@ -62,7 +59,7 @@ export default function TestimonialsCard1() {
                     <Box
                         sx={{
                             position: "relative",
-                            width: { xs: 28, sm: 36, md: 40 },   // 44px ≈ 2.75rem at 16px root
+                            width: { xs: 28, sm: 36, md: 40 },
                             height: { xs: 28, sm: 36, md: 32 },
                             flexShrink: 0,
                         }}
@@ -71,7 +68,7 @@ export default function TestimonialsCard1() {
                     </Box>
                 </Stack>
 
-                {/* Body copy (naturally sits lower without magic numbers) */}
+                {/* Body copy */}
                 <Typography
                     sx={{
                         fontWeight: 300,
