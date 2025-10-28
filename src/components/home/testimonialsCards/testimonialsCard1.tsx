@@ -77,7 +77,7 @@ export default function TestimonialsCard1() {
                         fontWeight: 300,
                         fontSize: { xs: "0.85rem", sm: "0.85rem", md: "0.9rem", lg: "0.95rem", xl: "1rem" },
                         px: { xs: 3, sm: 2, md: 1, lg: 0.5, xl: 1 },
-                        pb: { xs: 3, sm: 4, lg: 5, xl: 6 },
+                        pb: { xs: 3, sm: 4, lg: 6, xl: 7 },
                     }}
                 >
                     Very flexible and creative — they considered every detail of our niche
