@@ -158,7 +158,7 @@ const PortfolioSlider = () => {
                             </Typography>
                             <span className="arrow-clip">
                                 <span className="arrow-slide">
-                                    <EastIcon fontSize="small" style={{ transform: "rotate(45deg)" }} />
+                                    <EastIcon fontSize="small" style={{ transform: "rotate(-45deg)", fontSize: "1rem" }} />
                                 </span>
                             </span>
                         </Stack>
@@ -204,7 +204,7 @@ const PortfolioSlider = () => {
                             </Typography>
                             <span className="arrow-clip">
                                 <span className="arrow-slide">
-                                    <EastIcon fontSize="small" style={{ transform: "rotate(45deg)" }} />
+                                    <EastIcon fontSize="small" style={{ transform: "rotate(-45deg)", fontSize: "1rem" }} />
                                 </span>
                             </span>
                         </Stack>
