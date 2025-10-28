@@ -182,18 +182,13 @@ const DevelopingWithTheBest = () => {
                 </Stack>
                 <Stack sx={{
                     flexGrow: 1,
-                    width: "5%",
+                    width: "2%",
                     alignItems: "center",
+                    background: "linear-gradient(180deg, rgba(0, 19, 153, 0) 0%, #0020FF 100%)",
                 }}>
-                    <Stack sx={{
-                        background: "linear-gradient(180deg, rgba(0, 19, 153, 0) 0%, #0020FF 100%)",
-                        flexGrow: 1,
-                        width: "30%",
-                    }}>
-
-                    </Stack>
+                    
                 </Stack>
-                <Stack width="45%" flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
+                <Stack width="48%" flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
                     <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
                         Subscribe<br />to our newslatter
                     </Typography>
