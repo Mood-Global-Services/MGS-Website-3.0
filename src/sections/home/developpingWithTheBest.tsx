@@ -1,4 +1,4 @@
-import { Stack, Typography, Grid, InputBase, Button } from "@mui/material";
+import { Stack, Typography, Grid, InputBase } from "@mui/material";
 import theme from "@/theme/theme";
 import Image from "next/image";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
