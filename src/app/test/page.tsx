@@ -1,11 +1,13 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import HeroGridAnimation from "@/components/home/heroGridAnimation/heroGridAnimation";
 
 export default function Home() {
 
-  return (
-    <Stack width={"100%"} height={"100vh"} alignItems={"center"} gap={2}>
-      <HeroGridAnimation />
-    </Stack>
-  );
+    return (
+        <Stack sx={{ position: "relative", minHeight: "100vh", bgcolor: "#01070E", alignItems: "center", justifyContent: "center" }}>
+            <Box sx={{ position: "absolute", inset: 0, zIndex: 0 }}>
+                <HeroGridAnimation />
+            </Box>
+        </Stack>
+    );
 }
