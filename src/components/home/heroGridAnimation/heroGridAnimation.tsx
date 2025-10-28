@@ -33,7 +33,7 @@ export default function HeroGridTrail({
   cellSize = 40,
   fadeDurationMs = 1000,
   tickMs = 50,
-  borderIdle = "#0D131B",
+  borderIdle = "rgba(255, 255, 255, 0.05)",
   borderActive = "rgba(23, 47, 194, 1)",
   bgActive = "rgba(2, 11, 32, 1)",
   background = "#01070E",
@@ -220,7 +220,7 @@ export default function HeroGridTrail({
         width: "100%",
         height: "100%", // set height on the parent container using this
         overflow: "hidden",
-        backgroundColor: background,
+        backgroundColor: 'transparent',
         // If this is purely decorative behind hero text, uncomment:
         // pointerEvents: "none",
         ...sx,

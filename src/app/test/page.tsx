@@ -5,7 +5,7 @@ export default function Home() {
 
     return (
         <Stack sx={{ position: "relative", minHeight: "100vh", bgcolor: "#01070E", alignItems: "center", justifyContent: "center" }}>
-            <Box sx={{ position: "absolute", inset: 0, zIndex: 0 }}>
+            <Box sx={{ position: "absolute", inset: 0, zIndex: 2 }}>
                 <HeroGridAnimation />
             </Box>
         </Stack>

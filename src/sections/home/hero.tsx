@@ -10,6 +10,7 @@ import GridOverlay from "@/components/home/GridOverlay";
 
 import heroBg from "@/assets/images/heroBG.webp"
 import arrow from "@/assets/images/icons/arrow.webp"
+import HeroGridAnimation from "@/components/home/heroGridAnimation/heroGridAnimation";
 
 const Hero = () => {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -35,18 +36,25 @@ const Hero = () => {
                 src={heroBg}
                 fill
                 alt="mood global services"
-                style={{ position: "absolute", inset: 0, zIndex: 0, objectFit: "cover" }}
+                style={{ position: "absolute", inset: 0, zIndex: 1, objectFit: "cover" }}
                 priority
                 fetchPriority="high"
             />
 
             {/* Static grid */}
-            <GridOverlay cell={40} majorEvery={1} />
+            <Stack height="100%" width="100%" sx={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 1,
+                opacity: 0.75
+            }}>
+                <HeroGridAnimation />
+            </Stack>
 
             
 
             {/* Content */}
-            <Stack width="100%" height="70%" alignItems="center" sx={{ position: "relative", zIndex: 1 }}>
+            <Stack width="fit-content" height="70%" alignItems="center" sx={{ position: "relative", zIndex: 1 }}>
                 <HeroAnimation frameHeight={200} framePadding={0} artScale={1.12} align="left" />
                 <Stack alignItems="center" mt={-4} mb={6}>
                     <Typography variant="h1" component="h1" className="chno" fontWeight={500}>
