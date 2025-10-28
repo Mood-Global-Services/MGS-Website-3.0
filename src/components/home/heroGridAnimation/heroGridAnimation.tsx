@@ -3,199 +3,346 @@
 import * as React from "react";
 import { Box, type SxProps, type Theme } from "@mui/material";
 
-/**
- * HeroGridTrail (MUI)
- * - Div-based grid (no Tailwind), each cell is a MUI Box
- * - Mouse hover lights cells; they fade out over time
- * - Performance-friendly: mouse moves update a ref, not React state; a lightweight timer drives re-render
- * - ResizeObserver recalculates cols/rows when the container changes size
- * - Respects prefers-reduced-motion (slows down updates)
- */
-
 type Props = {
-  cellSize?: number;           // px per cell (logical CSS pixels)
-  fadeDurationMs?: number;     // ms until a cell fully fades
-  tickMs?: number;             // update cadence (ms) for fades
-  borderIdle?: string;         // border color when idle
-  borderActive?: string;       // border color for active cells (alpha applied)
-  bgActive?: string;           // background color for active cells (alpha applied)
-  background?: string;         // container background
+  // visuals / behavior
+  cellSize?: number;
+  color?: string;
+  bgColor?: string;        // solid background fill (transparent if undefined)
+  decay?: number;          // 0.85..0.995; higher = longer trails
+  activation?: number;     // 0..1
+  neighborJitter?: number; // small random sparks per frame
+  followLerp?: number;     // 0.08..0.2
+  threshold?: number;      // min alpha to draw a cell (e.g., 0.02)
+  maxFps?: number;         // 60/48/30
+
+  // layout / a11y
   ariaHidden?: boolean;
   sx?: SxProps<Theme>;
 };
 
-export default function HeroGridTrail({
-  cellSize = 40,
-  fadeDurationMs = 1000,
-  tickMs = 50,
-  borderIdle = "#0D131B",
-  borderActive = "rgba(23, 47, 194, 1)", // alpha controlled via inline style
-  bgActive = "rgba(2, 11, 32, 1)",       // alpha controlled via inline style
-  background = "#01070E",
+const supportsOffscreen = (): boolean =>
+  typeof window !== "undefined" &&
+  "OffscreenCanvas" in window &&
+  typeof HTMLCanvasElement !== "undefined" &&
+  typeof HTMLCanvasElement.prototype.transferControlToOffscreen === "function";
+
+/**
+ * HeroGridAnimation
+ * - Prefers OffscreenCanvas + Worker (but falls back to main-thread canvas rAF).
+ * - Zero external deps; fully typed.
+ */
+export default function HeroGridAnimation({
+  cellSize = 20,
+  color = "rgba(0,200,255,1)",
+  bgColor,
+  decay = 0.94,
+  activation = 0.85,
+  neighborJitter = 8,
+  followLerp = 0.14,
+  threshold = 0.02,
+  maxFps = 60,
   ariaHidden = true,
   sx,
 }: Props) {
-  // Container & layout
-  const containerRef = React.useRef<HTMLDivElement | null>(null);
-  const [cols, setCols] = React.useState(0);
-  const [rows, setRows] = React.useState(0);
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const workerRef = React.useRef<Worker | null>(null);
+  const visibleRef = React.useRef<boolean>(true);
 
-  // Map<"col-row", timestamp> stored in a ref to avoid rerenders on mousemove
-  const hoveredRef = React.useRef<Map<string, number>>(new Map());
+  // Fallback (main-thread) state
+  const dprRef = React.useRef<number>(1);
+  const colsRef = React.useRef<number>(0);
+  const rowsRef = React.useRef<number>(0);
+  const intensitiesRef = React.useRef<Float32Array | null>(null);
+  const followerRef = React.useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const targetRef = React.useRef<{ x: number; y: number; set: boolean }>({ x: 0, y: 0, set: false });
+  const rafRef = React.useRef<number | null>(null);
+  const lastTsRef = React.useRef<number>(0);
 
-  // A lightweight "clock" that rerenders at a fixed cadence to update fades
-  const [now, setNow] = React.useState<number>(() => Date.now());
+  const useWorker = supportsOffscreen();
 
-  // Reduced motion → slow the tick so it’s gentler on CPU and eyes
+  // Visibility observer (pause when off-screen)
   React.useEffect(() => {
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const reduced = mql.matches;
-    const interval = setInterval(
-      () => setNow(Date.now()),
-      reduced ? Math.max(tickMs * 2, 100) : tickMs
-    );
-    const onChange = () => {
-      clearInterval(interval);
-      // restart with new cadence (simple path: reload page cadence on change)
-      // In most apps, reduced-motion rarely toggles live; okay to keep it simple.
-    };
-    try {
-      mql.addEventListener("change", onChange);
-    } catch {
-      mql.addListener?.(onChange as unknown as (event: MediaQueryListEvent) => void);
-    }
-    return () => {
-      clearInterval(interval);
-      try {
-        mql.removeEventListener("change", onChange);
-      } catch {
-        mql.removeListener?.(onChange as unknown as (event: MediaQueryListEvent) => void);
-      }
-    };
-  }, [tickMs]);
-
-  // Compute cols/rows from container size (not window), and keep it updated
-  React.useEffect(() => {
-    const el = containerRef.current;
+    const el = wrapperRef.current;
     if (!el) return;
 
-    const compute = () => {
-      const w = Math.max(1, el.clientWidth);
-      const h = Math.max(1, el.clientHeight);
-      setCols(Math.ceil(w / cellSize) + 1);
-      setRows(Math.ceil(h / cellSize) + 1);
+    const io = new IntersectionObserver(([entry]) => {
+      const isVisible = Boolean(entry?.isIntersecting);
+      visibleRef.current = isVisible;
+      if (workerRef.current) {
+        workerRef.current.postMessage({ type: "visibility", visible: isVisible });
+      }
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Also pause when the tab is hidden
+  React.useEffect(() => {
+    const onVis = (): void => {
+      const v = document.visibilityState === "visible";
+      visibleRef.current = v;
+      if (workerRef.current) workerRef.current.postMessage({ type: "visibility", visible: v });
+    };
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
+  }, []);
+
+  // Pointer tracking (local to wrapper)
+  React.useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+
+    const handlePointerMove = (ev: PointerEvent): void => {
+      const rect = el.getBoundingClientRect();
+      const x = ev.clientX - rect.left;
+      const y = ev.clientY - rect.top;
+
+      if (workerRef.current) {
+        workerRef.current.postMessage({ type: "pointer", x, y });
+      } else {
+        targetRef.current.x = x;
+        targetRef.current.y = y;
+        targetRef.current.set = true;
+      }
     };
 
-    compute();
-    const ro = new ResizeObserver(compute);
+    el.addEventListener("pointermove", handlePointerMove, { passive: true });
+    return () => el.removeEventListener("pointermove", handlePointerMove);
+  }, []);
+
+  // Resize handling (worker and fallback)
+  const rebuildSize = React.useCallback(() => {
+    const el = wrapperRef.current;
+    const canvas = canvasRef.current;
+    if (!el || !canvas) return;
+
+    const width = Math.max(1, Math.floor(el.clientWidth));
+    const height = Math.max(1, Math.floor(el.clientHeight));
+    const dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
+
+    if (workerRef.current) {
+      workerRef.current.postMessage({ type: "resize", width, height, dpr });
+    } else {
+      // fallback canvas sizing & grid
+      dprRef.current = dpr;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      const cols = Math.max(1, Math.floor(width / cellSize));
+      const rows = Math.max(1, Math.floor(height / cellSize));
+      colsRef.current = cols;
+      rowsRef.current = rows;
+
+      const arr = new Float32Array(cols * rows);
+      arr.fill(0);
+      intensitiesRef.current = arr;
+
+      followerRef.current.x = width * 0.5;
+      followerRef.current.y = height * 0.5;
+      targetRef.current.set = false;
+    }
+  }, [cellSize]);
+
+  React.useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(rebuildSize);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [cellSize]);
+  }, [rebuildSize]);
 
-  // Mouse tracking (container-local)
+  // Init: prefer OffscreenCanvas + Worker, otherwise main-thread fallback
   React.useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+    const el = wrapperRef.current;
+    const canvas = canvasRef.current;
+    if (!el || !canvas) return;
 
-    const onMove = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      if (x < 0 || y < 0 || x > rect.width || y > rect.height) return;
+    const width = Math.max(1, Math.floor(el.clientWidth));
+    const height = Math.max(1, Math.floor(el.clientHeight));
+    const dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
 
-      const col = Math.floor(x / cellSize);
-      const row = Math.floor(y / cellSize);
-      const key = `${col}-${row}`;
-      hoveredRef.current.set(key, Date.now());
-      // Note: we do NOT set React state here—avoids re-render storms.
-    };
+    if (useWorker) {
+      const offscreen = canvas.transferControlToOffscreen();
+      const w = new Worker(new URL("./heroGrid.worker.ts", import.meta.url), { type: "module" });
+      workerRef.current = w;
 
-    el.addEventListener("mousemove", onMove, { passive: true });
+      w.postMessage(
+        {
+          type: "init",
+          canvas: offscreen,
+          width,
+          height,
+          dpr,
+          params: {
+            cellSize,
+            decay,
+            activation,
+            neighborJitter,
+            followLerp,
+            color,
+            bgColor,
+            threshold,
+            maxFps,
+          },
+        },
+        [offscreen]
+      );
+    } else {
+      // Fallback main-thread loop (rAF)
+      rebuildSize();
+      lastTsRef.current = 0;
 
-    // Optional: also light up on touch
-    const onTouch = (e: TouchEvent) => {
-      const t = e.touches[0];
-      if (!t) return;
-      const rect = el.getBoundingClientRect();
-      const x = t.clientX - rect.left;
-      const y = t.clientY - rect.top;
-      const col = Math.floor(x / cellSize);
-      const row = Math.floor(y / cellSize);
-      hoveredRef.current.set(`${col}-${row}`, Date.now());
-    };
-    el.addEventListener("touchmove", onTouch, { passive: true });
+      const loop = (ts: number): void => {
+        if (!visibleRef.current) {
+          rafRef.current = requestAnimationFrame(loop);
+          return;
+        }
+
+        const last = lastTsRef.current || ts;
+        const deltaMs = ts - last;
+
+        // FPS cap
+        const minDelta = 1000 / Math.max(1, maxFps);
+        if (deltaMs < minDelta) {
+          rafRef.current = requestAnimationFrame(loop);
+          return;
+        }
+        lastTsRef.current = ts;
+
+        const c = canvasRef.current;
+        const ctx = c?.getContext("2d");
+        const arr = intensitiesRef.current;
+        if (!c || !ctx || !arr) {
+          rafRef.current = requestAnimationFrame(loop);
+          return;
+        }
+
+        const widthCss = el.clientWidth;
+        const heightCss = el.clientHeight;
+        const cols = colsRef.current;
+        const rows = rowsRef.current;
+
+        // follower
+        const tx = targetRef.current.set ? targetRef.current.x : widthCss * 0.5;
+        const ty = targetRef.current.set ? targetRef.current.y : heightCss * 0.5;
+        const f = followerRef.current;
+        f.x += (tx - f.x) * followLerp;
+        f.y += (ty - f.y) * followLerp;
+
+        const fx = Math.max(0, Math.min(cols - 1, Math.floor(f.x / cellSize)));
+        const fy = Math.max(0, Math.min(rows - 1, Math.floor(f.y / cellSize)));
+        const fIdx = fy * cols + fx;
+
+        // decay normalized to ~60fps
+        const dt = deltaMs / 1000;
+        const decayFactor = Math.pow(decay, dt * 60);
+        for (let i = 0; i < arr.length; i++) arr[i] *= decayFactor;
+
+        // activate
+        arr[fIdx] = Math.min(1, arr[fIdx] + activation);
+
+        const radius = 2;
+        for (let dy = -radius; dy <= radius; dy++) {
+          const yy = fy + dy;
+          if (yy < 0 || yy >= rows) continue;
+          for (let dx = -radius; dx <= radius; dx++) {
+            const xx = fx + dx;
+            if (xx < 0 || xx >= cols) continue;
+            const dist2 = dx * dx + dy * dy;
+            const falloff = dist2 === 0 ? 1 : Math.max(0, 1 - dist2 / (radius * radius));
+            const idx = yy * cols + xx;
+            arr[idx] = Math.min(1, arr[idx] + activation * 0.35 * falloff);
+          }
+        }
+        for (let k = 0; k < neighborJitter; k++) {
+          const jx = Math.max(0, Math.min(cols - 1, fx + ((Math.random() * 5) | 0) - 2));
+          const jy = Math.max(0, Math.min(rows - 1, fy + ((Math.random() * 5) | 0) - 2));
+          const jIdx = jy * cols + jx;
+          arr[jIdx] = Math.min(1, arr[jIdx] + 0.4 * Math.random());
+        }
+
+        // draw
+        const dprLocal = dprRef.current;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        if (bgColor) {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = bgColor;
+          ctx.fillRect(0, 0, c.width, c.height);
+        } else {
+          ctx.clearRect(0, 0, c.width, c.height);
+        }
+        ctx.scale(dprLocal, dprLocal);
+        ctx.fillStyle = color;
+
+        let y = 0;
+        let idx = 0;
+        for (let row = 0; row < rows; row++) {
+          let x = 0;
+          for (let col = 0; col < cols; col++, idx++) {
+            const a = arr[idx];
+            if (a > threshold) {
+              ctx.globalAlpha = Math.min(1, a);
+              const inset = Math.max(1, Math.floor(cellSize * 0.05));
+              ctx.fillRect(x + inset, y + inset, cellSize - inset * 2, cellSize - inset * 2);
+            }
+            x += cellSize;
+          }
+          y += cellSize;
+        }
+
+        rafRef.current = requestAnimationFrame(loop);
+      };
+
+      rafRef.current = requestAnimationFrame(loop);
+    }
 
     return () => {
-      el.removeEventListener("mousemove", onMove as unknown as (event: MouseEvent) => void);
-      el.removeEventListener("touchmove", onTouch as unknown as (event: TouchEvent) => void);
-    };
-  }, [cellSize]);
-
-  // Prune fully faded cells occasionally (keeps the Map small)
-  React.useEffect(() => {
-    const map = hoveredRef.current;
-    const cutoff = now - fadeDurationMs - 50;
-    let changed = false;
-    for (const [key, ts] of map) {
-      if (ts < cutoff) {
-        map.delete(key);
-        changed = true;
+      // cleanup on unmount
+      if (workerRef.current) {
+        workerRef.current.postMessage({ type: "stop" });
+        workerRef.current.terminate();
+        workerRef.current = null;
       }
-    }
-    // No setState needed; cells with 0 opacity render as idle
-  }, [now, fadeDurationMs]);
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+  }, [
+    useWorker,
+    cellSize,
+    color,
+    bgColor,
+    decay,
+    activation,
+    neighborJitter,
+    followLerp,
+    threshold,
+    maxFps,
+    rebuildSize,
+  ]);
 
   return (
     <Box
-      ref={containerRef}
+      ref={wrapperRef}
       sx={{
         position: "relative",
         width: "100%",
-        height: "100%", // set a height on the parent container
+        height: "100%", // give the parent a height (e.g., minHeight on the section)
         overflow: "hidden",
-        backgroundColor: background,
-        // If purely decorative behind content:
-        // pointerEvents: "none",
+        // If decorative behind content, you can add: pointerEvents: "none",
         ...sx,
       }}
       aria-hidden={ariaHidden || undefined}
     >
-      {/* Grid layer */}
-      <Box sx={{ position: "absolute", inset: 0 }}>
-        {Array.from({ length: rows }).map((_, row) => (
-          <Box key={row} sx={{ display: "flex" }}>
-            {Array.from({ length: cols }).map((_, col) => {
-              const key = `${col}-${row}`;
-              const ts = hoveredRef.current.get(key);
-              let opacity = 0;
-              if (ts) {
-                const elapsed = now - ts;
-                opacity = Math.max(0, 1 - elapsed / fadeDurationMs);
-              }
-
-              return (
-                <Box
-                  key={key}
-                  sx={{
-                    width: `${cellSize}px`,
-                    height: `${cellSize}px`,
-                    boxSizing: "border-box",
-                    border: "1px solid",
-                    borderColor:
-                      opacity > 0
-                        ? `rgba(23, 47, 194, ${opacity})`
-                        : borderIdle,
-                    backgroundColor:
-                      opacity > 0
-                        ? `rgba(2, 11, 32, ${opacity})`
-                        : "transparent",
-                  }}
-                />
-              );
-            })}
-          </Box>
-        ))}
-      </Box>
+      <Box
+        component="canvas"
+        ref={canvasRef}
+        sx={{ position: "absolute", inset: 0, display: "block" }}
+      />
     </Box>
   );
 }
