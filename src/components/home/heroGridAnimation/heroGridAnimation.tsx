@@ -22,9 +22,6 @@ export default function HeroGridTrail({
   fadeDurationMs = 1000,
   tickMs = 50,
   borderIdle = "rgba(255, 255, 255, 0.05)",
-  borderActive = "rgba(23, 47, 194, 1)",
-  bgActive = "rgba(2, 11, 32, 1)",
-  background = "#01070E",
   ariaHidden = true,
   sx,
 }: Props) {
