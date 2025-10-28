@@ -19,7 +19,16 @@ const WeEmpower = () => {
                     Not just for institutions and SMEs
                 </Typography>
             </Stack>
-            <Stack width="100%" direction="row" alignItems="stretch" justifyContent="center" borderRadius={2} paddingX={8} paddingY={10} position={"relative"}>
+            <Stack width="100%" direction="row" alignItems="stretch" justifyContent="center" borderRadius={2} paddingX={8} paddingY={10} position={"relative"} sx={{
+                "& .empowerArrows": {
+                    transform: "translateY(-15%) translateX(-5%) scaleX(1)",
+                    transformOrigin: "left center",
+                    transition: "transform .3s ease",
+                },
+                "&:hover .empowerArrows": {
+                    transform: "translateY(-15%) translateX(0%) scaleX(1.1)",
+                },
+            }}>
                 <Stack position={"absolute"} width="100%" height="100%" sx={{
                     top: 0,
                     left: 0,
@@ -60,9 +69,7 @@ const WeEmpower = () => {
                     zIndex: 2,
                     transform: "translateY(-5%)",
                 }}>
-                    <Image src={weEmpowerArrows} alt="weEmpowerArrows" width={230} height={230} style={{
-                        transform: "translateY(-15%)",
-                    }} />
+                    <Image src={weEmpowerArrows} alt="weEmpowerArrows" width={230} height={230} className="empowerArrows" />
                     <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={2}>
