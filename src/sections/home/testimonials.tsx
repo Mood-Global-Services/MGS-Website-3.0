@@ -25,19 +25,19 @@ const Testimonials = () => {
                         <TestimonialsCard1 />
                     </Grid>
                     <Grid size={4}>
-                        <TestimonialsCard2 />
+                        <TestimonialsCard1 />
                     </Grid>
                     <Grid size={4}>
-                        <TestimonialsCard3 />
+                        <TestimonialsCard1 />
                     </Grid>
                     <Grid size={4}>
-                        <TestimonialsCard4 />
+                        <TestimonialsCard1 />
                     </Grid>
                     <Grid size={4}>
-                        <TestimonialsCard5 />
+                        <TestimonialsCard1 />
                     </Grid>
                     <Grid size={4}>
-                        <TestimonialsCard6 />
+                        <TestimonialsCard1 />
                     </Grid>
                 </Grid>
             </Stack>
