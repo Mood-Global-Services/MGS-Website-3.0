@@ -1,9 +1,11 @@
 "use client";
 
 import { Stack, Box } from "@mui/material";
-import Lottie from "lottie-react";
 import rawAnimation from "@/assets/animations/animation.json";
 import { stripLottieWatermark, type LottieJSON } from "@/types/lottie";
+
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false, loading: () => null });
 
 const cleanedAnimation = stripLottieWatermark(rawAnimation as LottieJSON);
 
