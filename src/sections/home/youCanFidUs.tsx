@@ -1,9 +1,12 @@
+"use client";
+
 import { Stack, Typography } from "@mui/material";
 import theme from "@/theme/theme";
 
 import ProductTagShape from "@/assets/images/ProductsTagShape.webp";
 
-import YouCanFindUsSlider from "@/components/home/youCanFindUsSlider";
+import dynamic from "next/dynamic";
+const YouCanFindUsSlider = dynamic(() => import("@/components/home/youCanFindUsSlider"), { ssr: false });
 
 const YouCanFidUs = () => {
     return (
