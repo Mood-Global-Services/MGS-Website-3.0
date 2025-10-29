@@ -6,7 +6,8 @@ import servicesHeroAsset from "@/assets/images/servicesPage/servicesHeroAsset.sv
 
 const ServicesHero = () => {
     return (
-        <Stack alignItems="center"
+        <Stack
+            alignItems="center"
             justifyContent="center"
             width="100%"
             minHeight="40vh"
