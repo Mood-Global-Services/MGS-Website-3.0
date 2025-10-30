@@ -27,13 +27,13 @@ import teamGradient from "@/assets/images/teamPage/teamGradient.webp";
 export default function TeamPage() {
 
     return (
-        <Stack width={"100%"} alignItems={"center"} paddingTop={10} position="relative" overflow="hidden">
+        <Stack width={"100%"} alignItems={"center"} paddingTop={{ xs: 4, lg: 10 }} position="relative" overflow="hidden">
             <Stack width="100%" height="100%" position="relative" alignItems="center">
                 <Stack alignItems="center" justifyContent="center" gap={4}>
-                    <Typography variant="h1" component="h1" fontSize="3.75rem !important" className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
+                    <Typography variant="h1" component="h1" fontSize={{ xs: "2rem !important", lg: "3.75rem !important" }} className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
                         Meet our Team
                     </Typography>
-                    <Stack width="60%" marginX="auto" gap={2} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap">
+                    <Stack width={{ xs: "95%", lg: "60%" }} marginX="auto" gap={2} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap">
                         <Stack direction="row" alignItems="center" gap={1} sx={{
                             width: "fit-content",
                             height: "fit-content",
@@ -45,7 +45,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={NetherlandsFlag} alt="Netherlands Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Netherlands
                             </Typography>
                         </Stack>
@@ -60,7 +60,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={ItalyFlag} alt="Italy Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Italy
                             </Typography>
                         </Stack>
@@ -75,7 +75,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={UnitedKingdomFlag} alt="United Kingdom Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 United Kingdom
                             </Typography>
                         </Stack>
@@ -90,7 +90,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={UkraineFlag} alt="Ukraine Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Ukraine
                             </Typography>
                         </Stack>
@@ -105,7 +105,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={IndiaFlag} alt="India Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 India
                             </Typography>
                         </Stack>
@@ -120,7 +120,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={PakistanFlag} alt="Pakistan Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Pakistan
                             </Typography>
                         </Stack>
@@ -135,7 +135,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={NigeriaFlag} alt="Nigeria Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Nigeria
                             </Typography>
                         </Stack>
@@ -150,7 +150,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={IranFlag} alt="Iran Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Iran
                             </Typography>
                         </Stack>
@@ -165,7 +165,7 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={MoroccoFlag} alt="Morocco Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Morocco
                             </Typography>
                         </Stack>
@@ -180,13 +180,13 @@ export default function TeamPage() {
                             gap: 1,
                         }}>
                             <Image src={SingaporeFlag} alt="Singapore Flag" width={25} height={25} />
-                            <Typography variant="body1" component="p" fontWeight={400}>
+                            <Typography variant="body1" component="p" fontWeight={400} fontSize={{ xs: "0.8rem !important", lg: "1rem !important" }}>
                                 Singapore
                             </Typography>
                         </Stack>
                     </Stack>
                 </Stack>
-                <Stack width="100%" marginX="auto" gap={2} paddingBottom={4} marginTop={-4} overflow="hidden">
+                <Stack width="100%" marginX="auto" gap={2} paddingBottom={{ xs: 4, lg: 4 }} marginTop={{ xs: 4, lg: -4 }} overflow="hidden">
                     <Image src={teamMap} alt="Team Map" width={1000} height={1000} style={{
                         width: "90%",
                         height: "auto",
@@ -195,9 +195,9 @@ export default function TeamPage() {
                         objectFit: "cover",
                     }} />
                 </Stack>
-                <Grid container spacing={4} width="75%" marginX="auto" height="fit-content">
+                <Grid container spacing={{ xs: 2, lg: 4 }} width={{ xs: "95%", lg: "75%" }} marginX="auto" height="fit-content">
                     {teamMembers.map((member: TeamMember) => (
-                        <Grid size={3} key={member.name}>
+                        <Grid size={{ xs: 6, lg: 3 }} key={member.name}>
                             <Stack width="100%" gap={1.5} className="team-member-card" sx={{
                                 border: "solid 1px #EEE4E421",
                                 borderRadius: 1.5,
