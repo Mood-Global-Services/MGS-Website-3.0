@@ -9,38 +9,38 @@ import gtmAndLegalAsset from "@/assets/images/servicesPage/gtmAsset.svg?url";
 const GTMAndLegal = () => {
     return (
         <Stack
-            direction="row"
+            direction={{ xs: "column", lg: "row" }}
             alignItems="start"
             justifyContent="center"
-            width="80%"
+            width={{ xs: "100%", lg: "80%" }}
             marginX="auto"
             paddingX={4}
             gap={6}
             position="relative"
             overflow="hidden"
         >
-            <Stack width="50%" gap={4}>
+            <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Stack gap={2}>
                     <Stack direction={"row"} alignItems={"center"} gap={1.5}>
                         <Image src={gtmAndLegalIcon} alt="sc icon" height={20} width={20} />
-                        <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5}>
+                        <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5} fontSize={{ xs: "1.3rem !important", lg: "1.75rem !important" }}>
                             GTM & Legal
                         </Typography>
                     </Stack>
-                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%" }}>
+                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%", display: { xs: "none", lg: "block" } }}>
                         From validating your MVP to navigating complex token regulations, our team provides the expertise to protect your business and position it for global success.
                     </Typography>
-                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%" }}>
+                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%", display: { xs: "none", lg: "block" } }}>
                         We combine market insight with legal precision to give your project the best possible start.
                     </Typography>
                 </Stack>
                 <Image src={gtmAndLegalAsset} alt="sc asset" height={450} width={450} />
             </Stack>
-            <Stack width="50%" gap={4}>
+            <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Grid container spacing={3} sx={{
                     width: "100%",
                 }}>
-                    <Grid size={12}>
+                    <Grid size={{ xs: 12, lg: 12 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 MVP Validation
@@ -50,7 +50,7 @@ const GTMAndLegal = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={12}>
+                    <Grid size={{ xs: 12, lg: 12 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Token Legal
@@ -60,7 +60,7 @@ const GTMAndLegal = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={12}>
+                    <Grid size={{ xs: 12, lg: 12 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Compliance
@@ -70,7 +70,7 @@ const GTMAndLegal = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={12}>
+                    <Grid size={{ xs: 12, lg: 12 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 EMEA Strategy

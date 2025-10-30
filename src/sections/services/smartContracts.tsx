@@ -9,10 +9,10 @@ import smartContractsAsset from "@/assets/images/servicesPage/smartContractsAsse
 const SmartContracts = () => {
     return (
         <Stack
-            direction="row"
+            direction={{ xs: "column", lg: "row" }}
             alignItems="start"
             justifyContent="center"
-            width="80%"
+            width={{ xs: "100%", lg: "80%" }}
             marginX="auto"
             paddingX={4}
             gap={6}
@@ -20,25 +20,25 @@ const SmartContracts = () => {
             overflow="hidden"
             id="smart-contracts"
         >
-            <Stack width="50%" gap={4}>
+            <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Stack gap={2}>
                     <Stack direction={"row"} alignItems={"center"} gap={1.5}>
                         <Image src={smartContractsIcon} alt="sc icon" height={20} width={20} />
-                        <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5}>
+                        <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5} fontSize={{ xs: "1.3rem !important", lg: "1.75rem !important" }}>
                             Smart Contracts
                         </Typography>
                     </Stack>
-                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%" }}>
+                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%", display: { xs: "none", lg: "block" } }}>
                         We design, develop, and audit secure and efficient contracts tailored to your specific business logic.
                     </Typography>
                 </Stack>
                 <Image src={smartContractsAsset} alt="sc asset" height={450} width={450} />
             </Stack>
-            <Stack width="50%" gap={4}>
+            <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Grid container spacing={3} sx={{
                     width: "100%",
                 }}>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 ERC Standards
@@ -48,7 +48,7 @@ const SmartContracts = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Custom Logic
@@ -58,7 +58,7 @@ const SmartContracts = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 DApps
@@ -68,7 +68,7 @@ const SmartContracts = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Oracles
@@ -78,7 +78,7 @@ const SmartContracts = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={12}>
+                    <Grid size={{ xs: 12, lg: 12 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Audits

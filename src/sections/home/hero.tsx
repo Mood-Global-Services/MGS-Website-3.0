@@ -57,7 +57,7 @@ const Hero = () => {
 
             {/* Content */}
             <Stack width="fit-content" height="70%" alignItems="center" sx={{ position: "relative", zIndex: 1 }}>
-                <HeroAnimation frameHeight={200} framePadding={0} artScale={1.4} align="left" />
+                <HeroAnimation frameHeight={200} framePadding={0} artScale={1.2} align="left" />
                 <Stack alignItems="center" mt={-4} mb={6}>
                     <Typography variant="h1" component="h1" className="chno" fontWeight={500}>
                         <span style={{ color: theme.palette.brand.mgsBlue1.main }}>Build</span> here

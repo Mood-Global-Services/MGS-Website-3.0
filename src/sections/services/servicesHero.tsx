@@ -10,7 +10,7 @@ const ServicesHero = () => {
             alignItems="center"
             justifyContent="center"
             width="100%"
-            minHeight="45vh"
+            minHeight={{ xs: "30vh", lg: "45vh" }}
             paddingX={4}
             position="relative"
             overflow="hidden"
@@ -22,8 +22,8 @@ const ServicesHero = () => {
                 zIndex: 0,
                 opacity: 0.78,
             }} />
-            <Stack width="50%" alignItems="center" justifyContent="center" gap={4} marginX="auto">
-                <Typography variant="h1" component="h1" fontSize="3.75rem !important" className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
+            <Stack width={{ xs: "100%", lg: "50%" }} alignItems="center" justifyContent="center" gap={4} marginX="auto">
+                <Typography variant="h1" component="h1" fontSize={{ xs: "2rem !important", lg: "3.75rem !important" }} className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
                     Services we offer
                 </Typography>
                 <Typography
@@ -32,6 +32,7 @@ const ServicesHero = () => {
                     fontWeight={300}
                     textAlign="center"
                     color={theme.palette.text.secondary}
+                    fontSize={{ xs: "1rem !important", lg: "1rem !important" }}
                 >
                     Our services cover the full spectrum of modern tech: blockchain infrastructure, advanced AI systems, product development, and market-ready GTM strategies with solid legal support.
                 </Typography>

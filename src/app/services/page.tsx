@@ -40,7 +40,7 @@ export default function ServicesPage() {
                     <SmartContracts />
                     <Divider id="infra-and-protocols" sx={{
                         borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
-                        marginY: 10,
+                        marginY: { xs: 6, lg: 10 },
                         marginX: "auto",
                         width: "80%",
 
@@ -48,21 +48,21 @@ export default function ServicesPage() {
                     <InfraAndProtocols />
                     <Divider id="ai-systems" sx={{
                         borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
-                        marginY: 10,
+                        marginY: { xs: 6, lg: 10 },
                         marginX: "auto",
                         width: "80%",
                     }} />
                     <AISystems />
                     <Divider id="product-dev" sx={{
                         borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
-                        marginY: 10,
+                        marginY: { xs: 6, lg: 10 },
                         marginX: "auto",
                         width: "80%",
                     }} />
                     <ProductDev />
                     <Divider id="gtm-and-legal" sx={{
                         borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
-                        marginY: 10,
+                        marginY: { xs: 6, lg: 10 },
                         marginX: "auto",
                         width: "80%",
                     }} />

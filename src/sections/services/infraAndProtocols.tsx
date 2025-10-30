@@ -9,21 +9,21 @@ import infraAndProtocolsAsset from "@/assets/images/servicesPage/infraAsset.svg?
 const InfraAndProtocols = () => {
     return (
         <Stack
-            direction="row"
+            direction={{ xs: "column-reverse", lg: "row" }}
             alignItems="start"
             justifyContent="center"
-            width="80%"
+            width={{ xs: "100%", lg: "80%" }}
             marginX="auto"
             paddingX={4}
             gap={6}
             position="relative"
             overflow="hidden"
         >
-            <Stack width="50%" gap={4}>
+            <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Grid container spacing={3} sx={{
                     width: "100%",
                 }}>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Layer Setup
@@ -33,7 +33,7 @@ const InfraAndProtocols = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Chain Infra
@@ -43,7 +43,7 @@ const InfraAndProtocols = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 Tooling
@@ -53,7 +53,7 @@ const InfraAndProtocols = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid size={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                         <Stack gap={1}>
                             <Typography variant="h6" component="h6" fontWeight={400}>
                                 DevOps Pipelines
@@ -65,15 +65,15 @@ const InfraAndProtocols = () => {
                     </Grid>
                 </Grid>
             </Stack>
-            <Stack width="50%" gap={4}>
+            <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Stack gap={2}>
                     <Stack direction={"row"} alignItems={"center"} gap={1.5}>
                         <Image src={infraAndProtocolsIcon} alt="sc icon" height={30} width={30} />
-                        <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5}>
+                        <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5} fontSize={{ xs: "1.3rem !important", lg: "1.75rem !important" }}>
                             Infra & Protocols
                         </Typography>
                     </Stack>
-                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%" }}>
+                    <Typography variant="h6" component="h6" fontWeight={400} sx={{ width: "90%", display: { xs: "none", lg: "block" } }}>
                         We design and implement robust blockchain infrastructure and protocols that ensure scalability, security, and reliability.
                     </Typography>
                 </Stack>
