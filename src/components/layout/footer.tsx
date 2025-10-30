@@ -94,22 +94,24 @@ export default function Footer() {
                             }
                         }}>Services</MUILink>
 
-                        <MUILink href="/siteLab" underline="hover" color="text.secondary" variant="body2" sx={{
+                        <MUILink href="/siteLab" underline="none" color="text.secondary" variant="body2" sx={{
                             width: 'fit-content',
-                            transition: 'color 300ms ease',
-                            "&:hover": {
-                                color: theme.palette.text.primary,
-                            }
-                        }}>
+                            
+                        }}
+                        onClick={(e) => {
+                           e.preventDefault();
+                        }}
+                        >
                             <FooterRowWithBadge label="SiteLab" />
                         </MUILink>
-                        <MUILink href="/blockAI" underline="hover" color="text.secondary" variant="body2" sx={{
+                        <MUILink href="/blockAI" underline="none" color="text.secondary" variant="body2" sx={{
                             width: 'fit-content',
-                            transition: 'color 300ms ease',
-                            "&:hover": {
-                                color: theme.palette.text.primary,
-                            }
-                        }}>
+                            
+                        }}
+                        onClick={(e) => {
+                            e.preventDefault();
+                        }}
+                        >
                             <FooterRowWithBadge label="BlockAI" />
                         </MUILink>
 
