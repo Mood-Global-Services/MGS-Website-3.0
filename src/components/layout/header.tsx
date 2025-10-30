@@ -60,7 +60,7 @@ export default function Header() {
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <div className="grid w-[800px] grid-cols-3 gap-x-3 gap-y-3">
-                                        <NavigationMenuContentItem href="/services/smart-contracts">
+                                        <NavigationMenuContentItem href="/services#smart-contracts">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuSmartContracts} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
@@ -72,7 +72,7 @@ export default function Header() {
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/infra-and-protocols">
+                                        <NavigationMenuContentItem href="/services#infra-and-protocols">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuInfra} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
@@ -83,7 +83,7 @@ export default function Header() {
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/ai-systems">
+                                        <NavigationMenuContentItem href="/services#ai-systems">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuAI} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
@@ -94,7 +94,7 @@ export default function Header() {
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/product-dev">
+                                        <NavigationMenuContentItem href="/services#product-dev">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuDev} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
@@ -105,7 +105,7 @@ export default function Header() {
                                                 </Typography>
                                             </Stack>
                                         </NavigationMenuContentItem>
-                                        <NavigationMenuContentItem href="/services/gtm-and-legal">
+                                        <NavigationMenuContentItem href="/services#gtm-and-legal">
                                             <Stack gap={1}>
                                                 <Stack direction={"row"} alignItems={"center"} gap={0.5}>
                                                     <Image src={menuGTM} height={20} width={20} alt="mgs mood global services smart contracts" priority></Image>
@@ -204,7 +204,7 @@ export default function Header() {
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <div className="grid w-[800px] h-[275px] items-stretch [grid-template-columns:1fr_1px_1fr_1px_1fr]">
-                                        <PlainContentItem href="/services/smart-contracts" className="pr-3">
+                                        <PlainContentItem href="/team" className="pr-3">
                                             <Stack paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
                                                 <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Team</Typography>
                                                 <Stack alignItems={"center"} justifyContent={"center"} paddingX={2} paddingTop={8}>
@@ -213,8 +213,8 @@ export default function Header() {
                                             </Stack>
                                         </PlainContentItem>
                                         <div aria-hidden className="bg-[#292929]" />
-                                        <PlainContentItem href="/services/infra-and-protocols" className="px-3">
-                                            <Stack height={"100%"} justifyContent={"space-between"} paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
+                                        <PlainContentItem href="/vacancies" className="px-3">
+                                            <Stack height={"100%"} justifyContent={"space-between"} paddingX={1} paddingTop={0.5} paddingBottom={1.5}>
                                                 <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Careers</Typography>
                                                 <Typography component="span" variant="body2">
                                                     Check out our open roles and become part of a team that’s shaping the future
@@ -231,7 +231,7 @@ export default function Header() {
                                             </Stack>
                                         </PlainContentItem>
                                         <div aria-hidden className="bg-[#292929]" />
-                                        <PlainContentItem href="/services/ai-systems" className="pl-3">
+                                        <PlainContentItem href="/" className="pl-3">
                                             <Stack height={"100%"} justifyContent={"space-between"} paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
                                                 <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Portfolio</Typography>
                                                 <Stack alignItems={"center"} justifyContent={"center"} paddingX={2}>

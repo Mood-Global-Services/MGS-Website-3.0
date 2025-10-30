@@ -16,7 +16,7 @@ export function PlainContentItem({ href, className, children }: Props) {
         href={href}
         className={cn("block h-full px-1", className)}
       >
-        <div className="h-full rounded-lg bg-transparent hover:bg-[#1D1D1D]">
+        <div className="h-full rounded-lg bg-transparent hover:bg-[#141414]">
           {children}
         </div>
       </Link>

@@ -14,28 +14,29 @@ export default function ServicesPage() {
         <Stack width={"100%"} alignItems={"center"} gap={2}>
             <ServicesHero />
             <SmartContracts />
-            <Divider sx={{
+            <Divider id="infra-and-protocols" sx={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
                 marginY: 10,
                 marginX: "auto",
                 width: "80%",
+
             }} />
             <InfraAndProtocols />
-            <Divider sx={{
+            <Divider id="ai-systems" sx={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
                 marginY: 10,
                 marginX: "auto",
                 width: "80%",
             }} />
             <AISystems />
-            <Divider sx={{
+            <Divider id="product-dev" sx={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
                 marginY: 10,
                 marginX: "auto",
                 width: "80%",
             }} />
             <ProductDev />
-            <Divider sx={{
+            <Divider id="gtm-and-legal" sx={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.17)",
                 marginY: 10,
                 marginX: "auto",

@@ -18,6 +18,7 @@ const SmartContracts = () => {
             gap={6}
             position="relative"
             overflow="hidden"
+            id="smart-contracts"
         >
             <Stack width="50%" gap={4}>
                 <Stack gap={2}>
