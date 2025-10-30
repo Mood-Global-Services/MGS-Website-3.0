@@ -10,9 +10,9 @@ const SmartContracts = () => {
     return (
         <Stack
             direction="row"
-            alignItems="center"
+            alignItems="start"
             justifyContent="center"
-            width="75%"
+            width="80%"
             marginX="auto"
             paddingX={4}
             gap={6}
@@ -21,7 +21,7 @@ const SmartContracts = () => {
         >
             <Stack width="50%" gap={4}>
                 <Stack gap={2}>
-                    <Stack direction={"row"} alignItems={"center"} gap={1}>
+                    <Stack direction={"row"} alignItems={"center"} gap={1.5}>
                         <Image src={smartContractsIcon} alt="sc icon" height={20} width={20} />
                         <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5}>
                             Smart Contracts

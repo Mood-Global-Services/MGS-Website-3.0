@@ -10,7 +10,7 @@ const ServicesHero = () => {
             alignItems="center"
             justifyContent="center"
             width="100%"
-            minHeight="40vh"
+            minHeight="45vh"
             paddingX={4}
             position="relative"
             overflow="hidden"
