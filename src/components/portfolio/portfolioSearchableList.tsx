@@ -1,15 +1,267 @@
-import { Stack, Typography } from "@mui/material";
+"use client"
+import { useState, useEffect } from "react";
+import { Stack, Typography, Collapse, List, ListItem, ListItemText, ListItemButton, ListItemIcon, Checkbox, IconButton } from "@mui/material";
 import { portfolioItems, type PortfolioItem } from "@/data/portfolio";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import theme from "@/theme/theme";
 import Image from "next/image";
 
 import arrow from "@/assets/images/icons/arrow.webp"
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ClearIcon from '@mui/icons-material/Clear';
+
+const tools = ["UI/UX", "Frontend", "Backend", "Blockchain", "DevOps", "DB/Storage"];
+const types = ["DeFi", "RWA", "NFT", "L1/L2", "AI", "Social"];
 
 const PortfolioSearchableList = () => {
+
+    const [openTools, setOpenTools] = useState<boolean>(false);
+    const [openTypes, setOpenTypes] = useState<boolean>(false);
+    const [selectedTools, setSelectedTools] = useState<string[]>([]);
+    const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+    const [filteredItems, setFilteredItems] = useState<PortfolioItem[]>(portfolioItems);
+
+    const handleToggleTool = (tool: string) => {
+        setSelectedTools(prev => prev.includes(tool) ? prev.filter(t => t !== tool) : [...prev, tool]);
+    };
+
+    const handleToggleType = (type: string) => {
+        setSelectedTypes(prev => prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]);
+    };
+    
+    useEffect(() => {
+        setFilteredItems(
+            selectedTools.length > 0 && selectedTypes.length > 0 ?
+            portfolioItems.filter(item => item.tools.some(tool => selectedTools.includes(tool)) && item.type.some(type => selectedTypes.includes(type)))
+            .sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
+            :
+            portfolioItems.sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
+        );
+    }, [selectedTools, selectedTypes]);
+
     return (
         <Stack width="70%" alignItems="center" marginX="auto" gap={2}>
-            {portfolioItems.map((item: PortfolioItem) => (
+            <Stack width="100%" direction="row" alignItems="start" justifyContent="center" gap={2}>
+                <Stack width="50%" alignItems="center" padding={1} borderRadius={2} sx={{
+                    border: "1px solid #6F6F6F",
+                    backgroundColor: "#0F0F0F4D",
+                    "&:hover": {
+                        borderColor: "#FFFFFF",
+                    }
+                }}>
+                    <Stack
+                        component="div"
+                        width="100%"
+                        direction="row"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        onClick={() => setOpenTypes(!openTypes)}
+                        sx={{
+                            cursor: "pointer",
+                            paddingLeft: 0.5,
+                        }}
+                    >
+                        {
+                            selectedTypes.length > 0 ? (
+                                <Stack direction="row" alignItems="center" gap={1} flexWrap="wrap">
+                                    {selectedTypes.map((type, index) => (
+                                        <Stack key={`type-${index}`} direction="row" alignItems="center" gap={1} sx={{
+                                            border: "0.3px solid #656565",
+                                            backgroundColor: "#0F0F0F",
+                                            borderRadius: 1,
+                                            paddingX: 1,
+                                            paddingY: 0.5,
+                                        }}>
+                                            <Typography variant="subtitle2" fontWeight={400}>
+                                                {type}
+                                            </Typography>
+                                            <IconButton onClick={() => {setOpenTypes(true); handleToggleType(type);setOpenTypes(true)}} sx={{
+                                                backgroundColor: "#7F7E7E",
+                                                padding: 0.25,
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                "&:hover": {
+                                                    backgroundColor: "#7F7E7E",
+                                                    opacity: 0.8,
+                                                },
+                                            }}>
+                                                <ClearIcon fontSize="small" sx={{
+                                                    fontSize: "0.8rem",
+                                                }} />
+                                            </IconButton>
+                                        </Stack>
+                                    ))}
+                                </Stack>
+                            ) : (
+                                <Typography variant="subtitle1" fontWeight={400}>
+                                    Type of project
+                                </Typography>
+                            )
+                        }
+                        <KeyboardArrowDownIcon fontSize="small" />
+                    </Stack>
+                    <Collapse in={openTypes} sx={{
+                        width: "100%",
+                        borderTop: openTypes ? "1px solid #242424" : "1px solid transparent",
+                        transition: " border-color 0.05s ease-in-out",
+                        marginTop: openTypes ? 1 : 0,
+                    }}>
+                        <Stack width="100%">
+                            <List dense disablePadding sx={{
+                                width: "100%",
+                                gap: 1,
+                            }}>
+                                {types.map((type, index) => (
+                                    <ListItem key={`type-${index}`} sx={{
+                                        width: "100%",
+                                        paddingX: 0,
+                                        paddingY: 0,
+                                        borderRadius: 1,
+                                    }}>
+                                        <ListItemButton role={undefined} onClick={() => handleToggleType(type)} dense sx={{
+                                            paddingLeft: 1,
+                                            gap: 1,
+                                        }}>
+                                            <ListItemIcon sx={{
+                                                minWidth: 0
+                                            }}>
+                                                <Checkbox
+                                                    edge="start"
+                                                    checked={selectedTypes.includes(type)}
+                                                    tabIndex={-1}
+                                                    disableRipple
+                                                    sx={{
+                                                        paddingRight: 0,
+                                                        color: selectedTypes.includes(type) ? theme.palette.text.primary : theme.palette.text.secondary,
+                                                        "&.Mui-checked": {
+                                                            color: theme.palette.text.primary,
+                                                        },
+                                                    }}
+                                                />
+                                            </ListItemIcon>
+                                            <ListItemText primary={type} sx={{
+                                                fontWeight: 300,
+                                                color: selectedTypes.includes(type) ? theme.palette.text.primary : theme.palette.text.secondary,
+                                            }} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </Stack>
+                    </Collapse>
+                </Stack>
+                <Stack width="50%" alignItems="center" padding={1} borderRadius={2} sx={{
+                    border: "1px solid #6F6F6F",
+                    backgroundColor: "#0F0F0F4D",
+                    "&:hover": {
+                        borderColor: "#FFFFFF",
+                    }
+                }}>
+                    <Stack
+                        component="div"
+                        width="100%"
+                        direction="row"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        onClick={() => setOpenTools(!openTools)}
+                        sx={{
+                            cursor: "pointer",
+                            paddingLeft: 0.5,
+                        }}
+                    >
+                        {
+                            selectedTools.length > 0 ? (
+                                <Stack direction="row" alignItems="center" gap={1} flexWrap="wrap">
+                                    {selectedTools.map((tool, index) => (
+                                        <Stack key={`tool-${index}`} direction="row" alignItems="center" gap={1} sx={{
+                                            border: "0.3px solid #656565",
+                                            backgroundColor: "#0F0F0F",
+                                            borderRadius: 1,
+                                            paddingX: 1,
+                                            paddingY: 0.5,
+                                        }}>
+                                            <Typography variant="subtitle2" fontWeight={400}>
+                                                {tool}
+                                            </Typography>
+                                            <IconButton onClick={() => {setOpenTools(true); handleToggleTool(tool);setOpenTools(true)}} sx={{
+                                                backgroundColor: "#7F7E7E",
+                                                padding: 0.25,
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                "&:hover": {
+                                                    backgroundColor: "#7F7E7E",
+                                                    opacity: 0.8,
+                                                },
+                                            }}>
+                                                <ClearIcon fontSize="small" sx={{
+                                                    fontSize: "0.8rem",
+                                                }} />
+                                            </IconButton>
+                                        </Stack>
+                                    ))}
+                                </Stack>
+                            ) : (
+                                <Typography variant="subtitle1" fontWeight={400}>
+                                    Type of tool
+                                </Typography>
+                            )
+                        }
+                        <KeyboardArrowDownIcon fontSize="small" />
+                    </Stack>
+                    <Collapse in={openTools} sx={{
+                        width: "100%",
+                        borderTop: openTools ? "1px solid #242424" : "1px solid transparent",
+                        transition: " border-color 0.05s ease-in-out",
+                        marginTop: openTools ? 1 : 0,
+                    }}>
+                        <Stack width="100%">
+                            <List dense disablePadding sx={{
+                                width: "100%",
+                                gap: 1,
+                            }}>
+                                {tools.map((tool, index) => (
+                                    <ListItem key={`tool-${index}`} sx={{
+                                        width: "100%",
+                                        paddingX: 0,
+                                        paddingY: 0,
+                                        borderRadius: 1,
+                                    }}>
+                                        <ListItemButton role={undefined} onClick={() => handleToggleTool(tool)} dense sx={{
+                                            paddingLeft: 1,
+                                            gap: 1,
+                                        }}>
+                                            <ListItemIcon sx={{
+                                                minWidth: 0
+                                            }}>
+                                                <Checkbox
+                                                    edge="start"
+                                                    checked={selectedTools.includes(tool)}
+                                                    tabIndex={-1}
+                                                    disableRipple
+                                                    sx={{
+                                                        paddingRight: 0,
+                                                        color: selectedTools.includes(tool) ? theme.palette.text.primary : theme.palette.text.secondary,
+                                                        "&.Mui-checked": {
+                                                            color: theme.palette.text.primary,
+                                                        },
+                                                    }}
+                                                />
+                                            </ListItemIcon>
+                                            <ListItemText primary={tool} sx={{
+                                                fontWeight: 300,
+                                                color: selectedTools.includes(tool) ? theme.palette.text.primary : theme.palette.text.secondary,
+                                            }} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </Stack>
+                    </Collapse>
+                </Stack>
+            </Stack>
+            {filteredItems.map((item: PortfolioItem) => (
                 <Stack key={item.id} width="100%" height="fit-content" direction="row" alignItems="stretch" justifyContent="space-between" sx={{
                     borderRadius: 2,
                     border: "1px solid #2F2F2F",

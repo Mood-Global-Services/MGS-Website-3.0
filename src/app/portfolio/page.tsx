@@ -48,13 +48,14 @@ export default function PortfolioPage() {
                     <Stack width="100%" position={"relative"} sx={{
                         zIndex: 2,
                     }}>
-                    <PortfolioSearchableList />
+                        <PortfolioSearchableList />
                     </Stack>
                 </Stack>
                 <Stack width={"100%"} alignItems={"center"} position={"relative"} sx={{
                     borderTop: `1px solid ${theme.palette.brand.border1.main}`,
                     zIndex: 2,
                     backgroundColor: "#0B0B0B",
+                    marginTop: 6,
                 }}>
                     <Footer />
                 </Stack>
