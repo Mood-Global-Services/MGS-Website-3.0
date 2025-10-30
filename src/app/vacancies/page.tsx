@@ -4,6 +4,8 @@ import VacanciesCard from "@/components/vacancies/vacanciesCard";
 import Footer from "@/components/layout/footer";
 import theme from "@/theme/theme";
 
+import { vacancies, type Vacancy } from "@/data/vacancies";
+
 export default function Home() {
 
     return (
@@ -11,21 +13,11 @@ export default function Home() {
             <VacanciesHero />
             
             <Grid container spacing={4} width="70%" marginX="auto">
-                <Grid size={6}>
-                    <VacanciesCard title="UX/UI Intern" remote={true} link="https://www.google.com" />
-                </Grid>
-                <Grid size={6}>
-                    <VacanciesCard title="Backend Intern" remote={true} link="https://www.google.com" />
-                </Grid>
-                <Grid size={6}>
-                    <VacanciesCard title="Vibe Coding Tool Expert Freelancer" remote={true} link="https://www.google.com" />
-                </Grid>
-                <Grid size={6}>
-                    <VacanciesCard title="AI Agent Dev Freelancer" remote={true} link="https://www.google.com" />
-                </Grid>
-                <Grid size={6}>
-                    <VacanciesCard title="Lead Generation Expert" remote={true} link="https://www.google.com" />
-                </Grid>
+                {vacancies.map((vacancy: Vacancy) => (
+                    <Grid size={6} key={vacancy.title}>
+                        <VacanciesCard title={vacancy.title} remote={vacancy.remote} link={`/vacancies/${vacancy.id}`} />
+                    </Grid>
+                ))}
             </Grid>
             <Stack width={"100%"} alignItems={"center"} position={"relative"} sx={{
                 borderTop: `1px solid ${theme.palette.brand.border1.main}`,
