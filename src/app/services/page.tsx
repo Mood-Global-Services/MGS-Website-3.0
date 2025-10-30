@@ -8,7 +8,7 @@ import GTMAndLegal from "@/sections/services/gtmAndLegal";
 import Footer from "@/components/layout/footer";
 import theme from "@/theme/theme";
 
-export default function Home() {
+export default function ServicesPage() {
 
     return (
         <Stack width={"100%"} alignItems={"center"} gap={2}>

@@ -6,7 +6,7 @@ import theme from "@/theme/theme";
 
 import { vacancies, type Vacancy } from "@/data/vacancies";
 
-export default function Home() {
+export default function VacanciesPage() {
 
     return (
         <Stack width={"100%"} alignItems={"center"} gap={8}>
