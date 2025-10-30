@@ -7,7 +7,10 @@ import theme from "@/theme/theme";
 
 const SpyralCard = () => {
     return (
-        <Link href="https://spyral.studio" target="_blank" underline="none">
+        <Link href="https://spyral.studio" target="_blank" underline="none" sx={{
+            width: "100%",
+            height: "100%",
+        }}>
             <Stack
                 sx={{
                     height: { xs: 180, sm: 220, md: 250, lg: 250 },

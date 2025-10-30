@@ -256,7 +256,7 @@ export default function Header() {
                 </div>
 
                 <div className="hidden md:block">
-                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                    <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={0.5}>
                                 Contact us&nbsp;
