@@ -16,7 +16,7 @@ export default function ServicesPage() {
     return (
         <Stack width={"100%"} alignItems={"center"} gap={2}>
             <ServicesHero />
-            <Stack width={"100%"} alignItems={"center"} position={"relative"} paddingBottom={6}>
+            <Stack width={"100%"} alignItems={"center"} position={"relative"} paddingBottom={10}>
                 <Stack width={"100%"} height={"100%"} sx={{
                     position: "absolute",
                     top: 0,
