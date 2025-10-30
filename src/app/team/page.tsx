@@ -2,6 +2,7 @@ import { Stack, Typography, Grid } from "@mui/material";
 import Footer from "@/components/layout/footer";
 import theme from "@/theme/theme";
 import Image from "next/image";
+import SideTabbedButton from "@/components/generic/SideTabbedButton";
 
 import NetherlandsFlag from "@/assets/images/teamPage/NL.svg?url";
 import UkraineFlag from "@/assets/images/teamPage/UA.svg?url";
@@ -18,259 +19,336 @@ import teamMap from "@/assets/images/teamPage/teamMap.svg?url";
 
 import { teamMembers, type TeamMember } from "@/data/team";
 
+import weAreHiringBg from "@/assets/images/teamPage/weAreHiringBg.webp";
+import arrow from "@/assets/images/icons/arrow.webp"
+
+import teamGradient from "@/assets/images/teamPage/teamGradient.webp";
+
 export default function TeamPage() {
 
     return (
-        <Stack width={"100%"} alignItems={"center"} gap={4} paddingTop={10}>
-            <Typography variant="h1" component="h1" fontSize="3.75rem !important" className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
-                Meet our Team
-            </Typography>
-            <Stack width="50%" marginX="auto" gap={2} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap">
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={NetherlandsFlag} alt="Netherlands Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Netherlands
+        <Stack width={"100%"} alignItems={"center"} paddingTop={10} position="relative" overflow="hidden">
+            <Stack width="100%" height="100%" position="relative" alignItems="center">
+                <Stack alignItems="center" justifyContent="center" gap={4}>
+                    <Typography variant="h1" component="h1" fontSize="3.75rem !important" className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
+                        Meet our Team
                     </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={ItalyFlag} alt="Italy Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Italy
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={UnitedKingdomFlag} alt="United Kingdom Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        United Kingdom
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={UkraineFlag} alt="Ukraine Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Ukraine
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={IndiaFlag} alt="India Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        India
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={PakistanFlag} alt="Pakistan Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Pakistan
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={NigeriaFlag} alt="Nigeria Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Nigeria
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={IranFlag} alt="Iran Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Iran
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={MoroccoFlag} alt="Morocco Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Morocco
-                    </Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" gap={1} sx={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    borderRadius: 1,
-                    border: `1px solid #323941`,
-                    backgroundColor: "#0A1119",
-                    paddingX: 2,
-                    paddingY: 1.25,
-                    gap: 1,
-                }}>
-                    <Image src={SingaporeFlag} alt="Singapore Flag" width={25} height={25} />
-                    <Typography variant="body1" component="p" fontWeight={400}>
-                        Singapore
-                    </Typography>
-                </Stack>
-            </Stack>
-            <Stack width="100%" marginX="auto" gap={2} paddingBottom={4} marginTop={-4} overflow="hidden">
-                <Image src={teamMap} alt="Team Map" width={1000} height={1000} style={{
-                    width: "90%",
-                    height: "auto",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    objectFit: "cover",
-                }} />
-            </Stack>
-            <Grid container spacing={4} width="75%" marginX="auto" height="fit-content">
-                {teamMembers.map((member: TeamMember) => (
-                    <Grid size={3} key={member.name}>
-                        <Stack width="100%" gap={1.5} className="team-member-card" sx={{
-                            border: "solid 1px #EEE4E421",
-                            borderRadius: 1.5,
-                            minHeight: 300,
-                            position: "relative",
-                            transition: "border 0.3s ease-in-out",
-                            "&:hover": {
-                                "&.team-member-card": {
-                                    border: "solid 1.5px #5D5D5D",
-                                },
-                            }
-
+                    <Stack width="60%" marginX="auto" gap={2} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap">
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
                         }}>
-                            <Stack height={250} width="100%" position="relative" sx={{
-                                marginTop: member.marginTop,
-                                position: "absolute",
-                                left: 0,
-                                right: 0,
-                                top: 0,
-                                zIndex: 1,
-                            }}>
-                                <Image
-                                    src={member.image}
-                                    alt={member.name}
-                                    width={1000}
-                                    height={1000}
-                                    className="team-member-image"
-                                    style={{
-                                        width: "100%",
-                                        height: "auto",
-                                        scale: member.scale,
-                                    }}
-                                />
-                            </Stack>
-                            <Stack padding={2} gap={1.5} sx={{
-                                backgroundColor: theme.palette.background.default,
+                            <Image src={NetherlandsFlag} alt="Netherlands Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Netherlands
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={ItalyFlag} alt="Italy Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Italy
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={UnitedKingdomFlag} alt="United Kingdom Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                United Kingdom
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={UkraineFlag} alt="Ukraine Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Ukraine
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={IndiaFlag} alt="India Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                India
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={PakistanFlag} alt="Pakistan Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Pakistan
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={NigeriaFlag} alt="Nigeria Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Nigeria
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={IranFlag} alt="Iran Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Iran
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={MoroccoFlag} alt="Morocco Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Morocco
+                            </Typography>
+                        </Stack>
+                        <Stack direction="row" alignItems="center" gap={1} sx={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            borderRadius: 1,
+                            border: `1px solid #323941`,
+                            backgroundColor: "#0A1119",
+                            paddingX: 2,
+                            paddingY: 1.25,
+                            gap: 1,
+                        }}>
+                            <Image src={SingaporeFlag} alt="Singapore Flag" width={25} height={25} />
+                            <Typography variant="body1" component="p" fontWeight={400}>
+                                Singapore
+                            </Typography>
+                        </Stack>
+                    </Stack>
+                </Stack>
+                <Stack width="100%" marginX="auto" gap={2} paddingBottom={4} marginTop={-4} overflow="hidden">
+                    <Image src={teamMap} alt="Team Map" width={1000} height={1000} style={{
+                        width: "90%",
+                        height: "auto",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        objectFit: "cover",
+                    }} />
+                </Stack>
+                <Grid container spacing={4} width="75%" marginX="auto" height="fit-content">
+                    {teamMembers.map((member: TeamMember) => (
+                        <Grid size={3} key={member.name}>
+                            <Stack width="100%" gap={1.5} className="team-member-card" sx={{
+                                border: "solid 1px #EEE4E421",
                                 borderRadius: 1.5,
-                                position: "absolute",
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                zIndex: 2,
-                                height: "fit-content",
-                                width: "100%",
+                                minHeight: 300,
+                                position: "relative",
+                                transition: "border 0.3s ease-in-out",
+                                "&:hover": {
+                                    "&.team-member-card": {
+                                        border: "solid 1.5px #5D5D5D",
+                                    },
+                                }
+
                             }}>
-                                <Stack direction="row" alignItems="center" gap={0.5}>
-                                    <Typography variant="caption" component="p" fontWeight={300} sx={{
-                                        backgroundColor: "#1E1E1E",
-                                        paddingX: 1,
-                                        paddingY: 0.25,
-                                        borderRadius: 1,
-                                    }}>
-                                        Linkedin
-                                    </Typography>
-                                    <Typography variant="caption" component="p" fontWeight={300} sx={{
-                                        backgroundColor: "#1E1E1E",
-                                        paddingX: 1,
-                                        paddingY: 0.25,
-                                        borderRadius: 1,
-                                    }}>
-                                        X
-                                    </Typography>
+                                <Stack height={250} width="100%" position="relative" sx={{
+                                    marginTop: member.marginTop,
+                                    position: "absolute",
+                                    left: 0,
+                                    right: 0,
+                                    top: 0,
+                                    zIndex: 1,
+                                }}>
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        width={1000}
+                                        height={1000}
+                                        className="team-member-image"
+                                        style={{
+                                            width: "100%",
+                                            height: "auto",
+                                            scale: member.scale,
+                                        }}
+                                    />
                                 </Stack>
-                                <Stack gap={0.5}>
-                                    <Stack direction="row" alignItems="center" gap={1}>
-                                        <Image src={member.flag} alt={member.name} width={20} height={20} />
-                                        <Typography variant="body1" component="p" fontWeight={400}>
-                                            {member.name}
+                                <Stack padding={2} gap={1.5} sx={{
+                                    backgroundColor: theme.palette.background.default,
+                                    borderRadius: 1.5,
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    zIndex: 2,
+                                    height: "fit-content",
+                                    width: "100%",
+                                }}>
+                                    <Stack direction="row" alignItems="center" gap={0.5}>
+                                        <Typography variant="caption" component="p" fontWeight={300} sx={{
+                                            backgroundColor: "#1E1E1E",
+                                            paddingX: 1,
+                                            paddingY: 0.25,
+                                            borderRadius: 1,
+                                        }}>
+                                            Linkedin
+                                        </Typography>
+                                        <Typography variant="caption" component="p" fontWeight={300} sx={{
+                                            backgroundColor: "#1E1E1E",
+                                            paddingX: 1,
+                                            paddingY: 0.25,
+                                            borderRadius: 1,
+                                        }}>
+                                            X
                                         </Typography>
                                     </Stack>
-                                    <Typography variant="caption" component="p" fontWeight={300}>
-                                        {member.position}
-                                    </Typography>
+                                    <Stack gap={0.5}>
+                                        <Stack direction="row" alignItems="center" gap={1}>
+                                            <Image src={member.flag} alt={member.name} width={20} height={20} />
+                                            <Typography variant="body1" component="p" fontWeight={400}>
+                                                {member.name}
+                                            </Typography>
+                                        </Stack>
+                                        <Typography variant="caption" component="p" fontWeight={300}>
+                                            {member.position}
+                                        </Typography>
+                                    </Stack>
                                 </Stack>
                             </Stack>
+                        </Grid>
+                    ))}
+                </Grid>
+                <Stack width="100%" alignItems={"center"} position={"relative"} sx={{
+                    paddingTop: 6,
+                    zIndex: 2,
+                }}>
+                    <Stack width="50%" marginX="auto" marginY={8} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap" sx={{
+                        backgroundColor: "#0A1119",
+                        borderRadius: 2,
+                        border: "solid 0.5px #EEE4E421",
+                        backgroundImage: `url(${weAreHiringBg.src})`,
+                        backgroundSize: "100% 100%",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        filter: "drop-shadow(0px 21px 59.8px rgba(0, 0, 0, 0.27))"
+                    }}>
+                        <Stack gap={4} alignItems="center" justifyContent="center" padding={8}>
+                            <Typography variant="h2" component="h2" fontSize="2.75rem !important" className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
+                                We&apos;re Hiring!
+                            </Typography>
+                            <Stack gap={2} alignItems="center" justifyContent="center">
+                                <Typography variant="h5" component="h5" fontWeight={400} textAlign="center">
+                                    Start doing work that matters.
+                                </Typography>
+                                <Typography variant="body1" component="p" fontWeight={400} textAlign="center" sx={{
+                                    width: "60%",
+                                }}>
+                                    We&apos;re 100% remote team spread all across the world and looking for talented people.
+                                </Typography>
+                            </Stack>
+                            <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                <div className="flex items-center justify-center gap-1">
+                                    <Typography component="span" variant="h6" marginRight={1}>
+                                        View Open Positions
+                                    </Typography>
+                                    <span className="arrow-clip">
+                                        <span className="arrow-slide">
+                                            <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                        </span>
+                                    </span>
+                                </div>
+                            </SideTabbedButton>
                         </Stack>
-                    </Grid>
-                ))}
-            </Grid>
+                    </Stack>
+
+                </Stack>
+                <Stack width="100%" height="60vh" position="relative" alignItems="center" sx={{
+                    position: "absolute",
+                    bottom: "0%",
+                    left: 0,
+                    right: 0,
+                    zIndex: 0,
+                    overflow: "hidden",
+                    backgroundImage: `url(${teamGradient.src})`,
+                    backgroundSize: "120% 110%",
+                    backgroundPosition: "center -10%",
+                    backgroundRepeat: "no-repeat",
+                }}>
+                    <Stack sx={{
+                        width: "100%",
+                        height: "35%",
+                        background: "linear-gradient(180deg, #0B0B0B 0%, rgba(11, 11, 11, 0) 100%);",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        zIndex: 1,
+                    }}>
+
+                    </Stack>
+                </Stack>
+            </Stack>
             <Stack width={"100%"} alignItems={"center"} position={"relative"} sx={{
                 borderTop: `1px solid ${theme.palette.brand.border1.main}`,
-                marginTop: 6,
             }}>
                 <Footer />
             </Stack>
