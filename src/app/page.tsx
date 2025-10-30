@@ -43,7 +43,6 @@ export default function Home() {
           px={{ xs: 12, md: 24, lg: 8, xl: 16 }}
           pt={{ xs: 12, md: 24, lg: 20, xl: 28 }}
           pb={{ xs: 12, md: 24, lg: 36, xl: 36 }}
-          mt={8}
           overflow={"visible"}
         >
           <Stack sx={{
