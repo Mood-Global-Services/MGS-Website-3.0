@@ -1,11 +1,13 @@
 "use client";
 
 import * as React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import { PlainContentItem } from "../generic/plainContentItem";
 import { Stack, Typography, Button, IconButton } from "@mui/material";
+import MobileMenu from "@/components/layout/mobileMenu";
 import theme from "@/theme/theme";
 
 import logo from "@/assets/images/logo.webp";
@@ -36,7 +38,19 @@ import {
     NavigationMenuContentItem,
 } from "@/components/generic/navigationMenu";
 
+const mobileMenuItems = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "About us", href: "/team" },
+    { label: "Blog", href: "/blog" },
+    { label: "SiteLab", href: "/sitelab", disabled: true },
+    { label: "BlockAI", href: "/blockai", disabled: true },
+  ];
+
 export default function Header() {
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    
     return (
         <header className="z-50 w-full bg-transparent">
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 lg:px-6">
@@ -287,17 +301,18 @@ export default function Header() {
                         paddingBottom: 0.75,
                         textTransform: "none",
                     }}
-                    onClick={() => {
-                        window.location.href = "/contact";
-                    }}
+                        onClick={() => {
+                            window.location.href = "/contact";
+                        }}
                     >
                         Contact us
                     </Button>
-                    <IconButton>
+                    <IconButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         <Image src={mobileMenuButton} alt="menu button" width={35} height={35} style={{ display: "block" }} />
                     </IconButton>
                 </Stack>
             </div>
+            <MobileMenu open={isMobileMenuOpen} width={"100%"} closeAction={() => setIsMobileMenuOpen(false)} items={mobileMenuItems} />
         </header>
     );
 }
