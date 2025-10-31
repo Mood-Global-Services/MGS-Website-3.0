@@ -1,6 +1,6 @@
 'use client';
 
-import { Stack, Typography, Box, Link as MUILink } from '@mui/material';
+import { Stack, Typography, Box, Link as MUILink, Grid } from '@mui/material';
 import Image from 'next/image';
 import logo from '@/assets/images/logo.webp';
 import theme from '@/theme/theme';
@@ -35,7 +35,7 @@ export default function Footer() {
                 sx={{ mx: 'auto', px: { xs: 2, sm: 4, lg: 8 } }}
             >
                 {/* Left: Logo + blurb + socials */}
-                <Stack width={{ xs: "100%", md: "38%" }} gap={3}>
+                <Stack width={{ xs: "100%", md: "38%" }} alignItems={{ xs: "center", md: "flex-start" }} gap={3}>
                     <Box sx={{ width: 140, height: 'auto' }}>
                         <Image
                             src={logo}
@@ -45,11 +45,11 @@ export default function Footer() {
                         />
                     </Box>
 
-                    <Stack gap={1}>
-                        <Typography variant="h5" fontWeight={500}>
+                    <Stack gap={1} alignItems={{ xs: "center", md: "flex-start" }}>
+                        <Typography variant="h5" fontWeight={500} textAlign={{ xs: "center", md: "left" }}>
                             Mood Global Services B.V.
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 520, lineHeight: 1.6 }}>
+                        <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 520, lineHeight: 1.6 }} textAlign={{ xs: "center", md: "left" }}>
                             A blockchain firm dedicated to promoting business
                             growth through digital infrastructure solutions.
                         </Typography>
@@ -76,7 +76,7 @@ export default function Footer() {
                 </Stack>
 
                 {/* Middle: Navigate */}
-                <Stack width={{ xs: "100%", md: "22%" }} gap={2}>
+                <Stack width={{ xs: "100%", md: "22%" }} gap={2} display={{ xs: "none", md: "block" }}>
                     <Typography variant="h6" fontWeight={300}>Navigate</Typography>
                     <Stack gap={2.25}>
                         <MUILink href="/" underline="hover" color="text.secondary" variant="body2" sx={{
@@ -96,21 +96,21 @@ export default function Footer() {
 
                         <MUILink href="/siteLab" underline="none" color="text.secondary" variant="body2" sx={{
                             width: 'fit-content',
-                            
+
                         }}
-                        onClick={(e) => {
-                           e.preventDefault();
-                        }}
+                            onClick={(e) => {
+                                e.preventDefault();
+                            }}
                         >
                             <FooterRowWithBadge label="SiteLab" />
                         </MUILink>
                         <MUILink href="/blockAI" underline="none" color="text.secondary" variant="body2" sx={{
                             width: 'fit-content',
-                            
+
                         }}
-                        onClick={(e) => {
-                            e.preventDefault();
-                        }}
+                            onClick={(e) => {
+                                e.preventDefault();
+                            }}
                         >
                             <FooterRowWithBadge label="BlockAI" />
                         </MUILink>
@@ -126,7 +126,7 @@ export default function Footer() {
                 </Stack>
 
                 {/* Middle-right: Legal */}
-                <Stack width={{ xs: "100%", md: "22%" }} gap={2}>
+                <Stack width={{ xs: "100%", md: "22%" }} gap={2} display={{ xs: "none", md: "block" }}>
                     <Typography variant="h6" fontWeight={300}>Legal</Typography>
                     <Stack gap={2.25}>
                         <MUILink href="/privacy-policy" underline="hover" color="text.secondary" variant="body2" sx={{
@@ -154,7 +154,7 @@ export default function Footer() {
                 </Stack>
 
                 {/* Right: Contact */}
-                <Stack width={{ xs: "100%", md: "22%" }} gap={2}>
+                <Stack width={{ xs: "100%", md: "22%" }} gap={2} display={{ xs: "none", md: "block" }}>
                     <Typography variant="h6" fontWeight={300}>Contact</Typography>
                     <Stack gap={2.25} color="text.secondary">
                         <MUILink href="https://maps.app.goo.gl/1234567890" underline="hover" color="text.secondary" variant="body2" sx={{
@@ -200,6 +200,148 @@ export default function Footer() {
                         }}>+31-6-19565119</MUILink>
                     </Stack>
                 </Stack>
+
+                <Grid container spacing={2} sx={{
+                    display: { xs: "flex", md: "none" },
+                    width: "100%",
+                    height: "100%",
+                    overflow: 'hidden',
+                }}>
+                    <Grid size={{ xs: 6, md: 6 }}>
+                        <Stack width="100%" gap={2}>
+                            <Typography variant="h6" fontWeight={300}>Navigate</Typography>
+                            <Stack gap={2.25}>
+                                <MUILink href="/" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>Home</MUILink>
+                                <MUILink href="/services" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>Services</MUILink>
+
+                                <MUILink href="/siteLab" underline="none" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+
+                                }}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                    }}
+                                >
+                                    <FooterRowWithBadge label="SiteLab" />
+                                </MUILink>
+                                <MUILink href="/blockAI" underline="none" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+
+                                }}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                    }}
+                                >
+                                    <FooterRowWithBadge label="BlockAI" />
+                                </MUILink>
+
+                                <MUILink href="/about-us" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>About Us</MUILink>
+                            </Stack>
+                        </Stack>
+                    </Grid>
+                    <Grid size={{ xs: 6, md: 6 }} sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        alignItems: 'flex-start',
+                        gap: 2,
+                        height: '100%',
+                    }}>
+                        <Stack width="100%" gap={2}>
+                            <Typography variant="h6" fontWeight={300}>Legal</Typography>
+                            <Stack gap={2.25}>
+                                <MUILink href="/privacy-policy" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>Privacy Policy</MUILink>
+                                <MUILink href="/terms-and-conditions" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>Terms and Conditions</MUILink>
+                                <MUILink href="/cookies-policy" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>Cookies policy</MUILink>
+                            </Stack>
+                        </Stack>
+                        <Stack width="100%" gap={2}>
+                            <Typography variant="h6" fontWeight={300}>Contact</Typography>
+                            <Stack gap={2.25} color="text.secondary">
+                                <MUILink href="https://maps.app.goo.gl/1234567890" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>
+                                    Overtoom 141, 1054 HG
+                                    <br />Amsterdam, Netherlands
+                                </MUILink>
+
+                                <MUILink
+                                    href="mailto:info@moodglobalservices.com"
+                                    underline="hover"
+                                    color="text.secondary"
+                                    variant="body2"
+                                    sx={{
+                                        width: '100%',
+                                        maxWidth: '100%',
+                                        whiteSpace: 'wrap',
+                                        transition: 'color 300ms ease',
+                                        "&:hover": {
+                                            color: theme.palette.text.primary,
+                                        }
+                                    }}
+                                >
+                                    info@moodglobalservices.com
+                                </MUILink>
+
+                                <MUILink href="https://www.kvk.nl/zoeken/bedrijf/85502081" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>KVK: 85502081</MUILink>
+                                <MUILink href="tel:+31619565119" underline="hover" color="text.secondary" variant="body2" sx={{
+                                    width: 'fit-content',
+                                    transition: 'color 300ms ease',
+                                    "&:hover": {
+                                        color: theme.palette.text.primary,
+                                    }
+                                }}>+31-6-19565119</MUILink>
+                            </Stack>
+                        </Stack>
+                    </Grid>
+
+                </Grid>
             </Stack>
 
             {/* Bottom bar */}
