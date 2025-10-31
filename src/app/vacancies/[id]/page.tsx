@@ -17,7 +17,7 @@ export default function VacancyPage() {
     return (
         <Stack width={"100%"} alignItems={"center"} gap={4}>
             <VacancyHero title={vacancy?.title ?? ""} />
-            <Stack width="60%" marginX="auto" sx={{
+            <Stack width={{ xs: "90%", lg: "60%" }} marginX="auto" sx={{
                 border: `1px solid ${theme.palette.brand.border1.main}`,
                 borderRadius: 2,
                 backgroundColor: "#0F0F0F",
