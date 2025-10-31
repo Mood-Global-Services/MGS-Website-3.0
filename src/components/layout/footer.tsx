@@ -358,7 +358,10 @@ export default function Footer() {
                         pt: 2.5,
                     }}
                 >
-                    <Typography variant="subtitle2" fontWeight={300} color="text.secondary">
+                    <Typography variant="subtitle2" fontWeight={300} color="text.secondary" sx={{
+                        fontSize: { xs: '0.875rem', md: '1rem' },
+                        textAlign: { xs: 'center', md: 'left' },
+                    }}>
                         © {new Date().getFullYear()} Mood Global Services B.V. All rights reserved.
                     </Typography>
                 </Stack>
