@@ -190,6 +190,7 @@ export default function HeroGridTrail({
         height: "100%",
         overflow: "hidden",
         backgroundColor: 'transparent',
+        display: { xs: "none", lg: "block" },
         ...sx,
       }}
       aria-hidden={ariaHidden || undefined}

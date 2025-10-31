@@ -7,7 +7,6 @@ import Image from "next/image";
 import theme from "@/theme/theme";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import HeroAnimation from "@/components/home/heroAnimation";
-import GridOverlay from "@/components/home/GridOverlay";
 
 import heroBg from "@/assets/images/heroBG.webp"
 import arrow from "@/assets/images/icons/arrow.webp"
@@ -23,7 +22,7 @@ const Hero = () => {
             alignItems="center"
             justifyContent="center"
             width="100%"
-            minHeight="calc(100vh - 80px)"
+            minHeight={{ xs: "calc(70vh - 80px)", lg: "calc(100vh - 80px)" }}
             paddingX={4}
             position="relative"
         >
