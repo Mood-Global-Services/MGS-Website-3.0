@@ -9,12 +9,12 @@ import { vacancies, type Vacancy } from "@/data/vacancies";
 export default function VacanciesPage() {
 
     return (
-        <Stack width={"100%"} alignItems={"center"} gap={8}>
+        <Stack width={"100%"} alignItems={"center"} gap={{ xs: 4, lg: 8 }}>
             <VacanciesHero />
             
-            <Grid container spacing={4} width="70%" marginX="auto">
+            <Grid container spacing={{ xs: 2, lg: 4 }} width={{ xs: "90%", lg: "70%" }} marginX="auto">
                 {vacancies.map((vacancy: Vacancy) => (
-                    <Grid size={6} key={vacancy.title}>
+                    <Grid size={{ xs: 12, lg: 6 }} key={vacancy.title}>
                         <VacanciesCard title={vacancy.title} remote={vacancy.remote} link={`/vacancies/${vacancy.id}`} />
                     </Grid>
                 ))}
