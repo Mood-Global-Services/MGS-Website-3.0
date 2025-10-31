@@ -186,7 +186,9 @@ export default function TeamPage() {
                         </Stack>
                     </Stack>
                 </Stack>
-                <Stack width="100%" marginX="auto" gap={2} paddingBottom={{ xs: 4, lg: 4 }} marginTop={{ xs: 4, lg: -4 }} overflow="hidden">
+                <Stack width="100%" marginX="auto" gap={2} paddingBottom={{ xs: 4, lg: 4 }} marginTop={{ xs: 4, lg: -4 }} overflow="hidden" sx={{
+                    scale: { xs: 1.4, lg: 1 },
+                }}>
                     <Image src={teamMap} alt="Team Map" width={1000} height={1000} style={{
                         width: "90%",
                         height: "auto",
@@ -218,6 +220,7 @@ export default function TeamPage() {
                                     right: 0,
                                     top: 0,
                                     zIndex: 1,
+                                    display: { xs: "none", lg: "block" },
                                 }}>
                                     <Image
                                         src={member.image}
@@ -229,6 +232,28 @@ export default function TeamPage() {
                                             width: "100%",
                                             height: "auto",
                                             scale: member.scale,
+                                        }}
+                                    />
+                                </Stack>
+                                <Stack height={250} width="100%" position="relative" sx={{
+                                    marginTop: member.mobileMarginTop,
+                                    position: "absolute",
+                                    left: 0,
+                                    right: 0,
+                                    top: 0,
+                                    zIndex: 1,
+                                    display: { xs: "block", lg: "none" },
+                                }}>
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        width={1000}
+                                        height={1000}
+                                        className="team-member-image"
+                                        style={{
+                                            width: "100%",
+                                            height: "auto",
+                                            scale: member.mobileScale,
                                         }}
                                     />
                                 </Stack>
@@ -263,8 +288,12 @@ export default function TeamPage() {
                                     </Stack>
                                     <Stack gap={0.5}>
                                         <Stack direction="row" alignItems="center" gap={1}>
-                                            <Image src={member.flag} alt={member.name} width={20} height={20} />
-                                            <Typography variant="body1" component="p" fontWeight={400}>
+                                            <Image src={member.flag} alt={member.name} width={20} height={20} style={{
+                                                marginTop: 0.5
+                                            }} />
+                                            <Typography variant="body1" component="p" fontWeight={400} sx={{
+                                                fontSize: { xs: "0.9rem !important", lg: "1.2rem !important" },
+                                            }}>
                                                 {member.name}
                                             </Typography>
                                         </Stack>
@@ -278,7 +307,7 @@ export default function TeamPage() {
                     ))}
                 </Grid>
                 <Stack width="100%" alignItems={"center"} position={"relative"} sx={{
-                    paddingTop: 6,
+                    paddingTop: { xs: 0, lg: 6 },
                     zIndex: 2,
                 }}>
                     <Stack width={{ xs: "95%", lg: "50%" }} marginX="auto" marginY={8} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap" sx={{

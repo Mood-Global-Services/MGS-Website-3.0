@@ -63,7 +63,9 @@ export const teamMembers: TeamMember[] = [
         linkedin: "",
         twitter: "",
         marginTop: "-15%",
+        mobileMarginTop: "0%",
         scale: 1.1,
+        mobileScale: 1.28,
     },
     {
         name: "Walt Schagen",
@@ -73,7 +75,9 @@ export const teamMembers: TeamMember[] = [
         linkedin: "",
         twitter: "",
         marginTop: "-15%",
+        mobileMarginTop: "-10%",
         scale: 0.95,
+        mobileScale: 1.03,
     },
     {
         name: "Lorenzo Ceppaluni",
