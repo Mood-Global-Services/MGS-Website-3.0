@@ -108,6 +108,7 @@ export default function ContactPage() {
                 overflow: "hidden",
                 position: "relative",
                 zIndex: 1,
+                display: { xs: "none", lg: "block" },
             }}>
                 <Image src={contactPageBg} alt="contact page background" width={1000} height={1000} style={{
                     width: "100%",
@@ -115,20 +116,45 @@ export default function ContactPage() {
                     objectFit: "cover",
                 }} />
             </Stack>
+            <Stack width={"100%"} height="35vh" sx={{
+                borderBottomLeftRadius: 20,
+                borderBottomRightRadius: 20,
+                overflow: "hidden",
+                position: "relative",
+                zIndex: 1,
+                display: { xs: "block", lg: "none" },
+            }}>
+                <Image src={contactPageBg} alt="contact page background" width={1000} height={1000} style={{
+                    width: "100%",
+                    height: "70%",
+                    objectFit: "cover",
+                    marginTop: "-10%",
+                    transform: "scaleX(-1)",
+                }} />
+            </Stack>
+            <Stack width={"100%"} height="10vh" sx={{
+                display: { xs: "block", lg: "none" },
+                background: "linear-gradient(180deg, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
+                marginTop: "-60%",
+                position: "relative",
+                zIndex: 2,
+            }}>
+
+            </Stack>
             <Stack
                 width={{ xs: "90%", lg: "80%" }}
                 marginX="auto"
                 direction={{ xs: "column", lg: "row" }}
                 alignItems="stretch"
                 justifyContent="space-between"
-                marginTop={"-25%"}
-                position="relative"
+                marginTop={{ xs: "-47%", lg: "-25%" }}
+                position={"relative"}
                 sx={{
                     zIndex: 2,
                 }}
             >
-                <Stack width="50%" flexGrow={1} justifyContent="space-between" marginBottom={16}>
-                    <Stack gap={2}>
+                <Stack width={{ xs: "100%", lg: "50%" }} flexGrow={1} justifyContent="space-between" marginBottom={{ xs: 4, lg: 16 }}>
+                    <Stack width="100%" gap={2}>
                         <Typography
                             variant="h1"
                             component="h1"
@@ -146,13 +172,13 @@ export default function ContactPage() {
                             fontSize={{ xs: "1rem !important", lg: "1rem !important" }}
                             color={theme.palette.text.secondary}
                             sx={{
-                                width: "80%",
+                                width: { xs: "100%", lg: "80%" },
                             }}
                         >
                             Reach out to explore services, partnerships, or collaborations in blockchain and digital finance..
                         </Typography>
                     </Stack>
-                    <Stack gap={2}>
+                    <Stack gap={2} display={{ xs: "none", lg: "flex" }}>
                         <Typography
                             variant="body1"
                             component="p"
@@ -190,12 +216,13 @@ export default function ContactPage() {
 
                     </Stack>
                 </Stack>
-                <Stack width="50%" flexGrow={1} gap={2} sx={{
-                    background: "#0F0F0FB2",
-                    border: "1px solid #181818",
-                    backdropFilter: "blur(89.80000305175781px)",
-                    borderRadius: 2,
-                    padding: 4,
+                <Stack width={{ xs: "100%", lg: "50%" }} flexGrow={1} gap={2} sx={{
+                    background: { xs: "transparent", lg: "#0F0F0FB2" },
+                    border: { xs: "none", lg: "1px solid #181818" },
+                    backdropFilter: { xs: "none", lg: "blur(89.80000305175781px)" },
+                    borderRadius: { xs: 0, lg: 2 },
+                    paddingY: { xs: 2, lg: 4 },
+                    paddingX: { xs: 2, lg: 4 },
                     alignItems: "center",
                     gap: 4,
                 }}>
@@ -551,8 +578,8 @@ export default function ContactPage() {
                                 color: theme.palette.text.primary,
                             }}
                         />
-                        <Stack width="100%" direction="row" alignItems="center" justifyContent="space-between" mt={2}>
-                            <Stack direction="row" alignItems="center" gap={1}>
+                        <Stack width="100%" direction={{ xs: "column", lg: "row" }} alignItems="center" justifyContent={{ xs: "center", lg: "space-between" }} mt={2} gap={{ xs: 2, lg: 0 }}>
+                            <Stack width={{ xs: "100%", lg: "fit-content" }} direction="row" alignItems="center" justifyContent={{ xs: "start", lg: "center" }} gap={1}>
                                 <Checkbox
                                     edge="start"
                                     checked={true}
@@ -568,20 +595,95 @@ export default function ContactPage() {
                                     I agree to the processing of personal data
                                 </Typography>
                             </Stack>
-                            <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-                                <div className="flex items-center justify-center gap-1">
-                                    <Typography component="span" variant="h6" marginRight={0.5}>
-                                        Send
-                                    </Typography>
-                                    <span className="arrow-clip">
-                                        <span className="arrow-slide">
-                                            <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                            <Stack display={{ xs: "none", lg: "block" }} width="fit-content">
+                                <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={0.5}>
+                                            Send
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
                                         </span>
-                                    </span>
-                                </div>
-                            </SideTabbedButton>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
+                            <Stack display={{ xs: "block", lg: "none" }} width="100%" justifyContent="center" alignItems="center">
+                                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={0.5}>
+                                            Send
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
+                                        </span>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
                         </Stack>
+                        <Stack display={{ xs: "block", lg: "none" }} width="100%" justifyContent="center" alignItems="center" sx={{
+                            backgroundColor: "#0F0F0F",
+                            border: "1px solid #2F2F2F",
+                            borderRadius: 2,
+                            paddingY: 2,
+                            paddingX: 4,
+                            marginTop: 2,
+                        }}>
+                            <Typography
+                                variant="h6"
+                                component="p"
+                                fontWeight={500}
+                                color={theme.palette.text.primary}
+                                textAlign="center"
+                                marginBottom={2.5}
+                            >
+                                Stay in contact with us
+                            </Typography>
+                            <Stack gap={1.5}>
+                                <Typography
+                                    variant="body1"
+                                    component="p"
+                                    fontWeight={300}
+                                    color={theme.palette.text.secondary}
+                                    textAlign="center"
+                                >
+                                    Overtoom 141, 1054 HG  Amsterdam, Netherlands
+                                </Typography>
+                                <Stack alignItems="center" gap={1}>
+                                    <Typography
+                                        variant="body1"
+                                        component="p"
+                                        fontWeight={300}
+                                        color={theme.palette.text.secondary}
+                                        textAlign="center"
+                                    >
+                                        info@moodglobalservices.com
+                                    </Typography>
+                                    <Typography
+                                        variant="body1"
+                                        component="p"
+                                        fontWeight={300}
+                                        color={theme.palette.text.secondary}
+                                        textAlign="center"
+                                    >
+                                        KVK: 85502081
+                                    </Typography>
+                                    <Typography
+                                        variant="body1"
+                                        component="p"
+                                        fontWeight={300}
+                                        color={theme.palette.text.secondary}
+                                        textAlign="center"
+                                    >
+                                        +31-6-19565119
+                                    </Typography>
+                                </Stack>
 
+                            </Stack>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>
