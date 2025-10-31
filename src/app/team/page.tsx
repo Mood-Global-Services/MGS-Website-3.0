@@ -281,7 +281,7 @@ export default function TeamPage() {
                     paddingTop: 6,
                     zIndex: 2,
                 }}>
-                    <Stack width="50%" marginX="auto" marginY={8} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap" sx={{
+                    <Stack width={{ xs: "95%", lg: "50%" }} marginX="auto" marginY={8} direction="row" alignItems="center" justifyContent="center" flexWrap="wrap" sx={{
                         backgroundColor: "#0A1119",
                         borderRadius: 2,
                         border: "solid 0.5px #EEE4E421",
@@ -291,7 +291,7 @@ export default function TeamPage() {
                         backgroundRepeat: "no-repeat",
                         filter: "drop-shadow(0px 21px 59.8px rgba(0, 0, 0, 0.27))"
                     }}>
-                        <Stack gap={4} alignItems="center" justifyContent="center" padding={8}>
+                        <Stack gap={4} alignItems="center" justifyContent="center" padding={{ xs: 4, lg: 8 }}>
                             <Typography variant="h2" component="h2" fontSize="2.75rem !important" className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
                                 We&apos;re Hiring!
                             </Typography>
@@ -305,18 +305,34 @@ export default function TeamPage() {
                                     We&apos;re 100% remote team spread all across the world and looking for talented people.
                                 </Typography>
                             </Stack>
-                            <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-                                <div className="flex items-center justify-center gap-1">
-                                    <Typography component="span" variant="h6" marginRight={1}>
-                                        View Open Positions
-                                    </Typography>
-                                    <span className="arrow-clip">
-                                        <span className="arrow-slide">
-                                            <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                            <Stack width="40%" marginX="auto" alignItems="center" justifyContent="center" display={{ xs: "none", lg: "block" }}>
+                                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={1}>
+                                            View Open Positions
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
                                         </span>
-                                    </span>
-                                </div>
-                            </SideTabbedButton>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
+                            <Stack width="80%" marginX="auto" alignItems="center" justifyContent="center" display={{ xs: "block", md: "none" }}>
+                                <SideTabbedButton fullWidth paddingX={10} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={1}>
+                                            View Open Positions
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
+                                        </span>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
                         </Stack>
                     </Stack>
 
