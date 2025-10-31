@@ -77,8 +77,8 @@ export default function MobileMenu({ open, closeAction, items, width = 340 }: Pr
                         const path = normalize(pathname || "/");
                         const href = normalize(item.href);
                         const active =
-                          path === href ||
-                          (href !== "/" && path.startsWith(href + "/"));
+                            path === href ||
+                            (href !== "/" && path.startsWith(href + "/"));
                         return (
                             <React.Fragment key={item.href + i}>
                                 <ListItem disableGutters disablePadding sx={{
@@ -97,21 +97,19 @@ export default function MobileMenu({ open, closeAction, items, width = 340 }: Pr
                                     >
                                         <Stack direction="row" alignItems="center" justifyContent="space-between" width="100%">
                                             <Stack direction="row" alignItems="center" gap={1}>
-                                            <ListItemText
-                                                primary={item.label}
-                                                sx={{
-                                                    fontSize: "1.3rem",
-                                                    fontWeight: 400,
-                                                    sx: {
-                                                        color: active ? theme.palette.text.primary : theme.palette.text.secondary,
-                                                    },
-                                                }}
-                                            />
-                                            {
-                                                item.disabled ? (
-                                                    <Badge>Coming soon</Badge>
-                                                ) : null
-                                            }
+                                                <Typography
+                                                    variant="h6"
+                                                    fontWeight="300 !important"
+                                                    fontSize="1.2rem !important"
+                                                    color={active ? theme.palette.text.primary : theme.palette.text.secondary}
+                                                >
+                                                    {item.label}
+                                                </Typography>
+                                                {
+                                                    item.disabled ? (
+                                                        <Badge>Coming soon</Badge>
+                                                    ) : null
+                                                }
                                             </Stack>
                                             {
                                                 item.disabled ? null : (
@@ -130,7 +128,7 @@ export default function MobileMenu({ open, closeAction, items, width = 340 }: Pr
                 </List>
 
                 {/* Footer / tagline */}
-                <Stack alignItems="center" gap={4} pb={6} px={3}>
+                <Stack alignItems="center" gap={4} pb={3} px={3}>
                     <Stack spacing={1}>
                         <Typography variant="h6" textAlign="center">
                             Mood Global Services B.V.
