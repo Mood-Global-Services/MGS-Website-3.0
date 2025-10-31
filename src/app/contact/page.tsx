@@ -135,7 +135,7 @@ export default function ContactPage() {
             <Stack width={"100%"} height="10vh" sx={{
                 display: { xs: "block", lg: "none" },
                 background: "linear-gradient(180deg, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
-                marginTop: "-60%",
+                marginTop: {xs: "-58%", lg: "-60%"},
                 position: "relative",
                 zIndex: 2,
             }}>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                 direction={{ xs: "column", lg: "row" }}
                 alignItems="stretch"
                 justifyContent="space-between"
-                marginTop={{ xs: "-47%", lg: "-25%" }}
+                marginTop={{ xs: "-42%", lg: "-25%" }}
                 position={"relative"}
                 sx={{
                     zIndex: 2,
