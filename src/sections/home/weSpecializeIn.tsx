@@ -44,7 +44,7 @@ export default function WeSpecializeIn() {
                     width: "fit-content",
                     px: 2,
                     position: "absolute",
-                    top: "10%",
+                    top: {xs: "5%", lg: "10%"},
                     left: 0,
                     right: 0,
                     m: "0 auto",
@@ -59,7 +59,7 @@ export default function WeSpecializeIn() {
             <Box
                 sx={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
+                    gridTemplateColumns: {xs: "repeat(1, minmax(0, 1fr))", lg: "repeat(5, minmax(0, 1fr))"},
                     gap: 2,
                     width: "100%",
                     height: "100%",
