@@ -18,7 +18,7 @@ type Props = {
 const MAX_CELLS = 6000;
 
 export default function HeroGridTrail({
-  cellSize = 40,
+  cellSize = 50,
   fadeDurationMs = 1000,
   tickMs = 50,
   borderIdle = "rgba(255, 255, 255, 0.05)",
