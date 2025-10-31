@@ -23,7 +23,7 @@ const SmartContracts = () => {
             <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Stack gap={2}>
                     <Stack direction={"row"} alignItems={"center"} gap={1.5}>
-                        <Image src={smartContractsIcon} alt="sc icon" height={20} width={20} />
+                        <Image src={smartContractsIcon} alt="sc icon" height={20} width={20}/>
                         <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5} fontSize={{ xs: "1.3rem !important", lg: "1.75rem !important" }}>
                             Smart Contracts
                         </Typography>

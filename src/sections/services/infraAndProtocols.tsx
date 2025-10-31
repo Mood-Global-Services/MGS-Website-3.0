@@ -68,7 +68,7 @@ const InfraAndProtocols = () => {
             <Stack width={{ xs: "100%", lg: "50%" }} gap={4}>
                 <Stack gap={2}>
                     <Stack direction={"row"} alignItems={"center"} gap={1.5}>
-                        <Image src={infraAndProtocolsIcon} alt="sc icon" height={30} width={30} />
+                        <Image src={infraAndProtocolsIcon} alt="sc icon" height={30} width={30} style={{ height: "auto", width: "auto" }} />
                         <Typography variant="h3" component="h3" className="chno" fontWeight={400} textTransform="uppercase" marginBottom={0.5} fontSize={{ xs: "1.3rem !important", lg: "1.75rem !important" }}>
                             Infra & Protocols
                         </Typography>
@@ -77,7 +77,7 @@ const InfraAndProtocols = () => {
                         We design and implement robust blockchain infrastructure and protocols that ensure scalability, security, and reliability.
                     </Typography>
                 </Stack>
-                <Image src={infraAndProtocolsAsset} alt="sc asset" height={450} width={450} />
+                <Image src={infraAndProtocolsAsset} alt="sc asset" height={450} width={450} style={{ height: 450, width: 450 }} />
             </Stack>
         </Stack>
     );

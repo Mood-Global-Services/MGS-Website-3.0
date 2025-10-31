@@ -1,3 +1,5 @@
+"use client";
+
 import { Stack, Divider } from "@mui/material";
 import ServicesHero from "@/sections/services/servicesHero";
 import SmartContracts from "@/sections/services/smartContracts";

@@ -21,6 +21,7 @@ const ServicesHero = () => {
                 right: "0%",
                 zIndex: 0,
                 opacity: 0.78,
+                height: "auto"
             }} />
             <Stack width={{ xs: "100%", lg: "50%" }} alignItems="center" justifyContent="center" gap={4} marginX="auto">
                 <Typography variant="h1" component="h1" fontSize={{ xs: "2rem !important", lg: "3.75rem !important" }} className="chno" fontWeight={500} textAlign="center" textTransform="uppercase" color={theme.palette.brand.mgsBlue1.main}>
