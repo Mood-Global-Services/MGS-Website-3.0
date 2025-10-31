@@ -14,7 +14,7 @@ interface VacanciesCardProps {
 const VacanciesCard = ({ title, remote, link }: VacanciesCardProps) => {
     return (
         <Stack width="100%" height="100%" justifyContent="space-between" borderRadius={2} gap={6} border={`1px solid ${theme.palette.brand.border1.main}`} p={3} sx={{
-            backgroundColor: "#0F0F0F",
+            background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(31, 55, 225, 0.08) 100%)",
         }}>
             <Typography variant="h6" component="h6" fontWeight={500}>{title}</Typography>
             <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center">

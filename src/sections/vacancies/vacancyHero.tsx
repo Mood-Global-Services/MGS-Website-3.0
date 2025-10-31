@@ -7,7 +7,7 @@ const VacancyHero = ({ title }: { title: string }) => {
             alignItems="center"
             justifyContent="center"
             width="100%"
-            paddingY={{ xs: 4, lg: 10 }}
+            paddingY={{ xs: 4, lg: 10 } }
             paddingX={4}
             position="relative"
             overflow="hidden"

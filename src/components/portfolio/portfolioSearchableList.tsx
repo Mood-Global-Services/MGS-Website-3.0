@@ -28,21 +28,21 @@ const PortfolioSearchableList = () => {
     const handleToggleType = (type: string) => {
         setSelectedTypes(prev => prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]);
     };
-    
+
     useEffect(() => {
         setFilteredItems(
             selectedTools.length > 0 && selectedTypes.length > 0 ?
-            portfolioItems.filter(item => item.tools.some(tool => selectedTools.includes(tool)) && item.type.some(type => selectedTypes.includes(type)))
-            .sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
-            :
-            portfolioItems.sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
+                portfolioItems.filter(item => item.tools.some(tool => selectedTools.includes(tool)) && item.type.some(type => selectedTypes.includes(type)))
+                    .sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
+                :
+                portfolioItems.sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
         );
     }, [selectedTools, selectedTypes]);
 
     return (
-        <Stack width="70%" alignItems="center" marginX="auto" gap={2}>
-            <Stack width="100%" direction="row" alignItems="start" justifyContent="center" gap={2}>
-                <Stack width="50%" alignItems="center" padding={1} borderRadius={2} sx={{
+        <Stack width={{ xs: "90%", lg: "70%" }} alignItems="center" marginX="auto" gap={2}>
+            <Stack width="100%" direction={{ xs: "column", lg: "row" }} alignItems="start" justifyContent="center" gap={2}>
+                <Stack width={{ xs: "100%", lg: "50%" }} alignItems="center" padding={1} borderRadius={2} sx={{
                     border: "1px solid #6F6F6F",
                     backgroundColor: "#0F0F0F4D",
                     "&:hover": {
@@ -75,7 +75,7 @@ const PortfolioSearchableList = () => {
                                             <Typography variant="subtitle2" fontWeight={400}>
                                                 {type}
                                             </Typography>
-                                            <IconButton onClick={() => {setOpenTypes(true); handleToggleType(type);setOpenTypes(true)}} sx={{
+                                            <IconButton onClick={() => { setOpenTypes(true); handleToggleType(type); setOpenTypes(true) }} sx={{
                                                 backgroundColor: "#7F7E7E",
                                                 padding: 0.25,
                                                 display: "flex",
@@ -151,7 +151,7 @@ const PortfolioSearchableList = () => {
                         </Stack>
                     </Collapse>
                 </Stack>
-                <Stack width="50%" alignItems="center" padding={1} borderRadius={2} sx={{
+                <Stack width={{ xs: "100%", lg: "50%" }} alignItems="center" padding={1} borderRadius={2} sx={{
                     border: "1px solid #6F6F6F",
                     backgroundColor: "#0F0F0F4D",
                     "&:hover": {
@@ -184,7 +184,7 @@ const PortfolioSearchableList = () => {
                                             <Typography variant="subtitle2" fontWeight={400}>
                                                 {tool}
                                             </Typography>
-                                            <IconButton onClick={() => {setOpenTools(true); handleToggleTool(tool);setOpenTools(true)}} sx={{
+                                            <IconButton onClick={() => { setOpenTools(true); handleToggleTool(tool); setOpenTools(true) }} sx={{
                                                 backgroundColor: "#7F7E7E",
                                                 padding: 0.25,
                                                 display: "flex",
@@ -262,27 +262,28 @@ const PortfolioSearchableList = () => {
                 </Stack>
             </Stack>
             {filteredItems.map((item: PortfolioItem) => (
-                <Stack key={item.id} width="100%" height="fit-content" direction="row" alignItems="stretch" justifyContent="space-between" sx={{
-                    borderRadius: 2,
+                <Stack key={item.id} width="100%" height="fit-content" direction={{ xs: "column", lg: "row" }} alignItems="stretch" justifyContent="space-between" sx={{
+                    borderRadius: { xs: 2, lg: 2 },
                     border: "1px solid #2F2F2F",
                     background: "#0F0F0F4D",
                     overflow: "hidden",
-                    padding: 2,
-                    gap: 6
+                    padding: { xs: 0, lg: 2 },
+                    gap: { xs: 2, lg: 6 }
                 }}>
-                    <Stack width="40%" alignItems="center" justifyContent="center">
+                    <Stack width={{ xs: "100%", lg: "40%" }} alignItems="center" justifyContent="center">
                         {
                             item.asset && <item.asset />
                         }
                     </Stack>
-                    <Stack width="60%" flexGrow={1} justifyContent="space-between">
-                        <Stack height="fit-content" width="100%" direction="row" alignItems="center" flexWrap="wrap" gap={1}>
+                    <Stack width={{ xs: "100%", lg: "60%" }} flexGrow={1} justifyContent="space-between" paddingX={{ xs: 2, lg: 0 }} paddingBottom={{ xs: 2, lg: 0 }} gap={{ xs: 3, lg: 0 }}>
+                        <Stack height="fit-content" width="100%" direction="row" alignItems="center" flexWrap="wrap" gap={{ xs: 0.5, lg: 1 }}>
                             {item.tools.map((tool, index) => (
                                 <Typography key={`tool-${index}`} variant="body2" fontWeight={400} sx={{
                                     backgroundColor: theme.palette.brand.mgsBlue1.main,
                                     paddingY: 1,
-                                    paddingX: 2,
+                                    paddingX: { xs: 1.5, lg: 2 },
                                     borderRadius: 10,
+                                    fontSize: { xs: "0.7rem !important", lg: "unset !important" },
                                 }}>{tool}</Typography>
                             ))}
                         </Stack>
@@ -290,8 +291,8 @@ const PortfolioSearchableList = () => {
                             <Typography variant="h5" fontWeight={500}>{item.title}</Typography>
                             <Typography variant="body2" fontWeight={400} color={theme.palette.text.secondary}>{item.description}</Typography>
                         </Stack>
-                        <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center" gap={2}>
-                            <Stack height="fit-content" width="fit-content" direction="row" alignItems="center" flexWrap="wrap" gap={1}>
+                        <Stack width="100%" direction={{ xs: "column", lg: "row" }} justifyContent="space-between" alignItems="center" gap={{ xs: 4, lg: 2 }}>
+                            <Stack height="fit-content" width={{ xs: "100%", lg: "fit-content" }} direction="row" alignItems="center" justifyContent={{ xs: "start", lg: "center" }} flexWrap="wrap" gap={1}>
                                 {item.type.map((type, index) => (
                                     <Typography key={`type-${index}`} variant="body2" fontWeight={400} sx={{
                                         backgroundColor: "#0F0F0F",
@@ -303,18 +304,34 @@ const PortfolioSearchableList = () => {
                                     }}>{type}</Typography>
                                 ))}
                             </Stack>
-                            <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-                                <div className="flex items-center justify-center gap-1">
-                                    <Typography component="span" variant="h6" marginRight={1}>
-                                        Visit website
-                                    </Typography>
-                                    <span className="arrow-clip">
-                                        <span className="arrow-slide">
-                                            <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                            <Stack width="fit-content" justifyContent="end" display={{ xs: "none", lg: "block" }}>
+                                <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={1}>
+                                            Visit website
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
                                         </span>
-                                    </span>
-                                </div>
-                            </SideTabbedButton>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
+                            <Stack width="100%" justifyContent="center" display={{ xs: "block", lg: "none" }}>
+                                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={1}>
+                                            Visit website
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
+                                        </span>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
                         </Stack>
                     </Stack>
                 </Stack>

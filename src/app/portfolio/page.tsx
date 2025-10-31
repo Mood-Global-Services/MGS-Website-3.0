@@ -13,15 +13,32 @@ export default function PortfolioPage() {
 
     return (
         <Stack width={"100%"} alignItems={"center"} gap={2} position={"relative"} overflow={"hidden"}>
-            <Stack width={"100%"} height={"45vh"} sx={{
+            <Stack width={"100%"} height="45vh" sx={{
                 position: "absolute",
                 top: 0,
                 left: 0,
                 zIndex: 1,
+                display: { xs: "none", lg: "block" },
             }}>
                 <Image src={portfolioPageGradient} alt="portfolio page gradient" width={1000} height={1000} style={{
                     width: "100vw",
                     height: "auto",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    transform: "translate(0%, -35%) scale(1.5)",
+                }} />
+            </Stack>
+            <Stack width={"100%"} height="140vh" sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                zIndex: 1,
+                display: { xs: "block", lg: "none" },
+            }}>
+                <Image src={portfolioPageGradient} alt="portfolio page gradient" width={1000} height={1000} style={{
+                    width: "auto",
+                    height: "100%",
                     position: "absolute",
                     top: 0,
                     left: 0,
