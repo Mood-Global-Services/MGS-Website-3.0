@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import { PlainContentItem } from "../generic/plainContentItem";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Button, IconButton } from "@mui/material";
 import theme from "@/theme/theme";
 
 import logo from "@/assets/images/logo.webp";
@@ -23,6 +23,9 @@ import menuExplore from "@/assets/images/icons/menu-explore.webp"
 import menuTeam from "@/assets/images/icons/menu-team.webp"
 import menuPortfolio from "@/assets/images/icons/menu-portfolio.webp"
 
+import mobileMenuButton from "@/assets/images/mobileMenuButton.webp"
+import mobileContactButtonBg from "@/assets/images/mobileContactButtonBg.webp"
+
 import {
     NavigationMenu,
     NavigationMenuList,
@@ -36,7 +39,7 @@ import {
 export default function Header() {
     return (
         <header className="z-50 w-full bg-transparent">
-            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 lg:px-6">
                 <Link href="/" className="inline-flex items-center gap-3">
                     <Image src={logo} alt="mood global services mgs logo" width={120} height={27} priority />
                 </Link>
@@ -269,6 +272,31 @@ export default function Header() {
                         </div>
                     </SideTabbedButton>
                 </div>
+                <Stack display={{ xs: "block", lg: "none" }} direction="row" alignItems="center" justifyContent="end" gap={1}>
+                    <Button size="medium" variant="contained" color="primary" sx={{
+                        backgroundColor: "transparent",
+                        backgroundImage: `url(${mobileContactButtonBg.src})`,
+                        backgroundSize: "100% 100%",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        color: theme.palette.text.primary,
+                        fontWeight: 400,
+                        fontSize: "1.1rem",
+                        paddingX: 2.5,
+                        paddingTop: 0.5,
+                        paddingBottom: 0.75,
+                        textTransform: "none",
+                    }}
+                    onClick={() => {
+                        window.location.href = "/contact";
+                    }}
+                    >
+                        Contact us
+                    </Button>
+                    <IconButton>
+                        <Image src={mobileMenuButton} alt="menu button" width={35} height={35} style={{ display: "block" }} />
+                    </IconButton>
+                </Stack>
             </div>
         </header>
     );
