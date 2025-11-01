@@ -34,7 +34,9 @@ export default function Home() {
       <Hero />
       <Stack width={"100%"} alignItems={"center"} gap={2} paddingBottom={4} position={"relative"}>
         <WeSpecializeIn />
-        <MobileWeSpecializeIn />
+        <Stack display={{ xs: "flex", lg: "none" }} paddingX={2}>
+          <MobileWeSpecializeIn />
+        </Stack>
         <Services />
         <Products />
         <Stack

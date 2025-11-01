@@ -32,18 +32,33 @@ import hf from "@/assets/images/hf.webp"
 
 import mvpValidation from "@/assets/images/mvpValidation.webp"
 
+import weSpecializeInTopBorderMobile from "@/assets/images/weSpecializeInTopBorderMobile.webp"
+
 const MobileWeSpecializeIn = () => {
     return (
         <Stack width="100%" alignItems="center" gap={4} sx={{
             display: { xs: "flex", lg: "none" },
             marginBottom: 4,
+            position: "relative",
         }}>
+            <Stack width="100%" height={14} sx={{
+                position: "absolute",
+                top: 15,
+                left: 0,
+                backgroundImage: `url(${weSpecializeInTopBorderMobile.src})`,
+                backgroundSize: "100% 100%",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                marginX: "auto"
+            }}>
+
+            </Stack>
             <Typography variant="h3" fontWeight={400}>
                 We specialize in
             </Typography>
 
             <Grid container spacing={1} sx={{
-                paddingX: 2,
+                marginTop: -2
             }}>
                 <Grid size={6}>
                     <Stack width="100%" height="100%" sx={{
