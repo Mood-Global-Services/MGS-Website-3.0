@@ -22,14 +22,14 @@ type HeroAnimationProps = {
 
 export default function HeroAnimation({
   frameHeight = 220,
-  framePadding = { xs: 8, md: 16, lg: 24 },
+  framePadding = { xs: 0, md: 16, lg: 24 },
   artScale = 1,
   align = "center",
 }: HeroAnimationProps) {
   const ar =
     typeof cleanedAnimation.w === "number" &&
-    typeof cleanedAnimation.h === "number" &&
-    cleanedAnimation.h > 0
+      typeof cleanedAnimation.h === "number" &&
+      cleanedAnimation.h > 0
       ? cleanedAnimation.w / cleanedAnimation.h
       : 16 / 9;
 
@@ -43,12 +43,13 @@ export default function HeroAnimation({
       justifyContent={
         align === "left" ? "flex-start" : align === "right" ? "flex-end" : "center"
       }
+      marginTop={{ xs: -5, lg: 0 }}
     >
       <Box
         sx={{
           display: "block",
           width: frameWidth,
-          height: frameHeight,
+          height: { xs: "150px", lg: frameHeight },
           mx: "auto",
           p: framePadding,
           boxSizing: "content-box",
@@ -62,7 +63,7 @@ export default function HeroAnimation({
             height: "100%",
             display: "grid",
             placeItems: "center",
-            transform: `scale(${artScale})`,
+            transform: { xs: "scale(0.85)", lg: `scale(${artScale})` },
             transformOrigin: "center",
           }}
         >

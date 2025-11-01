@@ -25,6 +25,8 @@ import Testimonials from "@/sections/home/testimonials";
 
 import MobileWeSpecializeIn from "@/sections/home/mobile/mobileWeSpecializeIn";
 
+import notJustForSmeMobileBg from "@/assets/images/testBG.webp";
+
 export default function Home() {
 
   return (
@@ -39,23 +41,24 @@ export default function Home() {
           className="hide-scrollbar"
           width={"100%"}
           height={"fit-content"}
-          minHeight={"100vh"}
+          minHeight={{ xs: "unset", lg: "100vh" }}
           alignItems={"center"}
           justifyContent={"center"}
           position={"relative"}
-          px={{ xs: 12, md: 24, lg: 8, xl: 16 }}
-          pt={{ xs: 12, md: 24, lg: 20, xl: 28 }}
-          pb={{ xs: 12, md: 24, lg: 36, xl: 36 }}
+          px={{ xs: 0, md: 24, lg: 8, xl: 16 }}
+          pt={{ xs: 4, md: 24, lg: 20, xl: 28 }}
+          pb={{ xs: 4, md: 24, lg: 36, xl: 36 }}
           overflow={"visible"}
         >
           <Stack sx={{
             position: "absolute",
-            top: "-35%",
-            left: 0,
+            top: {xs:"-10%",lg:"-35%"},
+            left: {xs:"50%",lg:0},
             width: "100%",
-            aspectRatio: "1/1",
+            aspectRatio: {xs:"1/1",lg:"1/1"},
             zIndex: 0,
             overflow: "hidden",
+            scale: {xs:2,lg:1},
           }}>
             <Image src={circle1} alt="circle1" width={1000} height={1000} style={{
               position: "absolute",
@@ -67,6 +70,16 @@ export default function Home() {
               opacity: 0.5,
             }} />
           </Stack>
+          <Stack
+            sx={{
+              position: "absolute",
+              inset: 0,                 // shorthand for top/right/bottom/left: 0
+              zIndex: 2,
+              overflow: "hidden",
+              display: { xs: "block", lg: "none" },
+            }}
+          >
+          </Stack>
           <NotJustSME />
           <Stack sx={{
             position: "absolute",
@@ -76,6 +89,7 @@ export default function Home() {
             height: "100%",
             zIndex: 2,
             overflow: "hidden",
+            display: { xs: "none", lg: "block" }
           }}>
             <Image src={notJustForSMEsBg} alt="notJustForSMEsBg" width={2693} height={2124} style={{
               position: "absolute",
@@ -89,12 +103,13 @@ export default function Home() {
           </Stack>
           <Stack sx={{
             position: "absolute",
-            bottom: "-35%",
-            right: 0,
-            width: "70vw",
-            aspectRatio: "1/1",
+            bottom: {xs:"-10%",lg:"-35%"},
+            right: {xs:"25%",lg:0},
+            width: {xs:"100vw",lg:"70vw"},
+            aspectRatio: {xs:"1/1",lg:"1/1"},
             zIndex: 0,
             overflow: "hidden",
+            scale: {xs:2,lg:1},
           }}>
             <Image src={circle2} alt="circle1" width={1000} height={1000} style={{
               position: "absolute",

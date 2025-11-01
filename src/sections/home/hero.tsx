@@ -20,9 +20,9 @@ const Hero = () => {
         <Stack
             ref={heroRef}
             alignItems="center"
-            justifyContent="center"
+            justifyContent={{xs:"start",lg:"center"}}
             width="100%"
-            minHeight={{ xs: "calc(70vh - 80px)", lg: "calc(100vh - 80px)" }}
+            minHeight={{ xs: "35vh", lg: "calc(100vh - 80px)" }}
             paddingX={4}
             position="relative"
         >
@@ -30,7 +30,8 @@ const Hero = () => {
                 background: "linear-gradient(-180deg, #0B0B0B 0%, rgba(11, 11, 11, 0) 100%)",
                 position: "absolute",
                 top: 0,
-                zIndex: 1
+                zIndex: 1,
+                display: { xs: "none", lg: "block" }
             }}>
             </Stack>
             <Image
@@ -40,6 +41,7 @@ const Hero = () => {
                 style={{ position: "absolute", inset: 0, zIndex: 1, objectFit: "cover" }}
                 priority
                 fetchPriority="high"
+                className="desktop-only"
             />
 
             {/* Static grid */}
@@ -47,17 +49,18 @@ const Hero = () => {
                 position: "absolute",
                 inset: 0,
                 zIndex: 1,
-                opacity: 0.75
+                opacity: 0.75,
+                display: { xs: "none", lg: "block" }
             }}>
                 <HeroGridAnimation />
             </Stack>
 
-            
+
 
             {/* Content */}
-            <Stack width="fit-content" height="70%" alignItems="center" sx={{ position: "relative", zIndex: 1 }}>
+            <Stack width="fit-content" height={{ xs: "50%", lg: "70%" }} alignItems="center" sx={{ position: "relative", zIndex: 2 }}>
                 <HeroAnimation frameHeight={200} framePadding={0} artScale={1.6} align="left" />
-                <Stack alignItems="center" mt={-4} mb={6}>
+                <Stack alignItems="center" mt={{ xs: 0, lg: -4 }} mb={{ xs: 4, lg: 6 }}>
                     <Typography variant="h1" component="h1" className="chno" fontWeight={500}>
                         <span style={{ color: theme.palette.brand.mgsBlue1.main }}>Build</span> here
                     </Typography>
@@ -69,22 +72,22 @@ const Hero = () => {
                 <Stack width="100%" direction="row" alignItems="center" justifyContent="center" position="relative" sx={{
                     zIndex: 2
                 }}>
-                <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-                    <div className="flex items-center justify-center gap-1">
-                        <Typography component="span" variant="h6" marginRight={1}>
-                            Get in touch
-                        </Typography>
-                        <span className="arrow-clip">
-                            <span className="arrow-slide">
-                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                    <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                        <div className="flex items-center justify-center gap-1">
+                            <Typography component="span" variant="h6" marginRight={1}>
+                                Get in touch
+                            </Typography>
+                            <span className="arrow-clip">
+                                <span className="arrow-slide">
+                                    <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                </span>
                             </span>
-                        </span>
-                    </div>
-                </SideTabbedButton>
+                        </div>
+                    </SideTabbedButton>
                 </Stack>
             </Stack>
 
-            <Stack height={"100px"} width="100%" sx={{
+            <Stack height={{ xs: "60px", lg: "100px" }} width="100%" sx={{
                 background: "linear-gradient(-180deg, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%)",
                 position: "absolute",
                 bottom: 0,
