@@ -41,7 +41,7 @@ const MobileWeSpecializeIn = () => {
                 We specialize in
             </Typography>
 
-            <Grid container spacing={2} sx={{
+            <Grid container spacing={1} sx={{
                 paddingX: 2,
             }}>
                 <Grid size={6}>
