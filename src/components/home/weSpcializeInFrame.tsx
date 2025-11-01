@@ -36,6 +36,7 @@ export default function WeSpecializeFrame({
         position: "relative",
         width: "100%",
         minHeight: height,
+        display: {xs: "none", lg: "block"},
         ...sx,
       }}
       {...rest}

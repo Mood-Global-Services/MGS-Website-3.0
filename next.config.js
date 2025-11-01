@@ -3,7 +3,6 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const baseConfig = {
-  swcMinify: true,
   // lets DevTools map numbered chunks (e.g., 255-*.js) back to modules
   productionBrowserSourceMaps: true,
   experimental: {

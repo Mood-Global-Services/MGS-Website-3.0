@@ -23,6 +23,8 @@ import empowerShadow from "@/assets/images/empowerShadow.svg?url";
 import theme from "@/theme/theme";
 import Testimonials from "@/sections/home/testimonials";
 
+import MobileWeSpecializeIn from "@/sections/home/mobile/mobileWeSpecializeIn";
+
 export default function Home() {
 
   return (
@@ -30,6 +32,7 @@ export default function Home() {
       <Hero />
       <Stack width={"100%"} alignItems={"center"} gap={2} paddingBottom={4} position={"relative"}>
         <WeSpecializeIn />
+        <MobileWeSpecializeIn />
         <Services />
         <Products />
         <Stack

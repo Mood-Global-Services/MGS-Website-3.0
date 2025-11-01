@@ -25,7 +25,7 @@ export default function WeSpecializeCard({
         position: "relative",
         borderRadius: `${radius}px`,
         height: `${heightPx}px`,
-        backgroundColor: "transparent",
+        backgroundColor: {xs: "#15151559", lg:"transparent"},
         overflow: "hidden",
         "&::after": {
           content: '""',
