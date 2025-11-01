@@ -170,6 +170,7 @@ export default function Home() {
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 2,
+        display: { xs: "none", lg: "block" },
       }}>
         <Image src={empowerShadow} className="desktop-only" alt="empowerShadow" width={1000} height={1000} style={{
           position: "absolute",
@@ -183,11 +184,13 @@ export default function Home() {
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} marginTop={8} sx={{
         zIndex: 1,
+        display: { xs: "none", lg: "block" },
       }}>
         <Testimonials />
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 1,
+        display: { xs: "none", lg: "block" },
       }}>
         <DevelopingWithTheBest />
       </Stack>
