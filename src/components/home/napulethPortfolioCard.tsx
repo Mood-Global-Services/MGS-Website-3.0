@@ -10,11 +10,11 @@ import napulethDiamond from "@/assets/images/napulethDiamond.webp"
 const NapulethPortfolioCard = () => {
     return (
         <Stack
-            width="50%"
+            width={{ xs: "100%", lg: "50%" }}
             flexGrow={1}
-            minHeight={340}
+            minHeight={{ xs: 240, lg: 340 }}
             alignItems={"center"}
-            py={2}
+            py={{ xs: 1, lg: 2 }}
             px={3}
             sx={{
                 borderRadius: 2,
@@ -119,10 +119,23 @@ const NapulethPortfolioCard = () => {
             </Typography>
             <Image
                 src={napulethScreen}
-                className="napuleth-screen"
+                className="napuleth-screen desktop-only"
                 alt="napuleth screen"
                 width={380}
                 height={380}
+                style={{
+                    borderRadius: 4,
+                    position: "relative",
+                    zIndex: 4,
+                    objectFit: "cover",
+                }}
+            />
+            <Image
+                src={napulethScreen}
+                className="napuleth-screen mobile-only"
+                alt="napuleth screen"
+                width={300}
+                height={300}
                 style={{
                     borderRadius: 4,
                     position: "relative",

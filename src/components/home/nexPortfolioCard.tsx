@@ -8,9 +8,9 @@ import nexCircle from "@/assets/images/nexCircle.svg?url";
 const NexPortfolioCard = () => {
     return (
         <Stack
-            width="50%"
+            width={{ xs: "100%", lg: "50%" }}
             flexGrow={1}
-            minHeight={340}
+            minHeight={{ xs: 240, lg: 340 }}
             py={2}
             px={3}
             sx={{
@@ -60,10 +60,23 @@ const NexPortfolioCard = () => {
 
             <Image
                 src={nexAsset1}
-                className="nex-asset-1"
+                className="nex-asset-1 desktop-only"
                 alt="nex asset 1"
                 width={250}
                 height={100}
+                style={{
+                    position: "absolute",
+                    bottom: "-30%",
+                    right: "5%",
+                    zIndex: 2,
+                }}
+            />
+            <Image
+                src={nexAsset1}
+                className="nex-asset-1 mobile-only"
+                alt="nex asset 1"
+                width={175}
+                height={65}
                 style={{
                     position: "absolute",
                     bottom: "-30%",

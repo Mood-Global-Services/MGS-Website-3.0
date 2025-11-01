@@ -4,6 +4,7 @@ import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import NexPortfolioCard from "@/components/home/nexPortfolioCard";
 import NapulethPortfolioCard from "@/components/home/napulethPortfolioCard";
 import PortfolioSlider from "@/components/home/portfolioSlider";
+import MobilePortfolioSlider from "@/components/home/mobile/mobilePortfolioSlider";
 import arrow from "@/assets/images/icons/arrow.webp"
 
 const OurPortfolio = () => {
@@ -15,25 +16,25 @@ const OurPortfolio = () => {
             justifyContent={"center"}
             position={"relative"}
             overflow={"hidden"}
-            paddingX={10}
-            mt={{ xs: 8, md: -20, lg: -22, xl: -14 }}
-            pb={36}
-            gap={36}
+            paddingX={{ xs: 2, lg: 10 }}
+            mt={{ xs: -4, md: -20, lg: -22, xl: -14 }}
+            pb={{xs:0, lg:36}}
+            gap={{ xs: 4, lg: 36 }}
         >
             <Stack
                 width={"100%"}
                 height={"100%"}
-                direction={"row"}
+                direction={{ xs: "column", lg: "row" }}
                 alignItems={"center"}
                 justifyContent={"start"}
                 position={"relative"}
                 gap={2}
                 zIndex={3}
             >
-                <Typography variant="h2" fontWeight={400} fontSize={"2.75rem !important"} className="chno">
+                <Typography variant="h2" fontWeight={400} fontSize={{ xs: "1.75rem !important", lg: "2.75rem !important" }} className="chno">
                     Our Portfolio
                 </Typography>
-                <Stack mt={1}>
+                <Stack mt={1} display={{ xs: "none", lg: "block" }}>
                     <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={1}>
@@ -50,18 +51,24 @@ const OurPortfolio = () => {
             </Stack>
             <Stack
                 width={"100%"}
-                height={200}
+                height={{ xs: "fit-content", lg: 200 }}
                 alignItems={"center"}
                 justifyContent={"center"}
                 position={"relative"}
                 zIndex={3}
             >
-                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"} gap={2} paddingX={0.75}>
+                <Stack display={{ xs: "none", lg: "flex" }} width={"100%"} direction="row" alignItems={"stretch"} justifyContent={"center"} gap={2} paddingX={0.75}>
                     <NexPortfolioCard />
                     <NapulethPortfolioCard />
                 </Stack>
-                <Stack width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"}>
+                <Stack display={{ xs: "flex", lg: "none" }} width={"100%"} direction={{ xs: "column", lg: "row" }} alignItems={"stretch"} justifyContent={"center"} gap={2} paddingX={0.75}>
+                    <NexPortfolioCard />
+                </Stack>
+                <Stack display={{ xs: "none", lg: "flex" }} width={"100%"} direction={"row"} alignItems={"stretch"} justifyContent={"center"}>
                     <PortfolioSlider />
+                </Stack>
+                <Stack display={{ xs: "flex", lg: "none" }} width={"100%"} minHeight={240} direction={"row"} alignItems={"stretch"} justifyContent={"center"}>
+                    <MobilePortfolioSlider />
                 </Stack>
             </Stack>
         </Stack>
