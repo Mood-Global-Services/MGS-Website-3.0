@@ -199,3 +199,29 @@ a {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
 }
+
+.desktop-only {
+  display: none !important;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}

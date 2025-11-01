@@ -19,104 +19,155 @@ const ServicesMarqueeTitle = () => {
                     position: 'relative',
                     zIndex: 1
                 }}>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
                             transform: "scaleX(-1)"
                         }}></Image>
-                        <Typography variant="h1" className="chno" sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
-                            marginLeft: 1,
-                        }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
-                    </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
-                            transform: "scaleX(-1)"
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
                         }}></Image>
                         <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
                             marginLeft: 1,
                         }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
                     </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
                             transform: "scaleX(-1)"
                         }}></Image>
-                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
-                            marginLeft: 1,
-                        }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
-                    </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
-                            transform: "scaleX(-1)"
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
                         }}></Image>
                         <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
                             marginLeft: 1,
                         }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
                     </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
                             transform: "scaleX(-1)"
                         }}></Image>
-                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
-                            marginLeft: 1,
-                        }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
-                    </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
-                            transform: "scaleX(-1)"
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
                         }}></Image>
                         <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
                             marginLeft: 1,
                         }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
                     </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
                             transform: "scaleX(-1)"
                         }}></Image>
-                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
-                            marginLeft: 1,
-                        }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
-                    </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
-                            transform: "scaleX(-1)"
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
                         }}></Image>
                         <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
                             marginLeft: 1,
                         }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
                     </Stack>
-                    <Stack width={"fit-content"} direction={"row"} alignItems={"start"} justifyContent={"center"} gap={1} marginX={4}>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} style={{
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
                             transform: "scaleX(-1)"
                         }}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
+                        }}></Image>
                         <Typography variant="h1" className="chno" lineHeight={1} sx={{
-                            fontSize: "3.375rem !important",
-                            lineHeight: "1 !important",
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
                             marginLeft: 1,
                         }}>SERVICES</Typography>
-                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
+                    </Stack>
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
+                            transform: "scaleX(-1)"
+                        }}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
+                        }}></Image>
+                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
+                            marginLeft: 1,
+                        }}>SERVICES</Typography>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
+                    </Stack>
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
+                            transform: "scaleX(-1)"
+                        }}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
+                        }}></Image>
+                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
+                            marginLeft: 1,
+                        }}>SERVICES</Typography>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
+                    </Stack>
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
+                            transform: "scaleX(-1)"
+                        }}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
+                        }}></Image>
+                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
+                            marginLeft: 1,
+                        }}>SERVICES</Typography>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
+                    </Stack>
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
+                            transform: "scaleX(-1)"
+                        }}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
+                        }}></Image>
+                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
+                            marginLeft: 1,
+                        }}>SERVICES</Typography>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
+                    </Stack>
+                    <Stack width={"fit-content"} direction={"row"} alignItems={{xs:"end",lg:"start"}} justifyContent={"center"} gap={1} marginX={{xs:1.5,lg:4}}>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only" style={{
+                            transform: "scaleX(-1)"
+                        }}></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only" style={{
+                            transform: "scaleX(-1)",
+                        }}></Image>
+                        <Typography variant="h1" className="chno" lineHeight={1} sx={{
+                            fontSize: {xs:"2rem !important",lg:"3.375rem !important"},
+                            lineHeight: { xs:"1.2 !important",lg:"1 !important"},
+                            marginLeft: 1,
+                        }}>SERVICES</Typography>
+                        <Image alt="special chevron mgs" src={specialChevron} height={60} width={40} className="desktop-only"></Image>
+                        <Image alt="special chevron mgs" src={specialChevron} height={30} width={20} className="mobile-only"></Image>
                     </Stack>
             </Marquee>
             </Stack>

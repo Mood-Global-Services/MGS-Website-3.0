@@ -18,6 +18,7 @@ import polygon from "@/assets/images/polygon.webp"
 import avalanche from "@/assets/images/avalanche.webp"
 import arb from "@/assets/images/arbitrum-arb-logo.webp"
 
+import mobileProductBannerBg from "@/assets/images/mobileProductBannerBg.webp";
 
 
 export default function ProductsBanner1() {
@@ -25,7 +26,7 @@ export default function ProductsBanner1() {
 
   return (
     <Stack
-      width="70%"
+      width={{ xs: "100%", lg: "70%" }}
       mx="auto"
       direction="row"
       alignItems="center"
@@ -34,10 +35,16 @@ export default function ProductsBanner1() {
         position: "relative",
         overflow: "hidden",
         borderRadius: 2,
+        backgroundColor: { xs: "#111111", lg: "unset" },
+        backgroundImage: { xs: `url(${mobileProductBannerBg.src})`, lg: "unset" },
+        backgroundSize: { xs: "100% 100%", lg: "unset" },
+        backgroundPosition: { xs: "center", lg: "unset" },
+        backgroundRepeat: { xs: "no-repeat", lg: "unset" },
+        p: { xs: 1, lg: 0 },
       }}
     >
 
-      <Image src={ProductsShape1} alt="Products Shape 1" width={180} height={180} style={{
+      <Image src={ProductsShape1} alt="Products Shape 1" className="desktop-only" width={180} height={180} style={{
         position: "absolute",
         top: 0,
         left: 0,
@@ -52,6 +59,7 @@ export default function ProductsBanner1() {
         component="svg"
         viewBox="0 0 1096 454"
         preserveAspectRatio="none"
+        className="desktop-only"
         sx={{
           position: "absolute",
           inset: 0,
@@ -96,6 +104,7 @@ export default function ProductsBanner1() {
         component="svg"
         viewBox="0 0 676 963"
         preserveAspectRatio="xMidYMid meet"
+        className="desktop-only"
         sx={{
           position: "absolute",
           top: "-50%",         // nudge up to let the blur bleed
@@ -140,6 +149,7 @@ export default function ProductsBanner1() {
         component="svg"
         viewBox="0 0 842 836"
         preserveAspectRatio="xMidYMid meet"
+        className="desktop-only"
         sx={{
           position: "absolute",
           left: "-12%",
@@ -178,30 +188,33 @@ export default function ProductsBanner1() {
       </Box>
 
       {/* Content */}
-      <Stack width="100%" height="100%" direction="row" alignItems="stretch" justifyContent="space-between" sx={{
+      <Stack width="100%" height="100%" direction={{ xs: "column", lg: "row" }} alignItems="stretch" justifyContent="space-between" sx={{
         borderRadius: 2,
       }}>
         <Stack
           justifyContent="center"
-          width="50%"
-          sx={{ position: "relative", zIndex: 1, height: "100%", p: 8, gap: 4, }}
+          width={{ xs: "100%", lg: "50%" }}
+          sx={{ position: "relative", zIndex: 1, height: "100%", px: { xs: 2, lg: 8 }, py: { xs: 4, lg: 8 }, gap: 4, }}
         >
-          <Stack gap={2}>
-            <Stack direction="row" alignItems="center" gap={1}>
+          <Stack width="100%" gap={2}>
+            <Stack width="100%" direction="row" alignItems="center" gap={{ xs: 2, lg: 1 }}>
               <Image src={ProductsIcon1} alt="Products Shape 1" width={50} height={60} />
               <Typography variant="h4" fontWeight={600} textTransform="uppercase">BlockAI: Chat-Powered Blockchain Search</Typography>
             </Stack>
-            <Typography variant="h6" fontWeight={500}>
+            <Typography variant="h6" fontWeight={500} sx={{
+              fontSize: { xs: "1.2rem !important", lg: "unset !important" },
+            }}>
               Explore all EVM-compatible blockchains
             </Typography>
             <Typography variant="body2" color={theme.palette.text.secondary} fontWeight={400} sx={{
               width: "80%",
+              display: { xs: "none", lg: "block" },
             }}>
               Query wallet addresses, retrieve transaction details, or append custom notes through natural conversation—faster and smarter than traditional tools like Blockscan
             </Typography>
           </Stack>
 
-          <Stack width="40%">
+          <Stack width="40%" display={{ xs: "none", lg: "block" }}>
             <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
               <div className="flex items-center justify-center gap-1">
                 <Typography component="span" variant="h6" marginRight={1}>
@@ -219,14 +232,15 @@ export default function ProductsBanner1() {
         <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{
           position: "relative",
           zIndex: 1,
-          width: "50%",
+          width: { xs: "100%", lg: "50%" },
           height: "100%",
           placeContent: "center",
           placeItems: "center",
           placeSelf: "center",
-          paddingRight: 8,
+          paddingRight: { xs: 2, lg: 8 },
+          paddingLeft: { xs: 2, lg: 0 },
         }}>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -240,7 +254,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Solana</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -254,7 +268,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Polygon</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -268,7 +282,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Ethereum</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -282,7 +296,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Avalanche</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -296,7 +310,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Bitcoin</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -310,7 +324,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Arbitrum</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -324,7 +338,7 @@ export default function ProductsBanner1() {
               <Typography component="span" variant="h6" fontWeight={400} color={theme.palette.text.secondary}>Aptos</Typography>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{
+          <Grid size={{ xs: 6, md: 6 }} sx={{
             backgroundImage: `url(${ProductTagShape.src})`,
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
@@ -337,6 +351,28 @@ export default function ProductsBanner1() {
           </Grid>
 
         </Grid>
+        <Stack display={{ xs: "flex", lg: "none" }} gap={2} py={2}>
+          <Typography variant="body2" color={theme.palette.text.secondary} fontWeight={400} sx={{
+            width: "100%",
+            px: 2,
+          }}>
+            Query wallet addresses, retrieve transaction details, or append custom notes through natural conversation—faster and smarter than traditional tools like Blockscan
+          </Typography>
+          <Stack width="100%" px={2}>
+            <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+              <div className="flex items-center justify-center gap-1">
+                <Typography component="span" variant="h6" marginRight={1}>
+                  Explore
+                </Typography>
+                <span className="arrow-clip">
+                  <span className="arrow-slide">
+                    <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                  </span>
+                </span>
+              </div>
+            </SideTabbedButton>
+          </Stack>
+        </Stack>
       </Stack>
     </Stack>
   );

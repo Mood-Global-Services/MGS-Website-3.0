@@ -12,7 +12,7 @@ const Products = () => {
             alignItems="center"
             justifyContent="center"
             width="100%"
-            paddingX={6}
+            paddingX={{ xs: 2, lg: 6 }}
             position="relative"
             gap={4}
         >
