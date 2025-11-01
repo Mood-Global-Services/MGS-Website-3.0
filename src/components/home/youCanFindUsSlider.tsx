@@ -1,5 +1,5 @@
 'use client';
-
+import "@/styles/carousel.css"
 import dynamic from 'next/dynamic';
 import { Stack, Box, Typography } from '@mui/material';
 import Image from "next/image";
