@@ -34,7 +34,6 @@ const NotJustSME = () => {
                 zIndex={3}
                 gap={{ xs: 4, lg: 4 }}
                 sx={{
-                    backgroundColor: { xs: "blue", lg: "unset" },
                     backgroundImage: { xs: `url(${notJustForSmeMobileBg.src})`, lg: "unset" },
                     backgroundSize: { xs: "100% 110%", lg: "unset" },
                     backgroundPosition: { xs: "center", lg: "unset" },
