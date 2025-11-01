@@ -11,6 +11,8 @@ import HeroAnimation from "@/components/home/heroAnimation";
 import heroBg from "@/assets/images/heroBG.webp"
 import arrow from "@/assets/images/icons/arrow.webp"
 
+import mobileHeroBg from "@/assets/images/mobileHeroBg.webp"
+
 const HeroGridAnimation = dynamic(() => import("@/components/home/heroGridAnimation/heroGridAnimation"), { ssr: false });
 
 const Hero = () => {
@@ -26,6 +28,22 @@ const Hero = () => {
             paddingX={4}
             position="relative"
         >
+            <Stack width="100%" height="100%" sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                zIndex: 0,
+                opacity: 0.55,
+                display: { xs: "block", lg: "none" },
+            }}>
+                <Image src={mobileHeroBg} alt="mobile hero bg" fill className="mobile-only" style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                }} />
+            </Stack>
             <Stack height={"120px"} width="100%" sx={{
                 background: "linear-gradient(-180deg, #0B0B0B 0%, rgba(11, 11, 11, 0) 100%)",
                 position: "absolute",
