@@ -119,7 +119,7 @@ const PortfolioSlider = () => {
                 '& .carousel-item': {
                   padding: { xs: '0 10px', md: '0 8px', lg: '0 6px' },
                   height: '100%',
-                  marginBottom: { xs: 2, md: 2, lg: 4, xl: 6 },
+                  marginBottom: { xs: 0, md: 2, lg: 4, xl: 6 },
                   overflow: 'visible',
                 },
               }}
@@ -226,6 +226,8 @@ const PortfolioSlider = () => {
                             </Stack>
                             <Typography variant="body2" fontSize="0.8rem !important" fontWeight={400} color={theme.palette.text.secondary}>
                                 On-chain markets are the future, and we’re building them with automation and decentralized indices.
+                                <br className="mobile-only" />
+                                <br className="mobile-only" />
                             </Typography>
                         </Stack>
                     </Stack>

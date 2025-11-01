@@ -1,11 +1,15 @@
+"use client";
+
 import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import NexPortfolioCard from "@/components/home/nexPortfolioCard";
 import NapulethPortfolioCard from "@/components/home/napulethPortfolioCard";
-import PortfolioSlider from "@/components/home/portfolioSlider";
-import MobilePortfolioSlider from "@/components/home/mobile/mobilePortfolioSlider";
 import arrow from "@/assets/images/icons/arrow.webp"
+
+import dynamic from "next/dynamic";
+const PortfolioSlider = dynamic(() => import("@/components/home/portfolioSlider"), { ssr: false });
+const MobilePortfolioSlider = dynamic(() => import("@/components/home/mobile/mobilePortfolioSlider"), { ssr: false });
 
 const OurPortfolio = () => {
     return (

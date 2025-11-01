@@ -125,7 +125,7 @@ export default function Home() {
         </Stack>
       </Stack>
       <OurPortfolio />
-      <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} paddingY={8} position={"relative"} overflow={"hidden"}>
+      <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} paddingY={{xs:2, lg:8}} position={"relative"} overflow={"hidden"}>
         <Stack width={"100%"} height={"10%"} sx={{
           background: "linear-gradient(-180deg, rgba(11, 11, 11, 1) 0%, rgba(11, 11, 11, 0) 100%)",
           position: "absolute",
@@ -135,13 +135,13 @@ export default function Home() {
         }}>
 
         </Stack>
-        <Image src={findUsBlobs} alt="findUsBg" width={1300} height={1300} style={{
+        <Image src={findUsBlobs} className="desktop-only" alt="findUsBg" width={1300} height={1300} style={{
           position: "absolute",
           top: "-30%",
           right: "-20%",
           zIndex: 2,
         }}></Image>
-        <Image src={findUsBg} alt="findUsBg" width={1000} height={1000} style={{
+        <Image src={findUsBg} className="desktop-only" alt="findUsBg" width={1000} height={1000} style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
@@ -153,14 +153,14 @@ export default function Home() {
           opacity: 0.3,
         }}></Image>
         <YouCanFidUs />
-        <Image src={findUsLeftSide} alt="findUsLeftSide" width={160} height={160} style={{
+        <Image src={findUsLeftSide} className="mobile-only" alt="findUsLeftSide" width={160} height={160} style={{
           position: "absolute",
           bottom: "10%",
           left: 0,
           marginLeft: "5rem",
           objectFit: "cover",
         }} />
-        <Image src={findUsRightSide} alt="findUsRightSide" width={100} height={100} style={{
+        <Image src={findUsRightSide} className="desktop-only" alt="findUsRightSide" width={100} height={100} style={{
           position: "absolute",
           bottom: "10%",
           right: 0,
@@ -171,7 +171,7 @@ export default function Home() {
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 2,
       }}>
-        <Image src={empowerShadow} alt="empowerShadow" width={1000} height={1000} style={{
+        <Image src={empowerShadow} className="desktop-only" alt="empowerShadow" width={1000} height={1000} style={{
           position: "absolute",
           top: "-10%",
           left: "-20%",
