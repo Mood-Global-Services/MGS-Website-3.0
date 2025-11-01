@@ -38,7 +38,7 @@ const Hero = () => {
                 opacity: 0.55,
                 display: { xs: "block", lg: "none" },
             }}>
-                <Image src={mobileHeroBg} alt="mobile hero bg" fill className="mobile-only" priority fetchPriority="high" style={{
+                <Image src={mobileHeroBg} alt="mobile hero bg" fill className="mobile-only" priority fetchPriority="high" loading="eager" style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
