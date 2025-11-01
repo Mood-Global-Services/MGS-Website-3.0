@@ -16,6 +16,7 @@ import grafana from "@/assets/images/grafana.webp"
 export default function ServicesLayer2Banner() {
     return (
         <Stack
+            display={{ xs: "none", lg: "block" }}
             width="70%"
             height={260}
             mx="auto"

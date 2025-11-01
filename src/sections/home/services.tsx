@@ -4,6 +4,7 @@ import { Stack } from "@mui/material";
 import ServicesMarqueeTitle from "@/components/home/servicesTitleMarquee";
 import ServicesLayer2Banner from "@/components/home/servicesLayer2Banner";
 import ServicesList from "@/components/home/servicesList";
+import MobileServicesList from "@/components/home/mobile/mobileServicesList";
 
 const Services = () => {
 
@@ -12,13 +13,14 @@ const Services = () => {
             alignItems="center"
             justifyContent="center"
             width="100%"
-            paddingX={6}
+            paddingX={{ xs: 2, lg: 6 }}
             position="relative"
-            gap={4}
+            gap={{ xs: 2, lg: 4 }}
         >
             <ServicesMarqueeTitle />
             <ServicesLayer2Banner />
             <ServicesList />
+            <MobileServicesList />
         </Stack>
     );
 };

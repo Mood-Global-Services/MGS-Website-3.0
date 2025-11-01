@@ -13,7 +13,7 @@ import arrow from "@/assets/images/icons/arrow.webp"
 
 const ServicesList = () => {
     return (
-        <Stack width="75%" height="100%" alignItems="center" gap={2}>
+        <Stack width="75%" height="100%" alignItems="center" gap={2} display={{ xs: "none", lg: "flex" }}>
             <ServicesListItem
                 leftChildren={
                     <Stack direction="row" justifyContent="start" alignItems="start" gap={2}>

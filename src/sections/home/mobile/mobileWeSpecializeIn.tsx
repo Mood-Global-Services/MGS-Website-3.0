@@ -35,7 +35,8 @@ import mvpValidation from "@/assets/images/mvpValidation.webp"
 const MobileWeSpecializeIn = () => {
     return (
         <Stack width="100%" alignItems="center" gap={4} sx={{
-            display: { xs: "flex", lg: "none" }
+            display: { xs: "flex", lg: "none" },
+            marginBottom: 4,
         }}>
             <Typography variant="h3" fontWeight={400}>
                 We specialize in

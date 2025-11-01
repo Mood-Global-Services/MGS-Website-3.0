@@ -8,7 +8,7 @@ import specialChevron from '@/assets/images/specialChevron.webp'
 
 const ServicesMarqueeTitle = () => {
     return (
-        <Stack width={'100%'} alignItems={'center'} justifyContent={'start'} gap={{xs:0, lg:2}} paddingX={{ xs: 2, lg: 4 }} paddingBottom={{xs:2, lg:0}} paddingTop={{sm: 0, lg: 6}} marginBottom={6} position={'relative'} overflow={'hidden'}>
+        <Stack width={'100%'} alignItems={'center'} justifyContent={'start'} gap={{xs:0, lg:2}} paddingX={{ xs: 2, lg: 4 }} paddingTop={{sm: 0, lg: 6}} marginBottom={{xs:2, lg:6}} position={'relative'} overflow={'hidden'}>
             <Box width={{ xs: '5vw', lg: '6vw' }} height={'100%'} position={'absolute'} left={0} zIndex={2} sx={{
                 boxShadow: `5px 0px 80px 50px ${theme.palette.brand.mgsBlack.main}`,
                 backgroundColor: theme.palette.brand.mgsBlack.main,
