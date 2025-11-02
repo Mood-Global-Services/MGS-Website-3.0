@@ -203,7 +203,7 @@ export default function TeamPage() {
                             <Stack width="100%" gap={1.5} className="team-member-card" sx={{
                                 border: "solid 1px #EEE4E421",
                                 borderRadius: 1.5,
-                                minHeight: 300,
+                                minHeight: {xs: 275, lg: 300},
                                 position: "relative",
                                 transition: "border 0.3s ease-in-out",
                                 "&:hover": {
@@ -213,7 +213,7 @@ export default function TeamPage() {
                                 }
 
                             }}>
-                                <Stack height={250} width="100%" position="relative" sx={{
+                                <Stack height={{xs:200, lg:250}} width="100%" position="relative" sx={{
                                     marginTop: member.marginTop,
                                     position: "absolute",
                                     left: 0,
@@ -235,7 +235,7 @@ export default function TeamPage() {
                                         }}
                                     />
                                 </Stack>
-                                <Stack height={250} width="100%" position="relative" sx={{
+                                <Stack height={100} width="100%" position="relative" sx={{
                                     marginTop: member.mobileMarginTop,
                                     position: "absolute",
                                     left: 0,
@@ -257,7 +257,7 @@ export default function TeamPage() {
                                         }}
                                     />
                                 </Stack>
-                                <Stack padding={2} gap={1.5} sx={{
+                                <Stack height={{xs:100, lg:250}} padding={2} gap={1.5} sx={{
                                     backgroundColor: theme.palette.background.default,
                                     borderRadius: 1.5,
                                     position: "absolute",
