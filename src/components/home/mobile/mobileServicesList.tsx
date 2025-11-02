@@ -16,15 +16,19 @@ import mobileServicesListItemBg from "@/assets/images/servicesPage/mobile/mobile
 const MobileServicesList = () => {
     return (
         <Stack width="100%" alignItems="center" gap={2}>
-            <Stack width="100%" height="100%" alignItems="center" gap={2} sx={{
-                display: { xs: "flex", lg: "none" },
-                backgroundImage: `url(${mobileServicesListItemBg.src})`,
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                paddingY: 3,
-                paddingX: 4,
-            }}>
+            <Stack width="100%" height="100%" alignItems="center" gap={2} component={"div"}
+                onClick={() => {
+                    window.location.href = "/services#smart-contracts";
+                }}
+                sx={{
+                    display: { xs: "flex", lg: "none" },
+                    backgroundImage: `url(${mobileServicesListItemBg.src})`,
+                    backgroundSize: "100% 100%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    paddingY: 3,
+                    paddingX: 4,
+                }}>
                 <Stack width="100%" height="100%" justifyContent="space-between" gap={4}>
                     <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center" gap={2}>
                         <Stack direction="row" justifyContent="start" alignItems="center" gap={1}>
@@ -68,21 +72,25 @@ const MobileServicesList = () => {
                     </Stack>
                 </Stack>
             </Stack>
-            <Stack width="100%" height="100%" alignItems="center" gap={2} sx={{
-                display: { xs: "flex", lg: "none" },
-                backgroundImage: `url(${mobileServicesListItemBg.src})`,
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                paddingY: 3,
-                paddingX: 4,
-            }}>
+            <Stack width="100%" height="100%" alignItems="center" gap={2} component={"div"}
+                onClick={() => {
+                    window.location.href = "/services#infra-and-protocols";
+                }}
+                sx={{
+                    display: { xs: "flex", lg: "none" },
+                    backgroundImage: `url(${mobileServicesListItemBg.src})`,
+                    backgroundSize: "100% 100%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    paddingY: 3,
+                    paddingX: 4,
+                }}>
                 <Stack width="100%" height="100%" justifyContent="space-between" gap={4}>
                     <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center" gap={2}>
                         <Stack direction="row" justifyContent="start" alignItems="center" gap={1}>
                             <Image src={Infra} alt="Infra & Protocols" width={25} height={25} />
                             <Typography variant="h6" component="p" className="chno" fontWeight={500} textTransform="uppercase">
-                            Infra & Protocols
+                                Infra & Protocols
                             </Typography>
                         </Stack>
                         <Stack width="fit-content" justifyContent="center" alignItems="end">
@@ -114,21 +122,25 @@ const MobileServicesList = () => {
                     </Stack>
                 </Stack>
             </Stack>
-            <Stack width="100%" height="100%" alignItems="center" gap={2} sx={{
-                display: { xs: "flex", lg: "none" },
-                backgroundImage: `url(${mobileServicesListItemBg.src})`,
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                paddingY: 3,
-                paddingX: 4,
-            }}>
+            <Stack width="100%" height="100%" alignItems="center" gap={2} component={"div"}
+                onClick={() => {
+                    window.location.href = "/services#ai-systems";
+                }}
+                sx={{
+                    display: { xs: "flex", lg: "none" },
+                    backgroundImage: `url(${mobileServicesListItemBg.src})`,
+                    backgroundSize: "100% 100%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    paddingY: 3,
+                    paddingX: 4,
+                }}>
                 <Stack width="100%" height="100%" justifyContent="space-between" gap={4}>
                     <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center" gap={2}>
                         <Stack direction="row" justifyContent="start" alignItems="center" gap={1}>
                             <Image src={AI} alt="AI Systems" width={25} height={25} />
                             <Typography variant="h6" component="p" className="chno" fontWeight={500} textTransform="uppercase">
-                            AI Systems
+                                AI Systems
                             </Typography>
                         </Stack>
                         <Stack width="fit-content" justifyContent="center" alignItems="end">
@@ -160,15 +172,19 @@ const MobileServicesList = () => {
                     </Stack>
                 </Stack>
             </Stack>
-            <Stack width="100%" height="100%" alignItems="center" gap={2} sx={{
-                display: { xs: "flex", lg: "none" },
-                backgroundImage: `url(${mobileServicesListItemBg.src})`,
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                paddingY: 3,
-                paddingX: 4,
-            }}>
+            <Stack width="100%" height="100%" alignItems="center" gap={2} component={"div"}
+                onClick={() => {
+                    window.location.href = "/services#product-dev";
+                }}
+                sx={{
+                    display: { xs: "flex", lg: "none" },
+                    backgroundImage: `url(${mobileServicesListItemBg.src})`,
+                    backgroundSize: "100% 100%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    paddingY: 3,
+                    paddingX: 4,
+                }}>
                 <Stack width="100%" height="100%" justifyContent="space-between" gap={4}>
                     <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center" gap={2}>
                         <Stack direction="row" justifyContent="start" alignItems="center" gap={1}>
@@ -212,21 +228,25 @@ const MobileServicesList = () => {
                     </Stack>
                 </Stack>
             </Stack>
-            <Stack width="100%" height="100%" alignItems="center" gap={2} sx={{
-                display: { xs: "flex", lg: "none" },
-                backgroundImage: `url(${mobileServicesListItemBg.src})`,
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                paddingY: 3,
-                paddingX: 4,
-            }}>
+            <Stack width="100%" height="100%" alignItems="center" gap={2} component={"div"}
+                onClick={() => {
+                    window.location.href = "/services#gtm-and-legal";
+                }}
+                sx={{
+                    display: { xs: "flex", lg: "none" },
+                    backgroundImage: `url(${mobileServicesListItemBg.src})`,
+                    backgroundSize: "100% 100%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    paddingY: 3,
+                    paddingX: 4,
+                }}>
                 <Stack width="100%" height="100%" justifyContent="space-between" gap={4}>
                     <Stack width="100%" direction="row" justifyContent="space-between" alignItems="center" gap={2}>
                         <Stack direction="row" justifyContent="start" alignItems="center" gap={1}>
                             <Image src={GTM} alt="GTM & Legal" width={25} height={25} />
                             <Typography variant="h6" component="p" className="chno" fontWeight={500} textTransform="uppercase">
-                            GTM & Legal
+                                GTM & Legal
                             </Typography>
                         </Stack>
                         <Stack width="fit-content" justifyContent="center" alignItems="end">

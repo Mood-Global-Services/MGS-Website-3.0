@@ -1,3 +1,5 @@
+"use client"
+
 import { Stack, Typography } from "@mui/material";
 import theme from "@/theme/theme";
 import Image from "next/image";
@@ -101,9 +103,10 @@ const WeEmpower = () => {
                     <Image src={weEmpowerMobileArrows} alt="weEmpowerMobileArrows" width={230} height={230} className="empowerArrows mobile-only" />
                     <Stack width="100%" alignItems="center" justifyContent="center" sx={{
                         display: {xs: "none", lg: "flex"},
-                        backgroundColor: theme.palette.brand.mgsBlue1.main,
                     }}>
-                        <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                        <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1} action={() => {
+                            window.location.href = "/contact";
+                        }}>
                             <div className="flex items-center justify-center gap-1">
                                 <Typography component="span" variant="h6" marginRight={2}>
                                     Contact us

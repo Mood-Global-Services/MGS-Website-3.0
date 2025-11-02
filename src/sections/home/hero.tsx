@@ -90,7 +90,9 @@ const Hero = () => {
                 <Stack width="100%" direction="row" alignItems="center" justifyContent="center" position="relative" sx={{
                     zIndex: 2
                 }}>
-                    <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                    <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1} action={() => {
+                        window.location.href = "/contact";
+                    }}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={1}>
                                 Get in touch

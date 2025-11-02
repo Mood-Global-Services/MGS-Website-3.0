@@ -10,6 +10,7 @@ type ServicesListItemProps = {
     baseFill?: string;
     strokeColor?: string;
     strokeWidth?: number;
+    action?: () => void;
 };
 
 const dShadow =
@@ -25,6 +26,7 @@ const maskMainDataUri =
     `</svg>')`;
 
 export default function ServicesListItem({
+    action,
     leftChildren,
     rightChildren,
     shadowOpacity = 1,
@@ -39,7 +41,8 @@ export default function ServicesListItem({
             direction="row"
             alignItems="stretch"
             justifyContent="space-between"
-
+            component={"div"}
+            onClick={action}
             sx={{
                 position: "relative",
                 overflow: "hidden",

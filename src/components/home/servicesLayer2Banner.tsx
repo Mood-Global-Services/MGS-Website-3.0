@@ -13,6 +13,8 @@ import chainlink from "@/assets/images/chainlink-link-logo.webp"
 import BS from "@/assets/images/BS.webp"
 import grafana from "@/assets/images/grafana.webp"
 
+import L2Asset from "@/assets/images/L2Asset.webp"
+
 export default function ServicesLayer2Banner() {
     return (
         <Stack
@@ -26,12 +28,31 @@ export default function ServicesLayer2Banner() {
                 borderRadius: 2,
                 overflow: "hidden",
                 backgroundColor: "#000",
+                transition: "border 0.3s ease-in-out",
+                "&:hover": {
+                    border: "1px solid rgba(103,103,103,1)",
+                },
+                "& .l2-gradient": {
+                    opacity: 0.75,
+                    transition: "opacity 0.3s ease-in-out",
+                },
+                "& .l2-asset": {
+                    transform: "scale(1) translateY(0%)",
+                    transition: "transform 0.3s ease-in-out",
+                },
+                "&:hover .l2-gradient": {
+                    opacity: 1,
+                },
+                "&:hover .l2-asset": {
+                    transform: "scale(1.02) translateY(-1%)",
+                },
             }}
         >
             <Box
                 component="svg"
                 viewBox="0 0 1343 572"
                 preserveAspectRatio="xMidYMid slice"
+                className="l2-gradient"
                 sx={{
                     position: "absolute",
                     inset: 0,
@@ -178,6 +199,14 @@ export default function ServicesLayer2Banner() {
                     </linearGradient>
                 </defs>
             </Box>
+            <Stack width={"100%"} height={"100%"} sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                zIndex: 1,
+            }}>
+                <Image src={L2Asset} alt="L1 Asset" fill className="l2-asset" />
+            </Stack>
             <Stack
                 justifyContent="center"
                 width={"60%"}
@@ -207,7 +236,9 @@ export default function ServicesLayer2Banner() {
                         </Stack>
                     </Stack>
                 </Stack>
-                <Stack width={"40%"}>
+                <Stack width={"40%"} component={"div"} onClick={() => {
+                    window.location.href = "/contact";
+                }}>
                     <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={1}>

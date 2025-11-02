@@ -39,7 +39,9 @@ const OurPortfolio = () => {
                     Our Portfolio
                 </Typography>
                 <Stack mt={1} display={{ xs: "none", lg: "block" }}>
-                    <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                    <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1} action={() => {
+                        window.location.href = "/portfolio";
+                    }}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={1}>
                                 All projects

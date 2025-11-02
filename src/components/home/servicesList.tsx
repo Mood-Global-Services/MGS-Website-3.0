@@ -15,6 +15,9 @@ const ServicesList = () => {
     return (
         <Stack width="75%" height="100%" alignItems="center" gap={2} display={{ xs: "none", lg: "flex" }}>
             <ServicesListItem
+                action={() => {
+                    window.location.href = "/services#smart-contracts";
+                }}
                 leftChildren={
                     <Stack direction="row" justifyContent="start" alignItems="start" gap={2}>
                         <Image src={SmartContracts} alt="Smart Contracts" width={36} height={36} />
@@ -58,6 +61,9 @@ const ServicesList = () => {
                 }
             />
             <ServicesListItem
+                action={() => {
+                    window.location.href = "/services#infra-and-protocols";
+                }}
                 leftChildren={
                     <Stack direction="row" justifyContent="start" alignItems="start" gap={2}>
                         <Image src={Infra} alt="Infrastructure" width={36} height={36} />
@@ -98,6 +104,9 @@ const ServicesList = () => {
                 }
             />
             <ServicesListItem
+                action={() => {
+                    window.location.href = "/services#ai-systems";
+                }}
                 leftChildren={
                     <Stack direction="row" justifyContent="start" alignItems="start" gap={2}>
                         <Image src={AI} alt="AI" width={36} height={36} />
@@ -138,6 +147,9 @@ const ServicesList = () => {
                 }
             />
             <ServicesListItem
+                action={() => {
+                    window.location.href = "/services#product-dev";
+                }}
                 leftChildren={
                     <Stack direction="row" justifyContent="start" alignItems="start" gap={2}>
                         <Image src={Dev} alt="Dev" width={36} height={36} />
@@ -181,6 +193,9 @@ const ServicesList = () => {
                 }
             />
             <ServicesListItem
+                action={() => {
+                    window.location.href = "/services#gtm-and-legal";
+                }}
                 leftChildren={
                     <Stack direction="row" justifyContent="start" alignItems="start" gap={2}>
                         <Image src={GTM} alt="GTM" width={36} height={36} />
