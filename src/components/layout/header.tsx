@@ -38,19 +38,45 @@ import {
     NavigationMenuContentItem,
 } from "@/components/generic/navigationMenu";
 
-const mobileMenuItems = [
+type NavItem = {
+    label: string;
+    href: string;
+    disabled?: boolean;
+    children?: NavItem[];
+};
+
+const mobileMenuItems: NavItem[] = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "About us", href: "/team" },
+    {
+        label: "Services",
+        href: "/services",
+        children: [
+            { label: "Smart Contracts", href: "/services#smart-contracts" },
+            { label: "Infra & Protocols", href: "/services#infra-and-protocols" },
+            { label: "AI Systems", href: "/services#ai-systems" },
+            { label: "Product Dev", href: "/services#product-dev" },
+            { label: "GTM & Legal", href: "/services#gtm-and-legal" },
+        ],
+    },
+    {
+        label: "About us",
+        href: "/team",
+        children: [
+            { label: "Team", href: "/team" },
+            { label: "Carreers", href: "/vacancies" },
+            { label: "Portfolio", href: "/portfolio" },
+        ],
+    },
     { label: "Blog", href: "/blog" },
     { label: "SiteLab", href: "/sitelab", disabled: true },
     { label: "BlockAI", href: "/blockai", disabled: true },
-  ];
+];
+
 
 export default function Header() {
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    
+
     return (
         <header className="z-50 w-full bg-transparent">
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 lg:px-6">
