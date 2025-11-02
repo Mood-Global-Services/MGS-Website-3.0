@@ -17,11 +17,16 @@ import subscribeInputBg from "@/assets/images/subscribeInputBg.webp";
 
 const DevelopingWithTheBest = () => {
     return (
-        <Stack width="100%" height="100%" position="relative" paddingY={8} paddingX={10} gap={4}>
-            <Stack direction="row" alignItems="stretch" justifyContent="space-between" gap={4}>
-                <Stack width="50%" flexGrow={1} position="relative" gap={4}>
-                    <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
+        <Stack width="100%" height="100%" position="relative" paddingY={{ xs: 4, lg: 8 }} paddingX={{ xs: 2, lg: 10 }} gap={4}>
+            <Stack direction={{ xs: "column", lg: "row" }} alignItems="stretch" justifyContent="space-between" gap={4}>
+                <Stack width={{ xs: "100%", lg: "50%" }} flexGrow={1} position="relative" gap={4}>
+                    <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno desktop-only" color={theme.palette.brand.mgsBlue1.main} sx={{}}>
                         Developing With The Best
+                    </Typography>
+                    <Typography variant="h3" fontSize={"2.5rem !important"} fontWeight={400} textAlign="center" className="chno mobile-only">
+                        <span>Developing</span>
+                        <br />
+                        <span style={{ color: theme.palette.brand.mgsBlue1.main }}>With The Best</span>
                     </Typography>
                     <Grid container spacing={2} width="100%" sx={{
                         "& .weDevelopIcon": {
@@ -182,68 +187,99 @@ const DevelopingWithTheBest = () => {
                 </Stack>
                 <Stack sx={{
                     flexGrow: 1,
-                    width: "2%",
+                    width: { xs: "100%", lg: "2%" },
                     alignItems: "center",
                     background: "linear-gradient(180deg, rgba(0, 19, 153, 0) 0%, #0020FF 100%)",
                 }}>
-                    
+
                 </Stack>
-                <Stack width="48%" flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
-                    <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno" color={theme.palette.brand.mgsBlue1.main}>
-                        Subscribe<br />to our newslatter
+                <Stack width={{ xs: "100%", lg: "48%" }} flexGrow={1} justifyContent="space-between" position="relative" gap={3}>
+                    <Typography variant="h3" fontSize={"2.25rem !important"} fontWeight={400} className="chno desktop-only" color={theme.palette.brand.mgsBlue1.main}>
+                        Subscribe<br />to our newsletter
                     </Typography>
-                    <Stack gap={2}>
-                        <Typography variant="h5" fontWeight={400}>
-                            Join our community of innovators.
-                        </Typography>
-                        <Typography variant="body1" color={theme.palette.text.secondary} fontWeight={400} sx={{
-                            width: "80%",
-                        }}>
-                            Get the latest updates on AI, blockchain, and product launches — plus expert tips to help your business grow.
-                        </Typography>
-                    </Stack>
-                    <Stack width="80%" direction="row" alignItems="center" justifyContent="space-between" gap={1}>
-                        <Stack alignItems="center" justifyContent="center" paddingY={1} width="100%" height="100%" position="relative" overflow="hidden" sx={{
-                            backgroundImage: `url(${subscribeInputBg.src})`,
-                            backgroundSize: "100% 90%",
-                            backgroundPosition: "center center",
-                            backgroundRepeat: "no-repeat",
-                            opacity: 0.75,
-                            transition: "opacity 0.3s ease-in-out",
-                            "&:hover": {
-                                opacity: 1,
-                            },
-                        }}>
-                            <InputBase
-                                placeholder="Your email"
-                                sx={{
-                                    width: "100%",
-                                    height: "100%",
-                                    borderRadius: 1,
-                                    border: "none",
-                                    outline: "none",
-                                    fontWeight: 300,
-                                    position: "relative",
-                                    paddingX: 1,
-                                    zIndex: 1,
-                                    "& ::placeholder": {
-                                        fontWeight: 300,
-                                    },
-                                }}
-                            />
+                    <Typography variant="h3" fontSize={"2.5rem !important"} fontWeight={400} textAlign="center" className="chno mobile-only" color={theme.palette.brand.mgsBlue1.main}>
+                        Subscribe to<br />our newsletter
+                    </Typography>
+                    <Stack width="100%" gap={{ xs: 3, lg: 6 }} marginTop={{ xs: 2, lg: 0 }} sx={{
+                        alignItems: { xs: "center", lg: "flex-start" },
+                        backgroundColor: { xs: "#101010", lg: "transparent" },
+                        borderRadius: { xs: 2, lg: 0 },
+                        border: { xs: "1px solid #2F2F2F", lg: "none" },
+                        paddingX: { xs: 2, lg: 0 },
+                        paddingY: { xs: 3, lg: 0 },
+                    }}>
+                        <Stack gap={{xs: 3, lg: 2}}>
+                            <Typography variant="h5" fontWeight={400} textAlign={{ xs: "center", lg: "left" }} sx={{
+                                fontSize: { xs: "1.2rem !important", lg: "1.5rem !important" },
+                            }}>
+                                Join our community of innovators.
+                            </Typography>
+                            <Typography variant="body1" color={theme.palette.text.secondary} fontWeight={400} textAlign={{ xs: "center", lg: "left" }} sx={{
+                                width: { xs: "100%", lg: "80%" },
+                                fontSize: { xs: "1.1rem !important", lg: "1rem !important" },
+                            }}>
+                                Get the latest updates on AI, blockchain, and product launches — plus expert tips to help your business grow.
+                            </Typography>
                         </Stack>
-                        <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
-                            <div className="flex items-center justify-center gap-1">
-                                <Typography component="span" variant="h6" marginRight={0.5}>
-                                    Subscribe
-                                </Typography>
-                                <span className="arrow-clip">
-                                    <span className="arrow-slide">
-                                        <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
-                                    </span>
-                                </span>
-                            </div>
-                        </SideTabbedButton>
+                        <Stack width={{ xs: "100%", lg: "80%" }} direction={{ xs: "column", lg: "row" }} alignItems="center" justifyContent="space-between" gap={{xs: 1.5, lg: 1}}>
+                            <Stack alignItems={{ xs: "center", lg: "flex-start" }} justifyContent={{ xs: "center", lg: "center" }} paddingY={1} width="100%" height="100%" position="relative" overflow="hidden" sx={{
+                                backgroundImage: `url(${subscribeInputBg.src})`,
+                                backgroundSize: "100% 90%",
+                                backgroundPosition: "center center",
+                                backgroundRepeat: "no-repeat",
+                                opacity: 0.75,
+                                transition: "opacity 0.3s ease-in-out",
+                                "&:hover": {
+                                    opacity: 1,
+                                },
+                            }}>
+                                <InputBase
+                                    placeholder="Your email"
+                                    sx={{
+                                        width: "100%",
+                                        height: "100%",
+                                        borderRadius: 1,
+                                        border: "none",
+                                        outline: "none",
+                                        fontWeight: 300,
+                                        position: "relative",
+                                        paddingX: 1,
+                                        zIndex: 1,
+                                        "& ::placeholder": {
+                                            fontWeight: 300,
+                                        },
+                                    }}
+                                />
+                            </Stack>
+                            <Stack width="auto" display={{xs: "none", lg: "flex"}}>
+                                <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={0.5}>
+                                            Subscribe
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
+                                        </span>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
+                            <Stack width="100%" display={{xs: "flex", lg: "none"}}>
+                                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <Typography component="span" variant="h6" marginRight={0.5}>
+                                            Subscribe
+                                        </Typography>
+                                        <span className="arrow-clip">
+                                            <span className="arrow-slide">
+                                                <Image src={arrow} alt="arrow animation" width={20} height={20} style={{ display: "block" }} />
+                                            </span>
+                                        </span>
+                                    </div>
+                                </SideTabbedButton>
+                            </Stack>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>

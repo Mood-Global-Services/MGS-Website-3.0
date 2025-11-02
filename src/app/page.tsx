@@ -216,7 +216,6 @@ export default function Home() {
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 1,
-        display: { xs: "none", lg: "block" },
       }}>
         <DevelopingWithTheBest />
       </Stack>
