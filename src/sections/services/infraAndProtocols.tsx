@@ -2,8 +2,8 @@ import { Stack, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 
-import infraAndProtocolsIcon from "@/assets/images/servicesPage/infraIcon.svg?url";
-import infraAndProtocolsAsset from "@/assets/images/servicesPage/infraAsset.svg?url";
+import infraAndProtocolsIcon from "@/assets/images/servicesPage/infraIcon.webp";
+import infraAndProtocolsAsset from "@/assets/images/servicesPage/infraAsset.webp";
 
 
 const InfraAndProtocols = () => {
@@ -77,7 +77,7 @@ const InfraAndProtocols = () => {
                         We design and implement robust blockchain infrastructure and protocols that ensure scalability, security, and reliability.
                     </Typography>
                 </Stack>
-                <Image src={infraAndProtocolsAsset} alt="sc asset" height={450} width={450} style={{ height: 450, width: 450 }} />
+                <Image src={infraAndProtocolsAsset} alt="sc asset" height={450} width={450} /> 
             </Stack>
         </Stack>
     );

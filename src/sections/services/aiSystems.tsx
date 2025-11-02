@@ -2,8 +2,8 @@ import { Stack, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 
-import aiSystemsIcon from "@/assets/images/servicesPage/aiIcon.svg?url";
-import aiSystemsAsset from "@/assets/images/servicesPage/aiAsset.svg?url";
+import aiSystemsIcon from "@/assets/images/servicesPage/aiIcon.webp";
+import aiSystemsAsset from "@/assets/images/servicesPage/aiAsset.webp";
 
 
 const AISystems = () => {

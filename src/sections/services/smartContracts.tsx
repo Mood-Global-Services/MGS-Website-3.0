@@ -2,8 +2,8 @@ import { Stack, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 
-import smartContractsIcon from "@/assets/images/servicesPage/smartContractsIcon.svg?url";
-import smartContractsAsset from "@/assets/images/servicesPage/smartContractsAsset.svg?url";
+import smartContractsIcon from "@/assets/images/servicesPage/smartContractsIcon.webp";
+import smartContractsAsset from "@/assets/images/servicesPage/smartContractsAsset.webp";
 
 
 const SmartContracts = () => {

@@ -2,8 +2,8 @@ import { Stack, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 
-import productDevIcon from "@/assets/images/servicesPage/devIcon.svg?url";
-import productDevAsset from "@/assets/images/servicesPage/devAsset.svg?url";
+import productDevIcon from "@/assets/images/servicesPage/devIcon.webp";
+import productDevAsset from "@/assets/images/servicesPage/devAsset.webp";
 
 
 const ProductDev = () => {

@@ -2,7 +2,7 @@ import theme from "@/theme/theme";
 import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
 
-import servicesHeroAsset from "@/assets/images/servicesPage/servicesHeroAsset.svg?url";
+import servicesHeroAsset from "@/assets/images/servicesPage/servicesHeroAsset.webp";
 
 const ServicesHero = () => {
     return (

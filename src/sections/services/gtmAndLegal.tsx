@@ -2,8 +2,8 @@ import { Stack, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 
-import gtmAndLegalIcon from "@/assets/images/servicesPage/gtmIcon.svg?url";
-import gtmAndLegalAsset from "@/assets/images/servicesPage/gtmAsset.svg?url";
+import gtmAndLegalIcon from "@/assets/images/servicesPage/gtmIcon.webp";
+import gtmAndLegalAsset from "@/assets/images/servicesPage/gtmAsset.webp";
 
 
 const GTMAndLegal = () => {

@@ -11,7 +11,7 @@ import Footer from "@/components/layout/footer";
 import theme from "@/theme/theme";
 import Image from "next/image";
 
-import servicesPageGradient from "@/assets/images/servicesPage/servicesPageGradients.svg?url";
+import servicesPageGradient from "@/assets/images/servicesPage/servicesPageGradients.webp";
 
 export default function ServicesPage() {
 
