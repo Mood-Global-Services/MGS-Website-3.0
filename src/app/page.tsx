@@ -26,8 +26,10 @@ import theme from "@/theme/theme";
 import Testimonials from "@/sections/home/testimonials";
 
 import MobileWeSpecializeIn from "@/sections/home/mobile/mobileWeSpecializeIn";
+import MobileTestimonials from "@/sections/home/mobile/mobileTestimonials";
 
 import notJustForSmeMobileBg from "@/assets/images/testBG.webp";
+
 
 export default function Home() {
 
@@ -202,9 +204,15 @@ export default function Home() {
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} marginTop={8} sx={{
         zIndex: 1,
-        display: { xs: "none", lg: "block" },
+        display: { xs: "none", lg: "flex" },
       }}>
         <Testimonials />
+      </Stack>
+      <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} marginTop={8} sx={{
+        zIndex: 1,
+        display: { xs: "flex", lg: "none" },
+      }}>
+        <MobileTestimonials />
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 1,

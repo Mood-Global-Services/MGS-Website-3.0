@@ -22,6 +22,15 @@ const scrollDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
+const scrollLeft = keyframes`
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+const scrollRight = keyframes`
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+`;
+
 // Utility: splitting cards into N columns for a masonry-like layout
 function chunkIntoColumns<T>(items: T[], columns: number) {
   const out: T[][] = Array.from({ length: columns }, () => []);
@@ -47,10 +56,14 @@ export default function Testimonials() {
   ];
 
   const columns = 3;
+  const mobileColumns = 2;
   const cols = chunkIntoColumns(cards, columns);
+  const mobileCols = chunkIntoColumns(cards, mobileColumns);
 
   const durations = [36, 32, 40];
   const directions = [scrollUp, scrollDown, scrollUp];
+  const mobileDurations = [10, 10, 10];
+  const mobileDirections = [scrollLeft, scrollRight, scrollLeft];
 
   return (
     <Stack width="100%" alignItems="center" position="relative" py={8} px={{ xs: 2, md: 10 }} gap={10}>
@@ -93,7 +106,9 @@ export default function Testimonials() {
         }} />
 
         {/* columns container */}
-        <Grid container columnSpacing={{ xs: 2, md: 3 }} rowSpacing={0} px={{ xs: 2, md: 0 }} position="relative" zIndex={1}>
+        <Grid container columnSpacing={{ xs: 2, md: 3 }} rowSpacing={0} px={{ xs: 2, md: 0 }} position="relative" zIndex={1} sx={{
+          display: {xs: "none", lg: "block"},
+        }}>
           {cols.map((colItems, idx) => (
             <Grid key={idx} size={{ xs: 12, md: 6, lg: 4 }}>
               <Box
@@ -108,8 +123,44 @@ export default function Testimonials() {
                 <Stack
                   spacing={{ xs: 2, md: 3 }}
                   sx={{
-                    animation: `${directions[idx]} ${durations[idx]}s linear infinite`,
-                    willChange: "transform",
+                    animation: {xs: `${mobileDirections[idx]} ${mobileDurations[idx]}s linear infinite`, lg: `${directions[idx]} ${durations[idx]}s linear infinite`},
+                    willChange: {xs: "transform", lg: "unset"},
+                    "&:hover": { animationPlayState: "paused" },
+                    pr: { md: 1 },
+                  }}
+                >
+                  {/* First copy */}
+                  {colItems.map((el, i) => (
+                    <Box key={`a-${i}`}>{el}</Box>
+                  ))}
+                  {/* Second copy */}
+                  {colItems.map((el, i) => (
+                    <Box key={`b-${i}`}>{el}</Box>
+                  ))}
+                </Stack>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container columnSpacing={{ xs: 2, md: 3 }} rowSpacing={0} px={{ xs: 2, md: 0 }} position="relative" zIndex={1} sx={{
+          display: {xs: "block", lg: "none"},
+        }}>
+          {mobileCols.map((colItems, idx) => (
+            <Grid key={idx} size={{ xs: 12, md: 6, lg: 4 }}>
+              <Box
+                sx={{
+                  height: { xs: 300, sm: 320, md: 360 },
+                  overflow: "hidden",
+                  position: "relative",
+                  isolation: "isolate",
+                }}
+              >
+                {/* column content */}
+                <Stack
+                  spacing={{ xs: 2, md: 3 }}
+                  sx={{
+                    animation: {xs: `${mobileDirections[idx]} ${mobileDurations[idx]}s linear infinite`, lg: `${directions[idx]} ${durations[idx]}s linear infinite`},
+                    willChange: {xs: "transform", lg: "unset"},
                     "&:hover": { animationPlayState: "paused" },
                     pr: { md: 1 },
                   }}

@@ -41,8 +41,8 @@ export default function TestimonialsCard1() {
                     alignItems="center"
                     justifyContent="space-between"
                     sx={{
-                        pl: { xs: 6, sm: 9, md: 8, lg: 6, xl: 10 },
-                        pr: { xs: 2, sm: 3, md: 0, lg: 0, xl: 0 },
+                        pl: { xs: 8, sm: 9, md: 8, lg: 6, xl: 10 },
+                        pr: { xs: 0, sm: 3, md: 0, lg: 0, xl: 0 },
                         py: { xs: 1, sm: 0, lg: 0, xl: 1.5 },
                         pb: { xs: 0, sm: 0, lg: 2, xl: 0 },
                     }}
@@ -73,7 +73,7 @@ export default function TestimonialsCard1() {
                     sx={{
                         fontWeight: 300,
                         fontSize: { xs: "0.85rem", sm: "0.85rem", md: "0.9rem", lg: "0.95rem", xl: "1rem" },
-                        px: { xs: 3, sm: 2, md: 1, lg: 0.5, xl: 1 },
+                        px: { xs: 1, sm: 2, md: 1, lg: 0.5, xl: 1 },
                         pb: { xs: 3, sm: 4, lg: 6, xl: 7 },
                     }}
                 >
