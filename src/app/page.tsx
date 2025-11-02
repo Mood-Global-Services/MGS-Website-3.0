@@ -20,6 +20,8 @@ import findUsBlobs from "@/assets/images/findUsBlobs.svg?url";
 import findUsLeftSide from "@/assets/images/findUsLeftSide.svg?url";
 import findUsRightSide from "@/assets/images/findUsRightSide.svg?url";
 import empowerShadow from "@/assets/images/empowerShadow.svg?url";
+import weEmpowerMobileShadow1 from "@/assets/images/weEmpowerMobileShadow1.webp";
+import weEmpowerMobileShadow2 from "@/assets/images/weEmpowerMobileShadow2.webp";
 import theme from "@/theme/theme";
 import Testimonials from "@/sections/home/testimonials";
 
@@ -170,13 +172,29 @@ export default function Home() {
       </Stack>
       <Stack width={"100%"} height={"fit-content"} alignItems={"center"} justifyContent={"center"} position={"relative"} sx={{
         zIndex: 2,
-        display: { xs: "none", lg: "block" },
       }}>
         <Image src={empowerShadow} className="desktop-only" alt="empowerShadow" width={1000} height={1000} style={{
           position: "absolute",
           top: "-10%",
           left: "-20%",
           width: "70%",
+          height: "auto",
+          zIndex: 0,
+        }} />
+        <Image src={weEmpowerMobileShadow1} className="mobile-only" alt="empowerShadow" width={1000} height={1000} style={{
+          position: "absolute",
+          top: "20%",
+          right: "-20%",
+          width: "100%",
+          height: "60%",
+          zIndex: 0,
+        }} />
+        <Image src={weEmpowerMobileShadow2} className="mobile-only" alt="empowerShadow" width={1000} height={1000} style={{
+          position: "absolute",
+          top: "65%",
+          left: "-40%",
+          width: "100%",
+          filter: "scale(2)",
           height: "auto",
           zIndex: 0,
         }} />
