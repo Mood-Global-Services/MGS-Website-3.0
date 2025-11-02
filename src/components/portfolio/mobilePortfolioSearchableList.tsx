@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { Stack, Typography, Collapse, List, ListItem, ListItemText, ListItemButton, ListItemIcon, Checkbox, IconButton } from "@mui/material";
-import { portfolioItems, type PortfolioItem } from "@/data/portfolio";
+import { mobilePortfolioItems, type MobilePortfolioItem } from "@/data/mobilePortfolio";
 import SideTabbedButton from "@/components/generic/SideTabbedButton";
 import theme from "@/theme/theme";
 import Image from "next/image";
@@ -19,7 +19,7 @@ const PortfolioSearchableList = () => {
     const [openTypes, setOpenTypes] = useState<boolean>(false);
     const [selectedTools, setSelectedTools] = useState<string[]>([]);
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-    const [filteredItems, setFilteredItems] = useState<PortfolioItem[]>(portfolioItems);
+    const [filteredItems, setFilteredItems] = useState<MobilePortfolioItem[]>(mobilePortfolioItems);
 
     const handleToggleTool = (tool: string) => {
         setSelectedTools(prev => prev.includes(tool) ? prev.filter(t => t !== tool) : [...prev, tool]);
@@ -32,10 +32,10 @@ const PortfolioSearchableList = () => {
     useEffect(() => {
         setFilteredItems(
             selectedTools.length > 0 && selectedTypes.length > 0 ?
-                portfolioItems.filter(item => item.tools.some(tool => selectedTools.includes(tool)) && item.type.some(type => selectedTypes.includes(type)))
-                    .sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
+                mobilePortfolioItems.filter(item => item.tools.some(tool => selectedTools.includes(tool)) && item.type.some(type => selectedTypes.includes(type)))
+                    .sort((a: MobilePortfolioItem, b: MobilePortfolioItem) => a.title.localeCompare(b.title))
                 :
-                portfolioItems.sort((a: PortfolioItem, b: PortfolioItem) => a.title.localeCompare(b.title))
+                mobilePortfolioItems.sort((a: MobilePortfolioItem, b: MobilePortfolioItem) => a.title.localeCompare(b.title))
         );
     }, [selectedTools, selectedTypes]);
 
@@ -261,7 +261,7 @@ const PortfolioSearchableList = () => {
                     </Collapse>
                 </Stack>
             </Stack>
-            {filteredItems.map((item: PortfolioItem) => (
+            {filteredItems.map((item: MobilePortfolioItem) => (
                 <Stack key={item.id} width="100%" height="fit-content" direction={{ xs: "column", lg: "row" }} alignItems="stretch" justifyContent="space-between" sx={{
                     borderRadius: { xs: 2, lg: 2 },
                     border: "1px solid #2F2F2F",
@@ -270,7 +270,7 @@ const PortfolioSearchableList = () => {
                     padding: { xs: 0, lg: 2 },
                     gap: { xs: 2, lg: 6 }
                 }}>
-                    <Stack width={{ xs: "100%", lg: "40%" }} height={{xs: 240, lg: "auto"}} alignItems="center" justifyContent="center">
+                    <Stack width={{ xs: "100%", lg: "40%" }} height={{ xs: 240, lg: "auto" }} alignItems="center" justifyContent="center">
                         {
                             item.asset && <item.asset />
                         }

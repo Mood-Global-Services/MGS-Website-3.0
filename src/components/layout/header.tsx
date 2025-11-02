@@ -274,7 +274,7 @@ export default function Header() {
                                             </Stack>
                                         </PlainContentItem>
                                         <div aria-hidden className="bg-[#292929]" />
-                                        <PlainContentItem href="/" className="pl-3">
+                                        <PlainContentItem href="/portfolio" className="pl-3">
                                             <Stack height={"100%"} justifyContent={"space-between"} paddingX={1.5} paddingTop={0.5} paddingBottom={1.5}>
                                                 <Typography component="span" variant="subtitle1" color={theme.palette.brand.mgsPurple1.main}>Portfolio</Typography>
                                                 <Stack alignItems={"center"} justifyContent={"center"} paddingX={2}>
@@ -298,7 +298,7 @@ export default function Header() {
                     </NavigationMenu>
                 </div>
 
-                <div className="hidden md:block">
+                <div className="hidden md:block" onClick={() => window.location.href = "/contact"}>
                     <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                         <div className="flex items-center justify-center gap-1">
                             <Typography component="span" variant="h6" marginRight={0.5}>

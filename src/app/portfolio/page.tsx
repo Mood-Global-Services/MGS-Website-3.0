@@ -1,6 +1,7 @@
 import { Stack } from "@mui/material";
 import PortfolioHero from "@/sections/portfolio/portfolioHero";
 import PortfolioSearchableList from "@/components/portfolio/portfolioSearchableList";
+import MobilePortfolioSearchableList from "@/components/portfolio/mobilePortfolioSearchableList";
 
 import Footer from "@/components/layout/footer";
 import theme from "@/theme/theme";
@@ -64,8 +65,15 @@ export default function PortfolioPage() {
                     </Stack>
                     <Stack width="100%" position={"relative"} sx={{
                         zIndex: 2,
+                        display: { xs: "none", lg: "block" },
                     }}>
                         <PortfolioSearchableList />
+                    </Stack>
+                    <Stack width="100%" position={"relative"} sx={{
+                        zIndex: 2,
+                        display: { xs: "block", lg: "none" },
+                    }}>
+                        <MobilePortfolioSearchableList />
                     </Stack>
                 </Stack>
                 <Stack width={"100%"} alignItems={"center"} position={"relative"} sx={{
