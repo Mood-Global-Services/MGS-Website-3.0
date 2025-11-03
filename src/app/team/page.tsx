@@ -276,6 +276,12 @@ export default function TeamPage() {
                                             paddingX: 1,
                                             paddingY: 0.25,
                                             borderRadius: 1,
+                                            border: "1px solid transparent",
+                                            transition: "border 0.3s ease-in-out",
+                                            cursor: "pointer",
+                                            "&:hover": {
+                                                border: "1px solid #595959"
+                                            },
                                         }}>
                                             Linkedin
                                         </Typography>
@@ -284,6 +290,12 @@ export default function TeamPage() {
                                             paddingX: 1,
                                             paddingY: 0.25,
                                             borderRadius: 1,
+                                            border: "1px solid transparent",
+                                            transition: "border 0.3s ease-in-out",
+                                            cursor: "pointer",
+                                            "&:hover": {
+                                                border: "1px solid #595959"
+                                            },
                                         }}>
                                             X
                                         </Typography>
