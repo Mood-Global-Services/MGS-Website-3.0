@@ -1,3 +1,5 @@
+"use client";
+
 import { Stack, Typography, Grid } from "@mui/material";
 import Footer from "@/components/layout/footer";
 import theme from "@/theme/theme";
@@ -335,7 +337,9 @@ export default function TeamPage() {
                                 </Typography>
                             </Stack>
                             <Stack width="40%" marginX="auto" alignItems="center" justifyContent="center" display={{ xs: "none", lg: "block" }}>
-                                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                                <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1} action={() => {
+                                    window.location.href = "/vacancies";
+                                }}>
                                     <div className="flex items-center justify-center gap-1">
                                         <Typography component="span" variant="h6" marginRight={1}>
                                             View Open Positions

@@ -43,7 +43,8 @@ export default function HeroAnimation({
       justifyContent={
         align === "left" ? "flex-start" : align === "right" ? "flex-end" : "center"
       }
-      marginTop={{ xs: -5, lg: 0 }}
+      marginTop={{ xs: -5, lg: -4 }}
+      marginBottom={{ xs: 2, lg: 2 }}
     >
       <Box
         sx={{
@@ -51,7 +52,8 @@ export default function HeroAnimation({
           width: frameWidth,
           height: { xs: "150px", lg: frameHeight },
           mx: "auto",
-          p: framePadding,
+          py: framePadding,
+          px: 20,
           boxSizing: "content-box",
           overflow: "hidden",
           flexShrink: 0,
