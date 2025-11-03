@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { Stack, Typography, Grid, InputBase } from "@mui/material";
 import theme from "@/theme/theme";
 import Image from "next/image";
@@ -15,7 +17,24 @@ import weDevelopIconArrow from "@/assets/images/icons/weDevelopIconArrow.svg?url
 import arrow from "@/assets/images/icons/arrow.webp"
 import subscribeInputBg from "@/assets/images/subscribeInputBg.webp";
 
+import { useSubscribe } from "@/hooks/useSubscribe";
+
 const DevelopingWithTheBest = () => {
+    const [email, setEmail] = useState("");
+    const { subscribe, status, error, reset } = useSubscribe({
+        onSuccess: () => setEmail(""),
+    });
+
+    const loading = status === "loading";
+
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (status !== "idle") reset();
+        setEmail(event.target.value);
+    };
+
+    const handleSubscribe = () => {
+        void subscribe(email);
+    };
     return (
         <Stack width="100%" height="100%" position="relative" paddingY={{ xs: 4, lg: 8 }} paddingX={{ xs: 2, lg: 10 }} gap={4}>
             <Stack direction={{ xs: "column", lg: "row" }} alignItems="stretch" justifyContent="space-between" gap={4}>
@@ -208,7 +227,7 @@ const DevelopingWithTheBest = () => {
                         paddingX: { xs: 2, lg: 0 },
                         paddingY: { xs: 3, lg: 0 },
                     }}>
-                        <Stack gap={{xs: 3, lg: 2}}>
+                        <Stack gap={{ xs: 3, lg: 2 }}>
                             <Typography variant="h5" fontWeight={400} textAlign={{ xs: "center", lg: "left" }} sx={{
                                 fontSize: { xs: "1.2rem !important", lg: "1.5rem !important" },
                             }}>
@@ -221,7 +240,7 @@ const DevelopingWithTheBest = () => {
                                 Get the latest updates on AI, blockchain, and product launches — plus expert tips to help your business grow.
                             </Typography>
                         </Stack>
-                        <Stack width={{ xs: "100%", lg: "80%" }} direction={{ xs: "column", lg: "row" }} alignItems="center" justifyContent="space-between" gap={{xs: 1.5, lg: 1}}>
+                        <Stack width={{ xs: "100%", lg: "80%" }} direction={{ xs: "column", lg: "row" }} alignItems="center" justifyContent="space-between" gap={{ xs: 1.5, lg: 1 }}>
                             <Stack alignItems={{ xs: "center", lg: "flex-start" }} justifyContent={{ xs: "center", lg: "center" }} paddingY={1} width="100%" height="100%" position="relative" overflow="hidden" sx={{
                                 backgroundImage: `url(${subscribeInputBg.src})`,
                                 backgroundSize: "100% 90%",
@@ -234,6 +253,8 @@ const DevelopingWithTheBest = () => {
                                 },
                             }}>
                                 <InputBase
+                                    value={email}
+                                    onChange={handleEmailChange}
                                     placeholder="Your email"
                                     sx={{
                                         width: "100%",
@@ -249,10 +270,13 @@ const DevelopingWithTheBest = () => {
                                             fontWeight: 300,
                                         },
                                     }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter" && !loading) handleSubscribe();
+                                    }}
                                 />
                             </Stack>
-                            <Stack width="auto" display={{xs: "none", lg: "flex"}}>
-                                <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
+                            <Stack width="auto" display={{ xs: "none", lg: "flex" }}>
+                                <SideTabbedButton paddingX={18} hoverShiftX={1.5} hoverShiftY={-1} action={handleSubscribe}>
                                     <div className="flex items-center justify-center gap-1">
                                         <Typography component="span" variant="h6" marginRight={0.5}>
                                             Subscribe
@@ -265,7 +289,7 @@ const DevelopingWithTheBest = () => {
                                     </div>
                                 </SideTabbedButton>
                             </Stack>
-                            <Stack width="100%" display={{xs: "flex", lg: "none"}}>
+                            <Stack width="100%" display={{ xs: "flex", lg: "none" }}>
                                 <SideTabbedButton fullWidth paddingX={18} hoverShiftX={1.5} hoverShiftY={-1}>
                                     <div className="flex items-center justify-center gap-1">
                                         <Typography component="span" variant="h6" marginRight={0.5}>
@@ -280,6 +304,17 @@ const DevelopingWithTheBest = () => {
                                 </SideTabbedButton>
                             </Stack>
                         </Stack>
+                        {/* feedback */}
+                        {status === "success" && (
+                            <Typography role="status" variant="body2" color="success.main" sx={{ mt: -1 }} aria-live="polite">
+                                Thanks! You’re subscribed.
+                            </Typography>
+                        )}
+                        {status === "error" && !!error && (
+                            <Typography role="status" variant="body2" color="error.main" sx={{ mt: -1 }} aria-live="polite">
+                                {error}
+                            </Typography>
+                        )}
                     </Stack>
                 </Stack>
             </Stack>
