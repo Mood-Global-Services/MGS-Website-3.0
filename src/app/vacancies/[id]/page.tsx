@@ -20,8 +20,13 @@ export default function VacancyPage() {
     const id = params.id as string;
     const vacancy = vacancies.find((vacancy: Vacancy) => vacancy.id === id);
 
+    const [fullName, setFullName] = useState("");
+    const [emailAddress, setEmailAddress] = useState("");
+    const [linkedinProfile, setLinkedinProfile] = useState("");
+    const [portoflio, setPortoflio] = useState("");
     const [resumeFile, setResumeFile] = useState<File | null>(null);
     const [coverLetterFile, setCoverLetterFile] = useState<File | null>(null);
+    const [agreeToProcessing, setAgreeToProcessing] = useState(false);
 
     return (
         <Stack width={"100%"} alignItems={"center"} gap={4}>
@@ -182,6 +187,8 @@ export default function VacancyPage() {
                     </Stack>
                     <Stack width={{xs: "100%", lg: "50%"}} gap={2} paddingTop={2}>
                         <InputBase
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
                             placeholder="Full Name"
                             type="text"
                             sx={{
@@ -200,6 +207,8 @@ export default function VacancyPage() {
                             }}
                         />
                         <InputBase
+                            value={emailAddress}
+                            onChange={(e) => setEmailAddress(e.target.value)}
                             placeholder="Email Address"
                             type="email"
                             sx={{
@@ -218,6 +227,8 @@ export default function VacancyPage() {
                             }}
                         />
                         <InputBase
+                            value={linkedinProfile}
+                            onChange={(e) => setLinkedinProfile(e.target.value)}
                             placeholder="Linkedin Profile (URL)"
                             type="url"
                             sx={{
@@ -236,6 +247,8 @@ export default function VacancyPage() {
                             }}
                         />
                         <InputBase
+                            value={portoflio}
+                            onChange={(e) => setPortoflio(e.target.value)}
                             placeholder="Portoflio (URL)"
                             type="url"
                             sx={{
@@ -259,7 +272,8 @@ export default function VacancyPage() {
                             <Stack width={{ xs: "100%", lg: "fit-content" }} direction="row" alignItems="center" justifyContent={{ xs: "start", lg: "center" }} gap={1}>
                                 <Checkbox
                                     edge="start"
-                                    checked={true}
+                                    checked={agreeToProcessing}
+                                    onChange={() => setAgreeToProcessing(!agreeToProcessing)}
                                     tabIndex={-1}
                                     disableRipple
                                     sx={{
