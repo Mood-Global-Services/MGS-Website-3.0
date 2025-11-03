@@ -5,7 +5,11 @@ import Image from 'next/image';
 import logo from '@/assets/images/logo.webp';
 import theme from '@/theme/theme';
 
-
+import notionGreyIcon from '@/assets/images/icons/notionGrayIcon.webp';
+import linkedinGreyIcon from '@/assets/images/icons/linkedinGrayIcon.webp';
+import githubGreyIcon from '@/assets/images/icons/githubGrayIcon.webp';
+import xGreyIcon from '@/assets/images/icons/XGrayIcon.webp';
+import instagramGreyIcon from '@/assets/images/icons/instagramGrayIcon.webp';
 import notionIcon from '@/assets/images/icons/notionIcon.webp';
 import linkedinIcon from '@/assets/images/icons/linkedinIcon.webp';
 import githubIcon from '@/assets/images/icons/githubIcon.webp';
@@ -58,19 +62,69 @@ export default function Footer() {
                     {/* Social icons (placeholders) */}
                     <Stack direction="row" gap={2} alignItems="center">
                         <MUILink href="https://www.notion.so/moodglobalservices" target="_blank" rel="noopener noreferrer">
-                            <Image src={notionIcon} alt="Notion" width={44} height={44} />
+                            <Stack width={44} height={44} sx={{
+                                backgroundImage: `url(${notionGreyIcon.src})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                                transition: "background-image 0.3s ease-in-out, transform 0.3s ease-in-out",
+                                "&:hover": {
+                                    backgroundImage: `url(${notionIcon.src})`,
+                                    transform: "translateY(1px)",
+                                },
+                            }} />
                         </MUILink>
                         <MUILink href="https://www.linkedin.com/company/moodglobalservices" target="_blank" rel="noopener noreferrer">
-                            <Image src={linkedinIcon} alt="LinkedIn" width={44} height={44} />
+                        <Stack width={44} height={44} sx={{
+                                backgroundImage: `url(${linkedinGreyIcon.src})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                                transition: "background-image 0.3s ease-in-out, transform 0.3s ease-in-out",
+                                "&:hover": {
+                                    backgroundImage: `url(${linkedinIcon.src})`,
+                                    transform: "translateY(1px)",
+                                },
+                            }} />
                         </MUILink>
                         <MUILink href="https://www.github.com/moodglobalservices" target="_blank" rel="noopener noreferrer">
-                            <Image src={githubIcon} alt="GitHub" width={44} height={44} />
+                        <Stack width={44} height={44} sx={{
+                                backgroundImage: `url(${githubGreyIcon.src})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                                transition: "background-image 0.3s ease-in-out, transform 0.3s ease-in-out",
+                                "&:hover": {
+                                    backgroundImage: `url(${githubIcon.src})`,
+                                    transform: "translateY(1px)",
+                                },
+                            }} />
                         </MUILink>
                         <MUILink href="https://www.x.com/moodglobalservices" target="_blank" rel="noopener noreferrer">
-                            <Image src={xIcon} alt="X" width={44} height={44} />
+                        <Stack width={44} height={44} sx={{
+                                backgroundImage: `url(${xGreyIcon.src})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                                transition: "background-image 0.3s ease-in-out, transform 0.3s ease-in-out",
+                                "&:hover": {
+                                    backgroundImage: `url(${xIcon.src})`,
+                                    transform: "translateY(1px)",
+                                },
+                            }} />
                         </MUILink>
                         <MUILink href="https://www.instagram.com/moodglobalservices" target="_blank" rel="noopener noreferrer">
-                            <Image src={instagramIcon} alt="Instagram" width={44} height={44} />
+                        <Stack width={44} height={44} sx={{
+                                backgroundImage: `url(${instagramGreyIcon.src})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                                transition: "background-image 0.3s ease-in-out, transform 0.3s ease-in-out",
+                                "&:hover": {
+                                    backgroundImage: `url(${instagramIcon.src})`,
+                                    transform: "translateY(1px)",
+                                },
+                            }} />
                         </MUILink>
                     </Stack>
                 </Stack>
