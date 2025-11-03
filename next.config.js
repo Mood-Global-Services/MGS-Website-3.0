@@ -9,6 +9,11 @@ const baseConfig = {
     // trims MUI bundle size by auto-rewriting deep imports
     optimizePackageImports: ['@mui/material', '@mui/icons-material'],
   },
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn.sanity.io" },
+    ],
+  },
 };
 
 export default withBundleAnalyzer({
