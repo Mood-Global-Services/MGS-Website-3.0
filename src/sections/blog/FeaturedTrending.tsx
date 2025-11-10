@@ -121,9 +121,9 @@ export default async function FeaturedTrending() {
   const cardBaseSx = {
     borderRadius: 2,
     bgcolor: theme.palette.background.default,
-    border: `1px solid ${theme.palette.brand.border1.main}`,
-    transition: "background-color 150ms ease, border-color 150ms ease",
-    "&:hover": { bgcolor: theme.palette.brand.cardHover1.main, borderColor: theme.palette.brand.border1.main },
+    border: `1px solid rgba(255, 255, 255, 0.1)`,
+    transition: "border-color 150ms ease",
+    "&:hover": { backgroundColor: theme.palette.background.default, borderColor: theme.palette.brand.border1.main },
   } as const;
 
   return (
@@ -136,7 +136,7 @@ export default async function FeaturedTrending() {
 
           {featured ? (
             <Card elevation={0} sx={{ ...cardBaseSx, display: "flex", flexDirection: "column", flex: 1 }}>
-              <CardActionArea component={Link} href={`/blog/${featured.slug}`} sx={{ alignItems: "stretch", display: "flex", flexDirection: "column", flex: 1 }}>
+              <CardActionArea component={Link} href={`/article/${featured._id}`} sx={{ alignItems: "stretch", display: "flex", flexDirection: "column", flex: 1 }}>
                 {featured.mainImage?.url && (
                   <Box sx={{ position: "relative", width: "100%", aspectRatio: "16 / 9", overflow: "hidden", flexShrink: 0 }}>
                     <Image
@@ -184,7 +184,7 @@ export default async function FeaturedTrending() {
           <Stack spacing={2}>
             {trending.map((post) => (
               <Card key={post._id} elevation={0} sx={cardBaseSx}>
-                <CardActionArea component={Link} href={`/blog/${post.slug}`}>
+                <CardActionArea component={Link} href={`/article/${post._id}`}>
                   <CardContent sx={{ py: 2.25 }}>
                     <Stack spacing={1}>
                       <AuthorAndDate author={post.author?.name} date={post.publishedAt} />
